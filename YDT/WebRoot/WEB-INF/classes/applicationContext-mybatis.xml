@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="   
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+                
+    <!-- spring扫描包下所有类，让标注spring注解的类生效 -->
+    <context:component-scan base-package="com.kgc.ssm.YDT.dao"/>
+    <context:component-scan base-package="com.kgc.ssm.YDT.service"/>
+    
+	<!-- 读取JDBC的配置文件 -->
+	<context:property-placeholder location="classpath:database.properties" />
+
+	<!-- JNDI获取数据源（dbcp连接池） -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" scope="singleton">
+		<property name="driver" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		
+		<!-- 连接初始值，连接池启动时创建的连接数量的个数，默认值为0 -->  
+		<property name="initialSize" value="${initialSize}" />
+		<!-- 连接池的最大值，同一时间可以从池分配的最多连接数量，0时无限制，默认为8 --> 
+		<property name="maxActive" value="${maxActive}" />
+		<!-- 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 ，0时无限制 -->
+		<property name="maxIdle" value="${maxIdle}" />
+		 <!-- 最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接（创建新的连接），以免洪峰来时来不及申请 ，值越接近maxIdle，性能越好-->
+		<property name="minIdle" value="${minIdle}" />
+		<!-- 获取连接最大等待时间 ，如果当连接池中没有可用的连接，那么连接池需要等待连接释放的最大时间，如果等待的时间超过这个值，则会抛出异常-->
+		<property name="maxWait" value="${maxWait}" />
+		<!-- 开启无用连接的回收机制, 默认是 false -->
+		<property name="removeAbandoned" value="${removeAbandoned}" />
+
+	    <!-- sql心跳 ：保证连接池中连接是真实有效的连接 -->
+		<property name="removeAbandonedTimeout" value="${removeAbandonedTimeout}" />
+		<!-- testWhileIdle testOnBorrow testOnReturn validationQuery-select 1 -->
+		<!-- 开启Evict的定时校验，循环校验 -->
+		<property name="testWhileIdle" value="true" />
+		<!-- 定义Evict的时间间隔，单位：毫秒，大于0才会开启evict -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 在进行borrowObject处理时，会对拿到的连接进行校验-false不校验 -->
+		<property name="testOnBorrow" value="false" />
+		<!-- 在进行returnObject处理时，会对返回的连接进行校验-false不校验 -->
+		<property name="testOnReturn" value="false" />
+		<!-- 校验使用的sql语句，validationQuery，复杂的校验sql会影响性能 -->
+		<property name="validationQuery" value="select 1" />
+		<!-- 配置每次校验连接的数量，一般等于maxActive -->
+		<property name="numTestsPerEvictionRun" value="${maxActive}" />
+	</bean>
+
+	<!-- 配置mybatis sqlSessionFactoryBean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<!-- 配置sql映射信息 -->
+    	<property name="mapperLocations">
+    	  <list>
+    	     <value>classpath:cn/kgc/YDT/dao/**/*.xml</value>
+    	  </list> 
+    	</property>
+	</bean>
+	
+	<!-- 事务管理 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- AOP事务处理 -->
+	<aop:aspectj-autoproxy />
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="execution(* com.kgc.ssm.YDT.service..*(..))"
+			id="transService" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transService" />
+	</aop:config>
+	
+	<!-- txAdvice:需要定义事务管理器，进行事务处理 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+            <tx:method name="find*" read-only="true" propagation="SUPPORTS" timeout="1000" />
+    		<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- mapper 接口所在包名，spring会自动查找其下的Mapper -->
+	<bean class=" org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.kgc.ssm.YDT.dao" />
+	</bean>
+
+</beans>
