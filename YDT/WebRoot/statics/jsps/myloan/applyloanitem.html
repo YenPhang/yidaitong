@@ -1,0 +1,1002 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>易通贷-财富结缘 易生相伴-中国互联网金融领域资深服务品牌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="description" content="易通贷成立于2011年3月,注册资金1.5亿元,是中国互联网金融领域资深服务品牌.易通贷秉承着普惠大众,通达天下的服务理念,以打造“互联网金融百年老店”为发展愿景,诚信经营,合规发展,是中国老百姓值得信赖的互联网财富管理伙伴.">
+<meta name="keywords" content="P2P理财,P2P网贷,投资理财,网络理财,网络投资,小额投资理财,如何投资理财,个人理财,家庭理财,易通贷">
+<link type="/image/x-icon" rel="Icon" href="/etd.ico" />
+<link type="/image/x-icon" rel="Shortcut Icon" href="/etd.ico" />
+<link type="/image/x-icon" rel="Bookmark" href="/etd.ico" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if IE 6]>
+<script src="js/dd_belatedpng.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.png,.png:hover,img,background');
+</script>
+<![endif]-->
+<link href="css/com.css" rel="stylesheet">
+<link href="css/tf.css" rel="stylesheet">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/iconfont.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/common.css">
+<script>
+Stringserver={
+	server:"https://app.etongdai.com",
+	staticServer:"https://www.etongdai.com",
+	sslServer:"https://app.etongdai.com",
+	mobileServer:"https://m.etongdai.com"
+}
+</script>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/digital.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+
+<script src="js/eframe.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/fancyselect.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(function(){
+//		Stringserver.server=Stringserver.server || "";
+		var userName=$.cookie('_username');
+		var loginHtml="";
+    	var myAccountHtml="";
+			loginHtml="<div class='welcome'>欢迎您，</div>" + 
+			"<a href='https://app.etongdai.com/account/index'>Etdzgqo326</a>" + 
+			"<a href='https://app.etongdai.com/login/logout'>退出登录</a>";
+            myAccountHtml="<a class=\"account\" href=\"https://app.etongdai.com/account/index\" title=\"我的账户\"><i class=\"iconfont\">&#xe637;</i>我的账户</a>";
+            showRedTicket();
+		$("#isLoginHead").html(loginHtml);
+    	$("#accountStatus").html(myAccountHtml);
+//		registerFenliu();
+		thousand_char($(".thousand_char"), 2);
+	
+		//var cur_domain = document.domain;
+		//if(cur_domain.indexOf("test") != -1 || cur_domain.indexOf("www") != -1){
+		//	$("#fixbar .hbgif").show();
+		//}else{
+			// 新手任务
+		//	$.ajax({
+		//		type : "post",
+		//		dataType : "json",
+		//		url : "/showNewTaskFlag",
+		//		error : function(){},
+		//		success : function(data){
+		//			if(data.body){
+		//				$("#fixbar .hbgif").show();
+		//			}
+		//		}
+		//	});
+		//}
+		
+})
+
+//显示红包金额
+function showRedTicket(){
+	$.ajax({
+		type : "post",
+		dataType : "json",
+		url : "/getRedTicketForIndex",
+		error : function(){},
+		success : function(data){
+			if(data.success){
+				$("#noLogin").hide();
+				$("#logined").show();
+				if(data.ticketAmount <= 0){
+					$("#noRed").show();
+				}else{
+					$("#showRed").show();
+					$("#userRedAmount").append(data.ticketAmount);
+				}
+			}
+		}
+	});
+}
+function startAnimation(){
+	$(".global-header .banner-loop").delay(3000).animate({opacity:0},500,"linear",function(){
+		$(".global-header .banner-loop").css("background-image","url(images/banner_03.png)");
+		$(".global-header .banner-loop").animate({opacity:1},500,"linear",function(){
+			$(".global-header .banner-loop").delay(2000).animate({opacity:0},500,"linear",function(){
+				$(".global-header .banner-loop").css("background-image","url(images/banner_02.png)");
+				$(".global-header .banner-loop").animate({opacity:1},500,"linear",startAnimation);
+			});
+		});
+	});
+}
+$(function(){
+	startAnimation();
+});
+
+function kf_online(){
+	var userName=$.cookie('_username');
+	var userMobile=$.cookie('_userMobile');
+	if(userName){
+		if(userMobile != null && userMobile != ''){
+			window.open("http://im.etongdai.com/webchat.html?custAcc="+userMobile+"&vip=0&mediaType=1",'_blank');
+		}else{
+			window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+		}
+	}else{
+		window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+	}
+}
+</script>
+</script>
+<script type='text/javascript'>
+	var userId=$.cookie('_userId');
+	var birthYear = $.cookie('_birthYear');
+	var gender = $.cookie('_gender');
+	var _vds = _vds || [];
+	window._vds = _vds;
+	(function(){
+		_vds.push(['setAccountId', '84873cbf3be76fe4']);
+        if(userId != null && userId != ''){
+        	_vds.push(['setCS1', 'userId', userId]);
+        	_vds.push(['setCS2', 'gender', gender]);
+        	_vds.push(['setCS3', 'birthYear', birthYear]);
+        }
+        (function() {
+			var vds = document.createElement('script');
+			vds.type='text/javascript';
+          	vds.async = true;
+         	vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          	var s = document.getElementsByTagName('script')[0];
+          	s.parentNode.insertBefore(vds, s);
+		})();
+	})();
+
+</script><link rel="stylesheet" type="text/css" href="css/my_com.css" />
+<link rel="stylesheet" type="text/css" href="css/diya.css" />
+<style>
+.formli li em, .ul_editor li em{
+    left: -87px;
+}
+</style>
+</head>
+<body>
+	<div id="toolbar">
+	    <span class="tool">服务热线：<strong>400-064-5156</strong></span>
+	    <span class="tool online">在线客服</span>
+	    <div class="grid service">
+	    	<a class="grid-unit-1-2" onclick="kf_online();"><i class="iconfont">&#xe634;</i>在线客服</a>
+	        <a class="grid-unit-1-2 service-email"><i class="iconfont">&#xe636;</i>客服邮件</a>
+			<h3 class="grid-unit-1">服务时间：周一至周日8:00-20:00</h3>
+	    </div>
+	    <nav class="tool nav">
+	        <a href="https://www.etongdai.com/download.html">手机APP</a>
+	        <a class="mobile">官方微信</a>
+	        <a href="https://www.etongdai.com/p2p/help/guide.html" target="_blank">新手指引</a>
+	        <a href="https://www.etongdai.com/p2p/help/" target="_blank">帮助中心</a>
+	    </nav>
+	    <div class="mobile-box">
+	        <h3>扫描关注官方微信号</h3>
+	        <img src="picture/wechat.png" alt="易通贷">
+	    </div>
+	    <nav class="tool user nav" id="isLoginHead">
+	    </nav>
+	</div>
+
+	<header class="grid global-header">
+		<div class="grid-unit-1-3 logo" >
+			<img src="picture/banner_01.png" style="position: relative;top: 1px;" onclick="location.href='https://www.etongdai.com/'" alt="易通贷" title="易通贷" />
+			<div class="banner-loop" onclick="location.href='https://www.etongdai.com/'"></div>
+		</div>
+		<ul class="grid-unit-2-3 global"><li class="grid-unit-1-8"><a href="https://www.etongdai.com/" title="首页">首页</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/investments/index" title="我要投资">我要投资</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/newCredit/addloan/creditloan" title="我要借款">我要借款</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/safetySystem/nvestingSafety" title="风控措施">风控措施</a></li><li class="grid-unit-1-6"><a href="https://www.etongdai.com/p2p/informations/index.html" title="信息披露">信息披露</a></li><li class="grid-unit-1-6"><a href="https://www.etongdai.com/p2p/abouts/abouts_company.html" title="关于我们">关于我们</a></li></ul>
+        <span id="accountStatus"></span>
+		<input type="hidden" value="https://app.etongdai.com" id="hideServer" />
+	</header>
+    <script>
+        /*头部样式*/
+        function getIndexHtml(){
+            var userName=$.cookie('_username');
+            var loginHtml="";
+            var myAccountHtml="";
+            if(userName){
+                loginHtml="欢迎您，"
+                        +"<a href='"+"https://app.etongdai.com"+"/account/index'>"+userName+"</a><span>|</span><a class='exit' href='"+
+                        "https://app.etongdai.com"+"/login/index'>退出登录</a>";
+                myAccountHtml="<a class=\"account\" href=\"https://app.etongdai.com/account/index\" title=\"我的账户\"><i class=\"iconfont\">&#xe637;</i>我的账户</a>"
+            }else{
+                myAccountHtml="<span id=\"register_log\" class=\"nvestingSafety\"><a id='fenliu' href='https://app.etongdai.com/register/index'>注册</a><i>/<i><a href='https://app.etongdai.com/login/index' id=\"fenliu_log\">登录</a></span>";
+            }
+            $("#isLoginHead").html(loginHtml);
+            $("#accountStatus").html(myAccountHtml)
+        }
+        getIndexHtml()
+	</script>	<div class="content">
+		<div class="con24 clearfix">
+<script type="text/javascript">
+$(function(){
+	
+	
+	$(".con_l li").click(function(){
+			$(this).addClass("cur1").append('<i class="cura"></i>')
+			.siblings().removeClass("cur1").children('i').remove();
+		});
+		$(".zmenu a").click(function(){
+			$(this).addClass("cur2").append('<em></em>')
+			.siblings().removeClass("cur2").children('em').remove();
+		});
+
+	$.ajax({
+		url: "/account/leftInfo",
+		type: "post",
+		dataType: 'json',
+		success: function(data){
+			if(data.success){
+				$("#allowPrice").empty().append(data.body.allowPrice);
+				thousand_char($("#allowPrice"),2);
+				 var totalLev=0;
+                if(data.body.extend.useAuthRealName=="1"){
+                  totalLev+=3;
+                  $("#realName").addClass("ok");
+                  $("#realName").attr("href","javaScript:void(0)");
+                }else
+                   $("#realName").attr("href","https://app.etongdai.com/certification/attestation");
+               
+              if(data.body.extend.useAuthMp=="1"){
+              		totalLev+=0.5;
+                  $("#mobileCertification").addClass("ok");
+                   $("#mobileCertification").attr("href","javaScript:void(0)");
+                }else
+                   $("#mobileCertification").attr("href","https://app.etongdai.com/certification/attestation");
+                if(data.body.extend.useAuthEmail=="1"){
+                	totalLev+=0.5;
+                  $("#cereMail").addClass("ok");
+                   $("#cereMail").attr("href","javaScript:void(0)");
+                }else
+                   $("#cereMail").attr("href","https://app.etongdai.com/certification/attestation");
+               if(data.body.extend.authBackCard=="2"){
+               		totalLev+=0.5;
+                  $("#cradBind").addClass("ok");
+                   $("#cradBind").attr("href","javaScript:void(0)");
+                }else
+                   $("#cradBind").attr("href","https://app.etongdai.com/certification/attestation");
+                if(data.body.flag=="0"){
+                	totalLev+=0.5;
+                  $("#tranpwdftl").addClass("ok");
+                   $("#tranpwdftl").attr("href","javaScript:void(0)");
+                }else
+                   $("#tranpwdftl").attr("href","https://app.etongdai.com/safe/tranpwdftl");
+                   
+                if(totalLev<3){
+                	 $("#safeLev,#safeLev2").empty().html("低");
+                	 $("#bar1,#bars").width("30%").removeClass().addClass("di");
+                }
+                else if(totalLev==5){
+                	 $("#safeLev,#safeLev2").empty().html("高");
+                	 $("#bar1,#bars").width("100%").removeClass().addClass("gao");
+                }
+                else{
+                	 $("#safeLev,#safeLev2").empty().html("中");
+                	 $("#bar1,#bars").width("65%").removeClass().addClass("zhong");
+                }
+                if(data.body.unUse>0){
+                	$("ul.ul_v .li3 a.t").append('<b></b>');
+                	$("ul.ul_v div.zmenu a.unUse").append('<b style="right:41px;"></b>');
+                }
+			}
+		}
+		});
+	$(".yuan").hide();
+	$.ajax({
+		url: "/message/countNotRead",
+		type: "post",
+		dataType: 'json',
+		success: function(data){
+			if(data.success){
+				if(data.info=='请先登录'){
+					alert(data.info);
+					window.location.href = "https://app.etongdai.com/login/index";
+					return;
+				}
+				if(data.info > 0){
+					$(".yuan").text(data.info);
+					$(".yuan").show();
+				}
+			}
+		}
+	});
+});
+</script>
+<div class="con_l">
+	<div class="name">
+    	<div class="lone">
+            <h2>您好!</h2>
+            <h2 class="number" title="Etdzgqo326">
+					Etdzgqo326
+            </h2>
+            <div class="icon">
+            	<a class="icon1" id="realName"></a>
+                <a class="icon2" id="mobileCertification"></a>
+                <a class="icon3" id="cereMail"></a>
+                <a class="icon4" id="cradBind"></a>
+                <a class="icon5" id="tranpwdftl"></a>
+            </div>
+            <div class="bar">
+            	<i id="bar1">
+                	
+                </i>
+            </div>
+            <p>安全等级：<i id="safeLev">&nbsp;&nbsp;</i>&nbsp;&nbsp;&nbsp;<span><a href="https://app.etongdai.com/certification/attestation">[提升]</a></span></p>
+            <p class="p3">余额：<em>￥<em id='allowPrice'></em></em></p>
+           
+            
+        </div>
+    </div>
+    	<div class="bd nav_l">
+        <ul class="ul_v">
+            <li class="li1 ">
+                <a href="https://app.etongdai.com/account/index" class="t"><span></span>账户总览</a>
+                
+            </li>
+             <li class="li2  "><a class="t"><span></span>我的资金</a>
+              
+              	<div class="zmenu">
+                    <a  href="https://app.etongdai.com/subsidiary/list"><i>▪</i>资金明细</a>
+                    <a  href="https://app.etongdai.com/recharge/payment"><i>▪</i>账户充值</a>
+                    <a  href="https://app.etongdai.com/withdrawal/apply"><i>▪</i>账户提现</a>
+                </div>
+             </li>
+            <li class="li3  "><a class="t"><span></span>我是投资者</a>
+             
+             <div class="zmenu">
+                    <a  href="https://app.etongdai.com/investors/myinvestors?typeId=-1&stateId=1"><i>▪</i>我的投资</a>
+                    <a  href="https://app.etongdai.com/amountMoneyCtr/myCollection"><i>▪</i>我的收款</a>
+                    <a  href="https://app.etongdai.com/amountMoneyCtr/selectAmountMoney"><i>▪</i>本月应收</a>
+                    <a  href="https://app.etongdai.com/transfer/list"><i>▪</i>债权转让</a>
+                    <a  href="https://app.etongdai.com/autobid/index"><i>▪</i>自动投标</a>
+                    <a  href="https://app.etongdai.com/activity/index"><i>▪</i>我的抽奖</a>
+                    <a  href="https://app.etongdai.com/couponActivity/coupon"><i>▪</i>奖券兑换</a>
+                    <a class="unUse " href="https://app.etongdai.com/redPacket/index"><i>▪</i>我的优惠券</a>
+                    
+                </div>
+            </li>
+             <li class="li4 cur1"><a class="t"><span></span>我是借款者</a>
+             <i class="cura"></i>
+                <div class="zmenu">
+                    <a href="https://app.etongdai.com/loanapplication/list/apply"><i>▪</i>我的借款</a>
+                    <a href="https://app.etongdai.com/newCredit/addloan/creditloan"><i>▪</i>申请信用贷款</a>
+                    <a href="https://app.etongdai.com/newCredit/addloan/mortgages"class="cur2"><i>▪</i>申请抵押贷款<em></em></a>
+                    <a href="https://app.etongdai.com/collateral/query"><i>▪</i>我的抵押物</a>
+                </div>
+                
+            </li> 
+            <li class="li5 "><a  class="t"><span></span>账户管理</a>
+             
+                <div class="zmenu">
+					<a href="https://app.etongdai.com/certification/attestation"><i>▪</i>我的认证</a>
+					<a  href="https://app.etongdai.com/uploadinfo/index"><i>▪</i>上传资料</a>
+                    <a  href="https://app.etongdai.com/safe/safeftl"><i>▪</i>安全中心</a>
+                </div>
+            </li>
+            <li class="li6 "><a  class="t"><span></span>消息管理</a>
+             
+             <div class="zmenu">
+                <a href="https://app.etongdai.com/message/mymessage?type=0" ><i>▪</i>我的消息<p class="yuan">0</p></a>
+             </div>
+            </li>
+            <li class="li7 ">
+            	<a  class="t"><span></span>好友管理</a>
+            	 
+                <div class="zmenu">
+                    <a href="https://app.etongdai.com/firend/newmyfriends" ><i>▪</i>我的好友</a>
+                    <a href="https://app.etongdai.com/firend/invitefriend" ><i>▪</i>邀请好友</a>
+                </div>
+            </li>
+        </ul>
+ 	</div>
+ 	 <div class="service">
+    </div>
+
+</div>			<div class="con_r">
+				<div class="friend">
+					<span class="t">申请抵押贷款</span>
+					<div class="ab_r">
+						<span class="blue">填写借款信息<i>&gt;</i></span><span>信息确认<i>&gt;</i></span><span>安全验证<i>&gt;</i></span><span>完成</span>
+					</div>
+				</div>
+				<form action="https://app.etongdai.com/newCredit/save/mortgages" method="post" enctype="multipart/form-data">
+				<div class="form_all">
+					<div class="form01">
+						<ul class="formli ul_h">
+							<li>
+								<em>借款类型</em>
+								<i>抵押贷借款</i>
+							</li>
+							<li class="money w170">
+								<em style="left:-125px;">预期投资回报率</em>
+								<label class="inp" style="width:175px;">
+									<input type="text" name="iteYearRate" placeholder="输入预期投资回报率" class="i_text notEmpty numberOnly" style="width:152px;font-size:16px;"/>
+								</label>
+								<i class="m_dw" style="left:157px;">%</i>
+                  			</li>
+							<li class="money w170">
+								<em>借款金额</em>
+								<label class="inp ">
+									<input type="text" name="iteLimitYuan" placeholder="输入借款金额" class="i_text notEmpty numberOnly"/>
+								</label>
+								<i class="m_dw">元</i>
+							</li>
+							<li class="li4 hk_date">
+								<em style="width: 56px;text-align: right">期限</em>
+								<select id="iteRepayInterval" name="iteRepayInterval" class="sel_o1">
+											<option value="1">按月</option> 
+											<option value="2">按天</option> 
+								</select>
+								<input type="hidden" id="iteRepayDate" name="iteRepayDate" value=""/>
+								<select id="iteRepayDate1" name="iteRepayDate1" class="sel_o2">
+											<option value="1">1个月</option> 
+											<option value="2">2个月</option> 
+											<option value="3">3个月</option> 
+											<option value="4">4个月</option> 
+											<option value="5">5个月</option> 
+											<option value="6">6个月</option> 
+											<option value="7">7个月</option> 
+											<option value="8">8个月</option> 
+											<option value="9">9个月</option> 
+											<option value="10">10个月</option> 
+											<option value="11">11个月</option> 
+											<option value="12">12个月</option> 
+								</select> 
+								<select id="iteRepayDate2" name="iteRepayDate2" class="sel_o3">
+											<option value="1">1天</option> 
+											<option value="2">2天</option> 
+											<option value="3">3天</option> 
+											<option value="4">4天</option> 
+											<option value="5">5天</option> 
+											<option value="6">6天</option> 
+											<option value="7">7天</option> 
+											<option value="8">8天</option> 
+											<option value="9">9天</option> 
+											<option value="10">10天</option> 
+											<option value="11">11天</option> 
+											<option value="12">12天</option> 
+											<option value="13">13天</option> 
+											<option value="14">14天</option> 
+											<option value="15">15天</option> 
+											<option value="16">16天</option> 
+											<option value="17">17天</option> 
+											<option value="18">18天</option> 
+											<option value="19">19天</option> 
+											<option value="20">20天</option> 
+											<option value="21">21天</option> 
+											<option value="22">22天</option> 
+											<option value="23">23天</option> 
+											<option value="24">24天</option> 
+											<option value="25">25天</option> 
+											<option value="26">26天</option> 
+											<option value="27">27天</option> 
+											<option value="28">28天</option> 
+											<option value="29">29天</option> 
+											<option value="30">30天</option> 
+											<option value="31">31天</option> 
+											<option value="32">32天</option> 
+											<option value="33">33天</option> 
+											<option value="34">34天</option> 
+											<option value="35">35天</option> 
+											<option value="36">36天</option> 
+											<option value="37">37天</option> 
+											<option value="38">38天</option> 
+											<option value="39">39天</option> 
+											<option value="40">40天</option> 
+											<option value="41">41天</option> 
+											<option value="42">42天</option> 
+											<option value="43">43天</option> 
+											<option value="44">44天</option> 
+											<option value="45">45天</option> 
+											<option value="46">46天</option> 
+											<option value="47">47天</option> 
+											<option value="48">48天</option> 
+											<option value="49">49天</option> 
+											<option value="50">50天</option> 
+											<option value="51">51天</option> 
+											<option value="52">52天</option> 
+											<option value="53">53天</option> 
+											<option value="54">54天</option> 
+											<option value="55">55天</option> 
+											<option value="56">56天</option> 
+											<option value="57">57天</option> 
+											<option value="58">58天</option> 
+											<option value="59">59天</option> 
+											<option value="60">60天</option> 
+											<option value="61">61天</option> 
+											<option value="62">62天</option> 
+											<option value="63">63天</option> 
+											<option value="64">64天</option> 
+											<option value="65">65天</option> 
+											<option value="66">66天</option> 
+											<option value="67">67天</option> 
+											<option value="68">68天</option> 
+											<option value="69">69天</option> 
+											<option value="70">70天</option> 
+											<option value="71">71天</option> 
+											<option value="72">72天</option> 
+											<option value="73">73天</option> 
+											<option value="74">74天</option> 
+											<option value="75">75天</option> 
+											<option value="76">76天</option> 
+											<option value="77">77天</option> 
+											<option value="78">78天</option> 
+											<option value="79">79天</option> 
+											<option value="80">80天</option> 
+											<option value="81">81天</option> 
+											<option value="82">82天</option> 
+											<option value="83">83天</option> 
+											<option value="84">84天</option> 
+											<option value="85">85天</option> 
+											<option value="86">86天</option> 
+											<option value="87">87天</option> 
+											<option value="88">88天</option> 
+											<option value="89">89天</option> 
+											<option value="90">90天</option> 
+								</select>
+							</li>
+							<li class="li5 cha_sel">
+								<em>借款目的</em> 
+								<select name="iteReason" class="sel_w">
+											<option value="1">短期周转</option> 
+											<option value="2">生意周转</option> 
+											<option value="3">生活周转</option> 
+											<option value="4">购物消费</option> 
+											<option value="5">不提现借款</option> 
+											<option value="6">创业借款</option> 
+											<option value="7">其他借款</option> 
+								</select>
+							</li>
+							<li class="li6 cha_sel">
+								<em>投资总额</em> 
+								<select name="iteBidSum" class="sel_w">
+									<option value="0">没有限制</option>
+											<option value="1000000">10000元</option>
+											<option value="10000000">100000元</option>
+											<option value="20000000">200000元</option>
+								</select>
+							</li>
+							<li class="li7 cha_sel">
+								<em>最低投资金额</em> 
+								<select name="iteBidMin" class="sel_w">
+											<option value="100">100</option>
+											<option value="150">150</option>
+											<option value="200">200</option>
+								</select>
+							</li>
+							<li class="li8 cha_sel">
+								<em>还款方式</em>
+								<select name="iteRepayType" class="sel_w">
+											<option value="1">按月等额本息</option>
+											<option value="2">按月还息到期还本</option>
+											<option value="3">到期还本息</option>
+								</select> 
+							</li>
+							<li class="li9 cha_sel">
+								<em>有效时间</em> 
+								<select name="iteBidDate" class="sel_w">
+										<option value="1" selected>1天</option>
+										<option value="2" selected>2天</option>
+										<option value="3" selected>3天</option>
+										<option value="4" selected>4天</option>
+										<option value="5" selected>5天</option>
+										<option value="6" selected>6天</option>
+										<option value="7" selected>7天</option>
+										<option value="8" selected>8天</option>
+										<option value="9" selected>9天</option>
+										<option value="10" selected>10天</option>
+										<option value="11" selected>11天</option>
+										<option value="12" selected>12天</option>
+										<option value="13" selected>13天</option>
+										<option value="14" selected>14天</option>
+										<option value="15" selected>15天</option>
+								</select>
+							</li>
+						</ul>
+					</div>
+					<div class="dy_info">
+						<h5>抵押物信息</h5>
+						<div class="em_num2 em_num">
+							<span class="em_sea cur"> 
+								<label>选择抵押物信息<i class="arwb"></i></label>
+								<div class="em_bd checkcontent" style="display: none;">
+									<table class="tb1_hide" style="display: none">
+										<thead>
+											<tr class="tr0">
+												<th>抵押物名称</th>
+												<td class="t2">抵押物信息描述</td>
+												<td class="t3">状态</td>
+												<td class="t4">是否已抵押</td>
+												<td class="t5">有效期至</td>
+												<td class="t6">选择</td>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="6" class="tool3">
+													<a class="btn submit_tb">确定</a>
+													<a id="reset_tb" class="btn2 close">取消</a>
+												</td>
+											</tr>
+										</tfoot>
+										</tbody>
+									</table>
+									<div class="tb1_show"></div>
+								</div>
+							</span>
+						</div>
+						<div class="infortb1">
+							<table class="table_copy tb1">
+								<thead>
+									<tr class="tr0">
+										<th>抵押物名称</th>
+										<td class="t2">抵押物信息描述</td>
+										<td class="t3">状态</td>
+										<td class="t4">是否已抵押</td>
+										<td class="t5">有效期至</td>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="form02">
+						<ul class="formli ul_v">
+							<li>
+								<em>借款标题</em>
+								<label class="inp">
+									<input type="text" name="iteTitle" placeholder="输入借款标题" maxlength="30" class="i_text notEmpty"/>
+								</label> 
+							</li>
+						</ul>
+						<ul class="ul_editor ul_h">
+							<li>
+								<em>借款说明</em>
+								<div class="inp tex">
+									<textarea name="itdContent" style="width: 668px; height: 232px; visibility: hidden;"></textarea>
+								</div>
+							</li>
+						</ul>
+						<ul class="ul_editor_next formli ul_v">
+							<li class="yzm">
+								<em>验证码</em> 
+								<label class="inp">
+									<input type="text" name="imgCode" placeholder="输入验证码" class="i_text notEmpty"/>
+								</label>
+								<div class="ab_l yzmtu">
+									<img id="code" />
+								</div>
+							</li>
+							<li class="tool clearfix">
+								<input type="submit" value="下一步" class="diya_submit btn">
+							</li>
+						</ul>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<nav id="redpack">
+		            <a href="https://app.etongdai.com/static/novice-guide/pc.html" target="_blank"><img src="picture/redpacket.gif" style="margin-left:-17px;"/></a>
+	</nav>
+	<nav id="fixbar">
+	    <a onclick="kf_online();" class="online">在线<br />客服</a>
+	    <a href="https://app.etongdai.com/calculator" class="calculator">收益<br />计算器</a>
+	    <a href="https://www.etongdai.com/download.html" class="download" onmousemove="$('.downloadimg').show();" onmouseout="$('.downloadimg').hide();">APP<br />下载</a>
+	    <a class="wxdownload" onmousemove="$('.wxdownloadimg').show();" onmouseout="$('.wxdownloadimg').hide();">微信<br />服务号</a>
+	    <a class="back">返回<br />顶部</a>
+	    <img class="downloadimg" src="picture/qrode_01.jpg" alt="APP下载">
+	    <img class="wxdownloadimg" src="picture/qrode_02.png" alt="微信服务">
+     </nav>
+	
+	<footer class="grid global-footer">
+	    <div>
+	        <nav class="grid-unit-1-8 global-footer-nav">
+	            <h3>关于我们</h3>
+		            	<a href="https://www.etongdai.com/p2p/abouts/abouts_company.html" title="公司简介">公司简介</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/abouts_team.html" title="团队介绍">团队介绍</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/honor/2/index.html" title="荣誉资质">荣誉资质</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/yxytd/" title="影音易通贷">影音易通贷</a>
+	        </nav>
+	        <nav class="grid-unit-1-6 global-footer-nav">
+	            <h3>相关法律</h3>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6536.html" title="民间借贷合法性">民间借贷合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6537.html" title="易通贷平台服务的合法性">易通贷平台服务的合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6538.html" title="电子合同合法性">电子合同合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6539.html" title="民间借贷利息的确认">民间借贷利息的确认</a>
+                    <a href="https://www.etongdai.com/p2p/help/risk/" title="出借人风险教育">出借人风险教育</a>
+	        </nav>
+	        <nav class="grid-unit-1-8 global-footer-nav">
+	            <h3>帮助中心</h3>
+                        <p><a href="https://www.etongdai.com/p2p/help/guide/1" title="新人向导">新人向导</a></p>
+                    
+                        <p><a href="https://www.etongdai.com/p2p/help/guide/3/" title="常见问题">常见问题</a></p>
+                    
+                        <p><a href="https://www.etongdai.com/p2p/help/risk/" title="风险揭示书">风险揭示书</a></p>
+                    
+                    
+                    
+                    
+                    <p><a href="https://www.etongdai.com/p2p/help/wzdt/" title="网站地图">网站地图</a></p>
+	        </nav>
+	        <div class="grid-unit-1-8 qrcode"><img src="picture/qrode_01.jpg" alt="易通贷APP下载">易通贷APP下载</div>
+	        <div class="grid-unit-1-8 qrcode"><img src="picture/qrode_02.jpg" alt="关注微信-易通贷资讯">关注微信-易通贷资讯</div>
+	        <div class="grid-unit-1-4 telephone">
+	            <h3>全国服务热线<a href="javascript:void(0);" title="拨打客服热线：400-064-5156">400-064-5156</a></h3>
+	            <p>客服咨询时间：8:00 - 20:00<span class="qq-server"><i></i>QQ客服</span></p>
+	            <p>服务投诉电话：010-56177355</p>
+	            <p>商务合作电话：010-56177361</p>
+                <p>服务投诉邮箱：service@etongdai.com</p>
+	        </div>
+	        <p class="grid-unit-1 tip">预期投资回报率不等于实际投资回报率，投资有风险，选择需谨慎。</p>
+	    </div>
+	</footer>
+	<section class="copyright">
+	    <div class="authentic">  
+	        <a href="http://webscan.360.cn/index/checkwebsite?url=www.etongdai.com" target="_blank"><img src="picture/01.gif"></a>
+	        <a href="https://search.szfw.org/cert/l/CX20140515008078008136" target="_blank"><img src="picture/02.gif"></a>
+	        <a href="http://www.isc.org.cn/xhhy/hydw/content-32.html" target="_blank"><img src="picture/03.gif"></a>
+	        <a href="https://ss.knet.cn/verifyseal.dll?sn=e14051911010849050et7r000000&amp;ct=df&amp;a=1&amp;pa=0.7002172293035737" target="_blank"><img src="picture/04.gif"></a>
+	        <a href="http://www.bcpcn.com/product/rz/bq/BCP2615734826.html" target="_blank"><img src="picture/05.gif"></a>
+	        <a href="http://www.315online.com.cn/member/315140031.html" target="_blank"><img src="picture/06.gif"></a>
+	        <a href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/1571278794" target="_blank"><img src="picture/wxrz-white.jpg"></a>
+	        <a target="_blank" href="http://www.etongdai.com/p2p/help/guide/4/2017071111727.html"><img src="picture/08.gif"></a>
+	        <a href="http://www.cecy.org.cn/bencandy_search.php?fid=122&amp;id=1204" target="_blank"><img src="picture/09.png"></a>
+	        <a id="ppb" key ="587c78dbefbfb04f3bf057c6" logo_size="124x47" logo_type="business" href="http://www.anquan.org">
+				<script src="js/aq_auth.js"></script>
+			</a>
+	    </div>
+	    <p class="link clearfix">
+	        <span>友情链接</span>
+	      		<a target="_blank" href="http://www.p2peye.com/">网贷天眼</a> 
+	      		<a target="_blank" href="http://www.chuangtianxia.cn">创天下</a> 
+	      		<a target="_blank" href="http://www.p2p001.com/">第一网贷</a> 
+	      		<a target="_blank" href="http://www.wd315.cn/">网贷315</a> 
+	      		<a target="_blank" href="http://www.wdzj.com/">网贷之家</a> 
+	      		<a target="_blank" href="http://www.erongtu.com/">融途网</a> 
+	      		<a target="_blank" href="https://www.rong360.com/licai/">融360</a> 
+	    </p>
+	    <p>版权所有 © 北京易通贷金融信息服务有限公司    公司地址：北京市海淀区丹棱街1号互联网金融中心7层    办公时间：周一至周五 9:00-18:00</p>
+	    <p>
+	    	<a target="_blank" href="http://www.miitbeian.gov.cn" style="color:#3f3a39; cursor:pointer;">备案号:京ICP备11042752号-4</a>
+	    	<a target="_blank" href="https://tsm.miit.gov.cn/pages/EnterpriseSearchList_Portal.aspx?type=0&amp;keyword=%E4%BA%ACICP%E8%AF%81140393%E5%8F%B7&amp;pageNo=1" style="color:#3f3a39; cursor:pointer;">京ICP证140393号</a>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024662"
+               style="display:inline-block;text-decoration:none; vertical-align: top;">
+                <img src="picture/ghs.png" style="float:left;"/>
+                <span style="float:left;margin: 0px 0px 0px 5px;">京公网安备 11010802024662号</span>
+            </a>
+	    </p>
+	</section>
+
+
+<div style="display:none" class="tc_f">
+	<i class="opa"></i>
+	<div class="fbd">
+		<h3 class="white">关注微信-易通贷资讯号</h3>
+        <em class="wxtu">
+        </em>
+        <p class="graya">打开微信，点击“扫一扫”，扫描此二维码即可关注，或微信
+			搜索公众号“易通贷资讯”。</p>
+		<a title="关闭" class="ab_r close">✖</a>
+	</div>
+</div>
+<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js"></script>
+<script>
+	var _this = $("#ppb");
+    _this.children("img").css({"width":"auto","height":"36"});
+</script>	<script src="js/log_reg.js"></script>
+	<script src="js/czqcheck.js"></script>
+	<script src="js/kindeditor-min.js"></script>
+	<script src="js/zh_cn.js"></script>
+<script>
+// 默认选中导航
+function defCurr(obj, add){
+    obj.addClass(add);
+}
+(function(){
+    var defObj = $(".global-header .global").children("li").eq(2).children("a");
+    defCurr(defObj, "def-curr");
+})()
+
+$("#_menu li").eq(2).click();
+$(function() {
+	// 下拉菜单样式
+	$('.sel_w,.sel_o1,.sel_o2,.sel_o3').fancySelect();
+	$('.sel_o1').parent().addClass("select1");
+	$('.sel_o2').parent().addClass("select2");
+	$('.sel_o3').parent().addClass("select3");
+	$('.sel_w').parent().addClass("select_w");
+	$('.select3').css("display", "none");
+
+	var tex = $(".select1 .trigger").text();
+	if (tex === "按月") {
+		$(".select2").show();
+		$(".select3").hide();
+	} else {
+		$(".select3").show();
+		$(".select2").hide();
+	}
+	$(".select1 .options a:first-child").click(function() {
+		$(".select2").show();
+		$(".select3").hide();
+	});
+	$(".select1 .options a:last-child").click(function() {
+		$(".select3").show();
+		$(".select2").hide();
+	});
+});
+$(".select1 .options a:nth-child(1)").click(function() {
+	$(this).css('background', '#f60');
+	$(".select3").show();
+	$(".select2").hide();
+});
+
+$(function() {
+	Kind_Editor("https://app.etongdai.com");
+
+	//用户输入校验
+	$(".i_text").checkInput({
+		iteYearRate : 'iteYearRate',
+		iteLimitYuan : 'iteLimitYuan',
+		iteTitle : 'iteTitle',
+		imgCode : 'imgCode'
+	});
+	
+	
+	//验证码
+	$("#code").attr({src:"/validCode?"+new Date().getTime()});
+	$("#code").click(function(){
+		this.src="/validCode?"+new Date().getTime();
+	});
+
+	// 文本编辑器
+	KindEditor.ready(function(K) {
+		var editor = K.create('textarea[name="itdContent"]', {
+			resizeType : 1,
+			allowPreviewEmoticons : true,
+			allowImageUpload : true,
+			items : [ 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor',
+					'bold', 'italic', 'underline', 'removeformat', '|',
+					'justifyleft', 'justifycenter', 'justifyright',
+					'insertorderedlist', 'insertunorderedlist', '|',
+					'emoticons', 'image', 'link' ]
+		});
+	});
+
+	// 抵押物信息选择
+	$(".em_num2 label")
+			.click(
+					function() {
+						$(".em_bd").fadeIn();
+						var table_conten = "<table class='tb1'>"
+								+ $(".tb1_hide").html() + "</table>";
+						$(".tb1_show").empty().append(table_conten);
+						$(".tb1_show .check_btn")
+								.click(
+										function() {
+											if ($(this).children(
+													"input[type='checkbox']")
+													.is(':checked')) {
+												$(this).parent().parent()
+														.addClass("tr_test");
+												var i = $(
+														".tb1_show .check_btn")
+														.index(this);
+												$('.tb1_hide .check_btn').eq(i)
+														.parent().parent()
+														.addClass("tr_test");
+												$('.tb1_hide .check_btn')
+														.eq(i)
+														.children(
+																"input[type='checkbox']")
+														.attr('checked',
+																'checked');
+											} else {
+												$(this).parent().parent()
+														.removeClass("tr_test");
+												var i = $(
+														".tb1_show .check_btn")
+														.index(this);
+												$('.tb1_hide .check_btn').eq(i)
+														.parent().parent()
+														.removeClass("tr_test");
+												$('.tb1_hide .check_btn')
+														.eq(i)
+														.children(
+																"input[type='checkbox']")
+														.removeAttr('checked');
+											}
+										});
+						$(".submit_tb")
+								.click(
+										function() {
+											$(".tb1_show").find(
+													".tb1 .t6,.tb1 tfoot")
+													.remove();
+											$(".tb1_show").find(".tb1 tr").not(
+													".tr_test").remove();
+											var table_copy = $(".tb1_show")
+													.find(".tb1").html();
+											var tit_tr = '<thead><tr><th>抵押物名称</th>'
+													+ '<td class="t2">抵押物信息描述</td>'
+													+ '<td class="t3">状态</td>'
+													+ '<td class="t4">是否已抵押</td>'
+													+ '<td class="t5">有效期至</td></tr></thead>';
+											$(".table_copy").empty().append(
+													table_copy).prepend(tit_tr);
+											$(".checkcontent").fadeOut();
+											$(".tb1_show").empty();
+										});
+						$(".btn2.close").click(function() {
+							$(".checkcontent").fadeOut();
+						});
+					});
+});
+</script>
+<div style="display:none;">
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?9a714a924f22b76dc92e5ae4bcbf6486";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</div>
+
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6abc8f820c003b71587d5619f3080cc1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div style="display:none;">
+	<script src='js/tongji_360.js' language='JavaScript' charset='gb2312'></script>
+</div>
+
+<script type="text/javascript">
+	window._pt_lt = new Date().getTime(); 
+	window._pt_sp_2 = []; 
+	_pt_sp_2.push('setAccount,641fe73f'); 
+	var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+	(function() { 
+		var atag = document.createElement('script'); 
+		atag.type = 'text/javascript'; 
+		atag.async = true; atag.src = _protocol + 'js.ptengine.cn/641fe73f.js'; 
+		var s = document.getElementsByTagName('script')[0]; 
+		s.parentNode.insertBefore(atag, s); 
+	})(); 
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+    setCookie("qqScriptId", "");
+    setCookie("qqScriptSrc", "");
+	var qqScriptId = $.cookie('qqScriptId');
+	var qqScriptSrc = $.cookie('qqScriptSrc');
+	$("body").before("<script id='" + qqScriptId + "' src = '" + qqScriptSrc + "' charset='utf-8' async defer>");
+})
+$(".qq-server").click(function(){
+    $(".qidian_wpa_img").click();
+})
+
+function setCookie(name, value) {
+    var exp = new Date();
+    exp.setDate(exp.getDate()+1000*60*60*24*30);
+    if (location.host.indexOf('.org') != -1) {
+        document.cookie = name + "="+ value+"; domain=etongdai.org; path=/;expires=" + exp.toGMTString();
+    } else {
+        document.cookie = name + "="+ value+"; domain=etongdai.com; path=/;expires=" + exp.toGMTString();
+    }
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿.risk_ctr>.risk_img {
+    background: url(../images/risk.png) no-repeat center;
+    background-size: 100%;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+    -o-background-size: 100%;
+    -webkit-background-size: 100%;
+    width: 764px;
+    height: 3677px;
+    margin-top: 22px;
+}

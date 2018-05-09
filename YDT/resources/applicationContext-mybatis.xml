@@ -50,7 +50,7 @@
 	
 	<!-- mapper 接口所在包名，spring会自动查找其下的Mapper，会直接扫描生成接口实现类，省去了mapperfacotorybean的配置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="cn.kgc.ssm.YDT.dao.notice" />
+		<property name="basePackage" value="cn.kgc.ssm.YDT.dao" />
 	</bean>
 	
 	

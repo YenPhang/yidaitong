@@ -1,0 +1,855 @@
+﻿*{
+     margin: 0 auto;
+     padding: 0;
+     border: 0;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    color: #2588c8;
+}
+i{
+    font-style: normal;
+}
+.clear{
+    zoom:1;
+}
+.clear:after{
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    content:'.';
+}
+#search{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+#search:after{
+	display: none;
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	content:'';
+	background-color: #eee;
+}
+#search h2{
+    width: 1000px;
+    height: 66px;
+    line-height: 81px;
+    font-weight: normal;
+    font-size: 16px;
+    background: #eee;
+}
+
+#search .orderArgs .current {
+
+border: 0 !important;
+
+border-radius: 0px;
+
+color: #444 !important;
+
+background-color: #fff;
+}
+#search .orderArgs_bg{
+
+position: absolute;
+
+height: 67px;
+
+width: 100%;
+
+background: #f5f5f5;
+}
+#search h2 .long_line {
+
+    color: #2EA7E0;
+
+    padding: 0 15px;
+}
+#search .seacrch_conditions{
+
+position: relative;
+
+padding: 13px 0 14px 0;
+
+height: 113px;
+}
+#search .orderArgs>i {
+    width: 184px;
+    text-align: left;
+    position: relative;
+    left: 29px;
+    height: 46px;
+    top: -2px;
+    background-color: transparent!important;
+}
+#search .orderArgs span:nth-of-type(1){
+
+padding: 0;
+
+margin: 0;
+
+left: 23px;
+}
+#search .orderArgs span:nth-of-type(2){
+
+margin: 0;
+
+padding: 0;
+
+left: 88px;
+cursor: text;
+width: 64px;
+}
+#search .orderArgs span:nth-of-type(3){
+
+margin: 0;
+
+padding: 0;
+
+left: 127px;
+cursor: text;
+}
+#search .orderArgs span:nth-of-type(4){
+
+margin: 0;
+
+padding: 0;
+
+left: 205px;
+}
+#search .orderArgs span  i.choose_status{
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    background: url(../images/progress_choose_none.png) no-repeat;
+    right: -13px;
+    top: 14px;
+}
+#search .orderArgs span  i.choose_status_coverage{
+    position: absolute;
+    width: 128px;
+    height: 62px;
+    right: -13px;
+    top: 0px;
+    z-index: 2;
+    background: #fff;
+    opacity: 0;
+}
+
+
+#search .orderArgs .asc  i{
+    background: url(../images/progress_choose_up.png)!important; no-repeat;
+}
+#search .orderArgs .desc  i{
+    background: url(../images/progress_choose_down.png)!important; no-repeat;
+}
+#search .seacrch_conditions>p{height: 38px;line-height: 38px;}
+#search .seacrch_conditions>p>span {
+    font-size: 14px;
+    border-radius: 3px;
+}
+#search h2:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 66px;
+    content: '';
+    background-color: #eee;
+}
+#search h2 a{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000000;
+}
+#search h2 .current{
+    position: relative;
+    border-bottom: 0 !important;
+    font-size: 20px;
+    color: #2EA7E0!important;
+}
+#search h2 .current:after{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #2ea7e0 #2ea7e0 #fff #2ea7e0;
+    display: none;
+}
+#search h2 a,#search h2 a:hover,#search h2 a:active{
+	color: #444;
+}
+#search p{
+    position: relative;
+    width: 1100px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+#search p i{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    color: #444;
+}
+#search p span{
+    position: relative;
+    display: inline-block;
+    line-height: 32px;
+    padding: 0px 19px 0 15px;
+    margin: 0 7px;
+    color: #444;
+    cursor: pointer;
+}
+#search p span:nth-of-type(1){
+	padding-right: 15px;
+}
+#search p .current{
+    border: 0 !important;
+    border-radius: 3px;
+    color: #fff !important;
+    background-color: #2ea7e0;
+}
+#search .orderArgs{
+    width: 1000px;
+    height: 46px;
+    margin-top: 21px;
+    background: #fff;
+}
+#search .orderArgs span:before{
+	position: absolute;
+	top: 8px;
+	left: -10px;
+	width: 1px;
+	height: 17px;
+	content: '';
+	background-color: #fff;
+}
+#search .orderArgs span:nth-of-type(1):before{
+	width: 0;
+}
+#search .orderArgs span:nth-of-type(2):before{
+	width: 0;
+}
+#search .orderArgs .asc,#search .orderArgs .desc{
+    position: relative;
+}
+#search .orderArgs .asc:after{
+    position: absolute;
+    top: 0;
+    right: -36px;
+    background: url(../images/progress_choose_down.png) no-repeat;
+    width: 40px;
+    height: 40px;
+    /*right: 8px;*/
+    /*content: '鈫�;*/
+}
+#search .orderArgs .desc:after{
+    position: absolute;
+    top: 0;
+    display: none;
+    right: 8px;
+    content: '';
+}
+#funds{
+    padding-top: 7px;
+}
+/*********/
+#funds .funds-list>.assethead {
+    
+float: left;
+    
+width: 180px;
+    
+margin-left: 30px;
+}
+#funds .funds-list>.assethead .asset_name {
+    font-size: 14px;
+    color: #444444;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    margin-top: 42px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#funds .funds-list>.assethead .asset_identify {
+    font-size: 12px;
+    color: #bdbdbd;
+    letter-spacing: 0;
+    line-height: normal;
+}
+#funds .funds-list>.rest_money {
+    float: left;
+    font-size: 12px;
+    color: #777777;
+    /* letter-spacing: 0; */
+    /* width: 174px; */
+    /* position: absolute; */
+    left: 888px;
+}
+/*鍒嗛〉*/
+.paging{
+    width: 1000px;
+    margin: 20px auto !important;
+    color: #999;
+    padding-bottom: 2px;
+    font-size: 14px;
+    text-align: center;
+}
+.paging span,.paging a{
+    display:inline-block;
+    height:auto;
+    line-height: 26px;
+    padding:0 8px;
+    margin-right:8px;
+    border:1px solid #2ea7e0;
+    vertical-align:middle;
+    text-align:center;
+    font-size:14px;
+    color:#2ea7e0;
+    background:#f8f8f8;
+    cursor: pointer;
+}
+.paging .active{
+    color:#fff;
+    background:#2ea7e0;
+}
+.paging .prev,.page .next{
+    margin-right:15px;
+    color:#2ea7e0;
+}
+.paging .next{
+    margin:0 5px;
+}
+.paging .page_box{
+    width:28px;
+    height: 24px;
+    padding:0 5px;
+    margin:-2px 3px 0;
+    border:1px solid #9d9d9d;
+    text-align:center;
+    vertical-align:middle;
+    color:#999;
+    background-color: transparent;
+}
+.paging .page_box:focus{
+    color:#2ea7e0;
+    border:1px solid #2ea7e0;
+}
+.paging .page_button{
+    width:40px;
+    height:26px;
+    padding:0;
+    margin-left:15px;
+    border: 1px solid #2ea7e0;
+    vertical-align:middle;
+    font-size:14px;
+    color: #2ea7e0;
+    cursor: pointer;
+    background-color:#f8f8f8;
+    overflow:hidden;
+}
+.paging .prev:hover,.paging .next:hover,.paging .page_button:hover,.paging .btn:hover{
+    color:#fff;
+    background-color:#2ea7e0;
+}
+.paging .disabled,.page .disabled:hover{
+    border-color:#ddd;
+    color:#ccc;
+    background-color:#f8f8f8;
+    cursor: default;
+}
+/**/
+#funds{
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: #f5f5f5;
+}
+#funds>div{
+    position: relative;
+    width: 1000px;
+    margin: 30px auto 0;
+}
+#funds>.funds-title{
+    width: 100%;
+    background-color: #fff;
+}
+#funds.funds-content{
+    width: 1000px;
+}
+#funds>div>h3{
+    position: relative;
+    width: 1000px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    color: #3f3a39;
+    background-color: #fff;
+}
+#funds>div>h3 small{
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: 1px solid #9d9d9d;
+    font-size: 16px;
+    color: #9d9d9d;
+}
+#funds .more{
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-weight: normal;
+    font-size: 14px;
+    color: #9d9d9d;
+}
+#funds .funds-list .fir_investment {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: url(../images/new_user2.png) no-repeat;
+    left: 0;
+    top: 0;
+    background-size: 100%;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+}
+#funds .rate ._full {
+    color: #444!important;
+}
+#funds .rate ._full small{
+    color: #444!important;
+}
+#funds .more:hover{
+    color: #37a8de;
+}
+#funds .funds-list{
+    position: relative;
+    width: 1000px;
+    height: 120px;
+    line-height: 120px;
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0 auto;
+    border-top: 1px solid #ECECEC;
+    cursor: pointer;
+}
+#funds .funds-list:nth-child(1) {
+    border-top: none;
+}
+#funds .funds-list h3{
+    line-height: 35px;
+    font-weight: normal;
+    font-size: 16px;
+}
+#funds .funds-list h3 a{
+    display: block;
+    float: left;
+    color: #3f3a39;
+}
+#funds .funds-list h3 .credit{
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    background: url(../images/funds.png) no-repeat;
+    background-size: 23px auto;
+    background-position: 8px 6px;
+}
+#funds .funds-list h3 .mortgage{
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    background: url(../images/funds.png) no-repeat;
+    background-size: 23px auto;
+    background-position: 8px -67px;
+}
+#funds .funds-list h3 .cooperation{
+    display: block;
+    float: left;
+    line-height: 21px;
+    padding: 0 8px;
+    margin: 7px 5px 0;
+    border: 1px solid #036eb8;
+    text-align: center;
+    font-size: 14px;
+    color: #036eb8;
+}
+#funds .funds-list h3 .third{
+    display: block;
+    float: left;
+    line-height: 21px;
+    padding: 0 8px;
+    margin: 7px 5px 0;
+    border: 1px solid #ef824c;
+    text-align: center;
+    font-size: 14px;
+    color: #ef824c;
+}
+#funds .funds-list h3 .authentication{
+    display: block;
+    float: left;
+    line-height: 21px;
+    padding: 0 8px;
+    margin: 7px 5px 0;
+    border: 1px solid #59d56e;
+    text-align: center;
+    font-size: 14px;
+    color: #59d56e;
+}
+#funds .funds-list .rate{
+    float: left;
+    text-align: left;
+    width: 146px;
+}
+#funds .funds-list .rate p{font-size: 32px;color: #FF5500;letter-spacing: 0;width: 100px;height: 42px;margin: 0 0;}
+#funds .funds-list .rate p small{
+    font-size: 18px;
+    color: #FF5500;
+}
+#funds .funds-list .rate p:nth-child(2){
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .term{
+    float: left;
+    width: 121px;
+    font-size: 26px;
+    height: 120px;
+    margin-left: 40px;
+}
+#funds .funds-list .term p:nth-child(1){
+    color: #444;
+}
+#funds .funds-list .term p:nth-child(1) small{
+    font-size: 18px;
+    color: #444;
+}
+#funds .funds-list .term p:nth-child(2){
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .money{
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+#funds .funds-list .money p:nth-child(1){
+    padding: 5px 0;
+    font-size: 24px;
+    color: #5d5d5d;
+}
+#funds .funds-list .money p:nth-child(1) small{
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .money p:nth-child(2){
+    text-align: center;
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .mode{
+    /* position: relative; */
+    /* float: left; */
+    width: 139px;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    float: left;
+    font-size: 14px;
+    margin-left: -11px;
+}
+#funds .funds-list .mode p:nth-child(1){
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    color: #444444;
+}
+#funds .funds-list .mode p:nth-child(1) small{
+    display: block;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .mode p:nth-child(2){
+    float: left;
+    width: 150px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #3f3a39;
+}
+#funds .funds-list .mode p:nth-child(2) small{
+    display: block;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .mode:before{
+    position: absolute;
+    top: 11px;
+    left: -15px;
+    width: 1px;
+    height: 38px;
+    content: '';
+    border-left: 1px solid #e8e8e8;
+}
+/*#funds .funds-list .mode::after{*/
+    /*position: absolute;*/
+    /*top: -52px;*/
+    /*right: 0px;*/
+    /*width: 1px;*/
+    /*height: 131px;*/
+    /*content: '';*/
+    /*border-left: 1px dashed #e8e8e8;*/
+/*}*/
+#funds .funds-list .progress{width: 147px;float: left;height: 5px;margin-top: 57px;margin-left: 7px;position: relative;}
+#funds .funds-list .progress .rest_money {
+    float: left;
+    position: absolute;
+    top: -68px;
+    font-size: 14px;
+    color: #777;
+}
+#funds .funds-list .progress .rest_money span {
+}
+#funds .funds-list .progress p:nth-child(1){
+    position: relative;
+    /* float: left; */
+    width: 120px;
+    height: 4px;
+    background: #dcdcdc;
+}
+#funds .funds-list .progress p:nth-child(1) i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20%;
+    height: 4px;
+    background: #2ea7e0;
+}
+#funds .funds-list .progress p:nth-child(1) small:nth-child(1){
+    display: block;
+    float: left;
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .progress p:nth-child(1) small:nth-child(2){
+    font-size: 12px;
+    color: #9d9d9d;
+}
+#funds .funds-list .progress p:nth-child(2){
+    position: relative;
+    float: left;
+    width: 140px;
+    height: 4px;
+    background: #dcdcdc;
+    margin-top: 16px;
+}
+#funds .funds-list .progress p:nth-child(2) i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20%;
+    height: 4px;
+    background: #2ea7e0;
+}
+#funds .funds-list .progress p:nth-child(2) small{
+    position: absolute;
+    top: -9px;
+    right: -90px;
+    width: 60px;
+    line-height: 20px;
+    text-align: right;
+    font-size: 14px;
+    color: #9d9d9d;
+}
+#funds .funds-list .investment{
+    float: left;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #37a8de;
+    margin-top: 40px;
+    margin-left: 32px;
+    display: none;
+}
+#funds .funds-list .investment.new-user {
+    background: #FF5500;
+    color:#fff;
+}
+
+#funds .funds-list .investment-all{
+    background-color: #2EA7E0;
+    color: #fff;
+}
+#funds .funds-list .investment:hover{
+    /* background-color: #46bff8 !important; */
+}
+#funds .funds-list .investment-all2,#funds .funds-list .investment-all2:hover{
+	background-color: #FC7030 !important;
+}
+#funds .funds-list .investment2:hover{
+    background-color: #FC7030 !important;
+}
+#funds .coverage{
+    float: left;
+    width: 360px;
+    height: 280px;
+    margin-right: 15px;
+    text-align: center;
+    background-color: #fff;
+}
+#funds .coverage h3{
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: left;
+    font-weight: normal;
+    font-size: 22px;
+}
+#funds .coverage a{
+    display: inline-block;
+    width: 146px;
+    height: 50px;
+    margin: 10px;
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+}
+#funds .information{
+    position: relative;
+    float: left;
+    width: 625px;
+    height: 280px;
+    background-color: #fff;
+}
+#funds .information h3{
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: left;
+    font-weight: normal;
+    font-size: 22px;
+}
+#funds .information h3 span{
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#funds .information h3 span:nth-child(1):after{
+    position: absolute;
+    top: 14px;
+    right: -5px;
+    width: 1px;
+    content: '';
+    border-right: 2px solid #2588c8;
+    height: 24px;
+}
+#funds .information .current{
+    border: 0 !important;
+}
+#funds .information .more{
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #9d9d9d;
+}
+#funds .information .more{
+    color: #37a8de;
+}
+#funds .information .activity-pannel{
+    display: none;
+}
+#funds .information p{
+    line-height: 40px;
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #3f3a39;
+}
+#funds .information p a{
+    color: #3f3a39;
+}
+#funds .information p a:hover{
+    color: #36a8de;
+}
+#funds .information p small{
+    float: right;
+    color: #9d9d9d;
+}
+#touman_tu{
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    display: block;
+    width: 180px;
+    height: 100px;
+}
+#touman_tu{
+    background: url(../images/tz_detail.gif) no-repeat 0 -970px;
+}
+#funds .funds-list .investment_des {
+    float: left;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 40px;
+    margin-left: 32px;
+    font-size: 14px;
+    color: #2EA7E0;
+    letter-spacing: 0;
+}
+#search .orderArgs>span {
+    line-height: 46px;
+    position: relative;
+    top: -2px;
+}
+#funds .none_list{
+    text-align: center;
+    line-height: 77px;
+    color: #666;
+    position: relative;
+    top:5px;
+}
+/*!*当前页面tab选中*!*/
+/*.global-header .global li:nth-of-type(2) a{*/
+    /*border-bottom: 2px solid #2588c8;*/
+    /*color: #2588c8;*/
+/*}*/

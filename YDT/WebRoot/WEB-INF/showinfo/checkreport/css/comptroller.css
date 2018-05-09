@@ -1,0 +1,12 @@
+﻿.comptroller.count{
+    padding-bottom: 40px;
+}
+
+.comptroller .infor_comptroller{margin: 20px 0px 24px 0px;}
+.comptroller .comptroller_img img {
+    width: 346px;
+    height: 498px;
+    float: left;
+}
+.comptroller .comptroller_img img:nth-child(1){margin-left: 20px;margin-right: 24px;}
+.comptroller .comptroller_img img:nth-child(3){margin-left: 20px;margin-top: 25px;}

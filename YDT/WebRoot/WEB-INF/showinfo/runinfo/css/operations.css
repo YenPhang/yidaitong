@@ -1,0 +1,58 @@
+﻿.operations_content table {
+    border-collapse: separate;
+    border: 1px solid #CFCFCF;
+    text-align: center;
+    font-size: 14px;
+    color: #565656;
+}
+.operations_content table .odd{background: rgb(231,231,231);height: 32px;}
+.operations_content table .even{background: rgb(247,247,247);}
+
+.operations_content table tr td:nth-child(1) {border-right: 2px solid #fff;}
+.operations_content table tr td:nth-child(2) {border-right: 2px solid #fff;}
+.operations_content table tr td{
+    border-top: 2px solid #fff;
+}
+.operations_content table tr:nth-child(1) td {
+    border-top: 0;
+}
+
+.lending .infor_tittle {
+    margin: 20px 0 23px;
+}
+.operations_content .info_table {
+    margin-left: 12px;
+}
+.operations_content .lending_des {
+    font-size: 12px;
+    color: #565656;
+    margin-top: 10px;
+}
+.lending_people .infor_tittle {
+    margin:46px 0 23px;
+}
+
+.operations_content .lending_people table tr td:nth-child(2) {
+    border-right: none;
+}
+.operations_content .lending_people table .tittle {
+    font-size: 18px;
+    color: #444444;
+}
+.operations_content .lending_standards .infor_tittle {
+    margin:47px 0 23px;
+}
+.operations_content  .table_img {
+    width: 753px;
+    height: 405px;
+    background: url(../images/charge_standards.png);
+    background-size: 100%;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+    -o-background-size: 100%;
+    -webkit-background-size: 100%;
+}
+
+.count {
+    padding-bottom: 36px;
+}

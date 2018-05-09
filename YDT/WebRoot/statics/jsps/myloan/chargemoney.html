@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>易通贷-财富结缘 易生相伴-中国互联网金融领域资深服务品牌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="description" content="易通贷成立于2011年3月,注册资金1.5亿元,是中国互联网金融领域资深服务品牌.易通贷秉承着普惠大众,通达天下的服务理念,以打造“互联网金融百年老店”为发展愿景,诚信经营,合规发展,是中国老百姓值得信赖的互联网财富管理伙伴.">
+<meta name="keywords" content="P2P理财,P2P网贷,投资理财,网络理财,网络投资,小额投资理财,如何投资理财,个人理财,家庭理财,易通贷">
+<link type="/image/x-icon" rel="Icon" href="/etd.ico" />
+<link type="/image/x-icon" rel="Shortcut Icon" href="/etd.ico" />
+<link type="/image/x-icon" rel="Bookmark" href="/etd.ico" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if IE 6]>
+<script src="js/dd_belatedpng.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.png,.png:hover,img,background');
+</script>
+<![endif]-->
+<link href="css/com.css" rel="stylesheet">
+<link href="css/tf.css" rel="stylesheet">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/iconfont.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/common.css">
+<script>
+Stringserver={
+	server:"https://app.etongdai.com",
+	staticServer:"https://www.etongdai.com",
+	sslServer:"https://app.etongdai.com",
+	mobileServer:"https://m.etongdai.com"
+}
+</script>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/digital.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+
+<script src="js/eframe.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/fancyselect.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(function(){
+//		Stringserver.server=Stringserver.server || "";
+		var userName=$.cookie('_username');
+		var loginHtml="";
+    	var myAccountHtml="";
+			loginHtml="<div class='welcome'>欢迎您，</div>" + 
+			"<a href='https://app.etongdai.com/account/index'>Etdzgqo326</a>" + 
+			"<a href='https://app.etongdai.com/login/logout'>退出登录</a>";
+            myAccountHtml="<a class=\"account\" href=\"https://app.etongdai.com/account/index\" title=\"我的账户\"><i class=\"iconfont\">&#xe637;</i>我的账户</a>";
+            showRedTicket();
+		$("#isLoginHead").html(loginHtml);
+    	$("#accountStatus").html(myAccountHtml);
+//		registerFenliu();
+		thousand_char($(".thousand_char"), 2);
+	
+		//var cur_domain = document.domain;
+		//if(cur_domain.indexOf("test") != -1 || cur_domain.indexOf("www") != -1){
+		//	$("#fixbar .hbgif").show();
+		//}else{
+			// 新手任务
+		//	$.ajax({
+		//		type : "post",
+		//		dataType : "json",
+		//		url : "/showNewTaskFlag",
+		//		error : function(){},
+		//		success : function(data){
+		//			if(data.body){
+		//				$("#fixbar .hbgif").show();
+		//			}
+		//		}
+		//	});
+		//}
+		
+})
+
+//显示红包金额
+function showRedTicket(){
+	$.ajax({
+		type : "post",
+		dataType : "json",
+		url : "/getRedTicketForIndex",
+		error : function(){},
+		success : function(data){
+			if(data.success){
+				$("#noLogin").hide();
+				$("#logined").show();
+				if(data.ticketAmount <= 0){
+					$("#noRed").show();
+				}else{
+					$("#showRed").show();
+					$("#userRedAmount").append(data.ticketAmount);
+				}
+			}
+		}
+	});
+}
+function startAnimation(){
+	$(".global-header .banner-loop").delay(3000).animate({opacity:0},500,"linear",function(){
+		$(".global-header .banner-loop").css("background-image","url(images/banner_03.png)");
+		$(".global-header .banner-loop").animate({opacity:1},500,"linear",function(){
+			$(".global-header .banner-loop").delay(2000).animate({opacity:0},500,"linear",function(){
+				$(".global-header .banner-loop").css("background-image","url(images/banner_02.png)");
+				$(".global-header .banner-loop").animate({opacity:1},500,"linear",startAnimation);
+			});
+		});
+	});
+}
+$(function(){
+	startAnimation();
+});
+
+function kf_online(){
+	var userName=$.cookie('_username');
+	var userMobile=$.cookie('_userMobile');
+	if(userName){
+		if(userMobile != null && userMobile != ''){
+			window.open("http://im.etongdai.com/webchat.html?custAcc="+userMobile+"&vip=0&mediaType=1",'_blank');
+		}else{
+			window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+		}
+	}else{
+		window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+	}
+}
+</script>
+</script>
+<script type='text/javascript'>
+	var userId=$.cookie('_userId');
+	var birthYear = $.cookie('_birthYear');
+	var gender = $.cookie('_gender');
+	var _vds = _vds || [];
+	window._vds = _vds;
+	(function(){
+		_vds.push(['setAccountId', '84873cbf3be76fe4']);
+        if(userId != null && userId != ''){
+        	_vds.push(['setCS1', 'userId', userId]);
+        	_vds.push(['setCS2', 'gender', gender]);
+        	_vds.push(['setCS3', 'birthYear', birthYear]);
+        }
+        (function() {
+			var vds = document.createElement('script');
+			vds.type='text/javascript';
+          	vds.async = true;
+         	vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          	var s = document.getElementsByTagName('script')[0];
+          	s.parentNode.insertBefore(vds, s);
+		})();
+	})();
+
+</script>    <link rel="stylesheet" type="text/css" href="css/my_com.css" />
+    <link rel="stylesheet" type="text/css" href="css/chongzhi.css" />
+    <link rel="stylesheet" type="text/css" href="css/tk.css" />
+    <script type="text/javascript">
+    var minNumber=0;
+        $(function(){
+       minNumber=Number("100.00");
+        $(".fastPayMoney,#recSum0").attr("placeholder","最低充值金额"+minNumber+"元")
+
+            $.post("/userRealState",function(data){
+                var data=$.parseJSON(data);
+                if(!data){
+                    $("#big").show();
+                    $('#f_submit').attr("disabled","disabled");
+                }else{
+                    $("#fastPaySubmit").removeAttr("disabled").removeClass("btn-disabled");
+                }
+            });
+            $('#btn2,#btn3').click(function(){
+                $('#big').hide();
+            });
+
+            $(".tc_pay .close").click(function(){
+                $("#window_show").fadeOut();
+            });
+
+            $(".channel_val").val($(".cur .sypRuleJs").val());
+            var flag = "0";
+            $(".pay a").click(function(){
+                $(this).addClass('cur').siblings().removeClass('cur');
+                $(".channel_val").val($(".cur .sypRuleJs").val());
+                flag="1";
+                $("#recSum0").blur();
+                flag="0";
+            });
+
+            //网银充值输入金额校验
+            $("#recSum0").on("input",function(){
+                if($(".money").find(".f_wrong")){
+                    $(".money").find(".f_wrong").remove();
+                }
+            })
+            $("#recSum0").focus(function(){
+                $(".money").find(".f_wrong").remove();
+            })
+            $("#recSum0").blur(function(){
+                $(".money").find(".f_wrong").remove();
+                var small=Number("100.00");
+                var val=Number($(this).val().replace(/,/g,""));
+                var max=Number("5000000.00");
+                if(!val || isNaN(val)){
+                    var f_wrong='<span class="f_wrong">请输入充值金额</span>';
+                    $(".money").append(f_wrong);
+                    //$("#recSum0").val("0.00").focus();
+                    return;
+                }
+                if(flag!="1"&&(val < small || val > max)){
+                    if(val < small){
+                        var f_wrong ='<span class="f_wrong">最小充值金额'+small+'元</span>';
+                        $(".money").append(f_wrong);
+                    }else if(val > max){
+                        var f_wrong ='<span class="f_wrong">最大充值金额'+max+'元</span>';
+                        $(".money").append(f_wrong);
+                    }
+                }else{
+                    var pay = Number($(".cur .fee").val());
+                    var money=String(val-pay);
+                    $("#payCash").text(pay);
+                    $("#payTotalMoney").text(money);
+                    thousand_char($("#payCash"),2);
+                    thousand_char($("#payTotalMoney"),2);
+                    $(".pay_val").val(pay);
+                    $(".money_val").val(money);
+                }
+            });
+            $("#f_submit").click(function(){
+                $(".money").find(".f_wrong").remove();
+                var small=Number("100.00");
+                var val=Number($("#recSum0").val().replace(/,/g,""));
+                var max=Number("5000000.00");
+                if(!val || isNaN(val)){
+                    var f_wrong='<span class="f_wrong">请输入充值金额</span>';
+                    $(".money").append(f_wrong);
+                    return;
+                }
+                if(flag!="1"&&(val < small || val > max)){
+                    if(val < small){
+                        var f_wrong ='<span class="f_wrong">最小充值金额'+small+'元</span>';
+                        $(".money").append(f_wrong);
+                    }else if(val > max){
+                        var f_wrong ='<span class="f_wrong">最大充值金额'+max+'元</span>';
+                        $(".money").append(f_wrong);
+                    }
+                }else{
+                    var pay = Number($(".cur .fee").val());
+                    var money=String(val-pay);
+                    $("#payCash").text(pay);
+                    $("#payTotalMoney").text(money);
+                    thousand_char($("#payCash"),2);
+                    thousand_char($("#payTotalMoney"),2);
+                    $(".pay_val").val(pay);
+                    $(".money_val").val(money);
+                    $(this).attr("disabled","disabled");
+                    $('#rechargeForm').submit();
+                }
+            });
+        })
+
+
+        function getOrder(){
+            var flag=validShow.form_submit();
+            var retsub=false;
+            if(flag&&$("#recSum0").val()){
+                $(".pay_money_true").val($("#recSum0").val().replace(/,/g,""));
+                $.ajax({
+                    type: 'post',
+                    url: 'https://app.etongdai.com/recharge/addRechargeMapper',
+                    data: $('#rechargeForm').serialize(),
+                    dataType: 'json',
+                    async: false,
+                    success: function(data) {
+                        if(data.success){
+                            $('#f_submit').attr("disabled","disabled").parent().append("<i class='dis_sm'>充值中...</i>");
+                            $("input[name='order0']").val(data.body);
+                            $("#_successBody").attr('href', '/recharge/successBody?recOrderNo=' + data.body);
+                            $("#window_show").show();
+                            retsub=true;
+                        }else{
+                            alert(data.info);
+                            retsub=false;
+                        }
+                    },
+                    error: function(data) {
+                        if(data){
+                            alert(data.info);
+                        } else {
+                            alert('请重新登录！');
+                        }
+                        retsub=false;
+                    }
+                });
+            }
+            return retsub;
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div id="big" style="display:none">
+    <div id="park">
+    </div>
+    <div id="ts">
+        <div class="null"></div>
+        <p>您当前状态还未进行实名认证，</p>
+        <p>为保障您的资金安全建议您完成实名认证？</p>
+        <div id="btn1"><a href="https://app.etongdai.com/certification/attestation">去认证</a></div>
+        <div id="btn2"><a href="#">忽略</a></div>
+        <div id="btn3"></div>
+    </div>
+</div>
+
+
+	<div id="toolbar">
+	    <span class="tool">服务热线：<strong>400-064-5156</strong></span>
+	    <span class="tool online">在线客服</span>
+	    <div class="grid service">
+	    	<a class="grid-unit-1-2" onclick="kf_online();"><i class="iconfont">&#xe634;</i>在线客服</a>
+	        <a class="grid-unit-1-2 service-email"><i class="iconfont">&#xe636;</i>客服邮件</a>
+			<h3 class="grid-unit-1">服务时间：周一至周日8:00-20:00</h3>
+	    </div>
+	    <nav class="tool nav">
+	        <a href="https://www.etongdai.com/download.html">手机APP</a>
+	        <a class="mobile">官方微信</a>
+	        <a href="https://www.etongdai.com/p2p/help/guide.html" target="_blank">新手指引</a>
+	        <a href="https://www.etongdai.com/p2p/help/" target="_blank">帮助中心</a>
+	    </nav>
+	    <div class="mobile-box">
+	        <h3>扫描关注官方微信号</h3>
+	        <img src="picture/wechat.png" alt="易通贷">
+	    </div>
+	    <nav class="tool user nav" id="isLoginHead">
+	    </nav>
+	</div>
+
+	<header class="grid global-header">
+		<div class="grid-unit-1-3 logo" >
+			<img src="picture/banner_01.png" style="position: relative;top: 1px;" onclick="location.href='https://www.etongdai.com/'" alt="易通贷" title="易通贷" />
+			<div class="banner-loop" onclick="location.href='https://www.etongdai.com/'"></div>
+		</div>
+		<ul class="grid-unit-2-3 global"><li class="grid-unit-1-8"><a href="https://www.etongdai.com/" title="首页">首页</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/investments/index" title="我要投资">我要投资</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/newCredit/addloan/creditloan" title="我要借款">我要借款</a></li><li class="grid-unit-1-6"><a href="https://app.etongdai.com/safetySystem/nvestingSafety" title="风控措施">风控措施</a></li><li class="grid-unit-1-6"><a href="https://www.etongdai.com/p2p/informations/index.html" title="信息披露">信息披露</a></li><li class="grid-unit-1-6"><a href="https://www.etongdai.com/p2p/abouts/abouts_company.html" title="关于我们">关于我们</a></li></ul>
+        <span id="accountStatus"></span>
+		<input type="hidden" value="https://app.etongdai.com" id="hideServer" />
+	</header>
+    <script>
+        /*头部样式*/
+        function getIndexHtml(){
+            var userName=$.cookie('_username');
+            var loginHtml="";
+            var myAccountHtml="";
+            if(userName){
+                loginHtml="欢迎您，"
+                        +"<a href='"+"https://app.etongdai.com"+"/account/index'>"+userName+"</a><span>|</span><a class='exit' href='"+
+                        "https://app.etongdai.com"+"/login/index'>退出登录</a>";
+                myAccountHtml="<a class=\"account\" href=\"https://app.etongdai.com/account/index\" title=\"我的账户\"><i class=\"iconfont\">&#xe637;</i>我的账户</a>"
+            }else{
+                myAccountHtml="<span id=\"register_log\" class=\"nvestingSafety\"><a id='fenliu' href='https://app.etongdai.com/register/index'>注册</a><i>/<i><a href='https://app.etongdai.com/login/index' id=\"fenliu_log\">登录</a></span>";
+            }
+            $("#isLoginHead").html(loginHtml);
+            $("#accountStatus").html(myAccountHtml)
+        }
+        getIndexHtml()
+	</script>
+<div class="content">
+    <div class="con24 clearfix">
+<script type="text/javascript">
+$(function(){
+	
+	
+	$(".con_l li").click(function(){
+			$(this).addClass("cur1").append('<i class="cura"></i>')
+			.siblings().removeClass("cur1").children('i').remove();
+		});
+		$(".zmenu a").click(function(){
+			$(this).addClass("cur2").append('<em></em>')
+			.siblings().removeClass("cur2").children('em').remove();
+		});
+
+	$.ajax({
+		url: "/account/leftInfo",
+		type: "post",
+		dataType: 'json',
+		success: function(data){
+			if(data.success){
+				$("#allowPrice").empty().append(data.body.allowPrice);
+				thousand_char($("#allowPrice"),2);
+				 var totalLev=0;
+                if(data.body.extend.useAuthRealName=="1"){
+                  totalLev+=3;
+                  $("#realName").addClass("ok");
+                  $("#realName").attr("href","javaScript:void(0)");
+                }else
+                   $("#realName").attr("href","https://app.etongdai.com/certification/attestation");
+               
+              if(data.body.extend.useAuthMp=="1"){
+              		totalLev+=0.5;
+                  $("#mobileCertification").addClass("ok");
+                   $("#mobileCertification").attr("href","javaScript:void(0)");
+                }else
+                   $("#mobileCertification").attr("href","https://app.etongdai.com/certification/attestation");
+                if(data.body.extend.useAuthEmail=="1"){
+                	totalLev+=0.5;
+                  $("#cereMail").addClass("ok");
+                   $("#cereMail").attr("href","javaScript:void(0)");
+                }else
+                   $("#cereMail").attr("href","https://app.etongdai.com/certification/attestation");
+               if(data.body.extend.authBackCard=="2"){
+               		totalLev+=0.5;
+                  $("#cradBind").addClass("ok");
+                   $("#cradBind").attr("href","javaScript:void(0)");
+                }else
+                   $("#cradBind").attr("href","https://app.etongdai.com/certification/attestation");
+                if(data.body.flag=="0"){
+                	totalLev+=0.5;
+                  $("#tranpwdftl").addClass("ok");
+                   $("#tranpwdftl").attr("href","javaScript:void(0)");
+                }else
+                   $("#tranpwdftl").attr("href","https://app.etongdai.com/safe/tranpwdftl");
+                   
+                if(totalLev<3){
+                	 $("#safeLev,#safeLev2").empty().html("低");
+                	 $("#bar1,#bars").width("30%").removeClass().addClass("di");
+                }
+                else if(totalLev==5){
+                	 $("#safeLev,#safeLev2").empty().html("高");
+                	 $("#bar1,#bars").width("100%").removeClass().addClass("gao");
+                }
+                else{
+                	 $("#safeLev,#safeLev2").empty().html("中");
+                	 $("#bar1,#bars").width("65%").removeClass().addClass("zhong");
+                }
+                if(data.body.unUse>0){
+                	$("ul.ul_v .li3 a.t").append('<b></b>');
+                	$("ul.ul_v div.zmenu a.unUse").append('<b style="right:41px;"></b>');
+                }
+			}
+		}
+		});
+	$(".yuan").hide();
+	$.ajax({
+		url: "/message/countNotRead",
+		type: "post",
+		dataType: 'json',
+		success: function(data){
+			if(data.success){
+				if(data.info=='请先登录'){
+					alert(data.info);
+					window.location.href = "https://app.etongdai.com/login/index";
+					return;
+				}
+				if(data.info > 0){
+					$(".yuan").text(data.info);
+					$(".yuan").show();
+				}
+			}
+		}
+	});
+});
+</script>
+<div class="con_l">
+	<div class="name">
+    	<div class="lone">
+            <h2>您好!</h2>
+            <h2 class="number" title="Etdzgqo326">
+					Etdzgqo326
+            </h2>
+            <div class="icon">
+            	<a class="icon1" id="realName"></a>
+                <a class="icon2" id="mobileCertification"></a>
+                <a class="icon3" id="cereMail"></a>
+                <a class="icon4" id="cradBind"></a>
+                <a class="icon5" id="tranpwdftl"></a>
+            </div>
+            <div class="bar">
+            	<i id="bar1">
+                	
+                </i>
+            </div>
+            <p>安全等级：<i id="safeLev">&nbsp;&nbsp;</i>&nbsp;&nbsp;&nbsp;<span><a href="https://app.etongdai.com/certification/attestation">[提升]</a></span></p>
+            <p class="p3">余额：<em>￥<em id='allowPrice'></em></em></p>
+           
+            
+        </div>
+    </div>
+    	<div class="bd nav_l">
+        <ul class="ul_v">
+            <li class="li1 ">
+                <a href="https://app.etongdai.com/account/index" class="t"><span></span>账户总览</a>
+                
+            </li>
+             <li class="li2  cur1"><a class="t"><span></span>我的资金</a>
+              <i class="cura"></i>
+              	<div class="zmenu">
+                    <a  href="https://app.etongdai.com/subsidiary/list"><i>▪</i>资金明细</a>
+                    <a class="cur2" href="https://app.etongdai.com/recharge/payment"><i>▪</i>账户充值<em></em></a>
+                    <a  href="https://app.etongdai.com/withdrawal/apply"><i>▪</i>账户提现</a>
+                </div>
+             </li>
+            <li class="li3  "><a class="t"><span></span>我是投资者</a>
+             
+             <div class="zmenu">
+                    <a  href="https://app.etongdai.com/investors/myinvestors?typeId=-1&stateId=1"><i>▪</i>我的投资</a>
+                    <a  href="https://app.etongdai.com/amountMoneyCtr/myCollection"><i>▪</i>我的收款</a>
+                    <a  href="https://app.etongdai.com/amountMoneyCtr/selectAmountMoney"><i>▪</i>本月应收</a>
+                    <a  href="https://app.etongdai.com/transfer/list"><i>▪</i>债权转让</a>
+                    <a  href="https://app.etongdai.com/autobid/index"><i>▪</i>自动投标</a>
+                    <a  href="https://app.etongdai.com/activity/index"><i>▪</i>我的抽奖</a>
+                    <a  href="https://app.etongdai.com/couponActivity/coupon"><i>▪</i>奖券兑换</a>
+                    <a class="unUse " href="https://app.etongdai.com/redPacket/index"><i>▪</i>我的优惠券</a>
+                    
+                </div>
+            </li>
+             <li class="li4 "><a class="t"><span></span>我是借款者</a>
+             
+                <div class="zmenu">
+                    <a href="https://app.etongdai.com/loanapplication/list/apply"><i>▪</i>我的借款</a>
+                    <a href="https://app.etongdai.com/newCredit/addloan/creditloan"><i>▪</i>申请信用贷款</a>
+                    <a href="https://app.etongdai.com/newCredit/addloan/mortgages"><i>▪</i>申请抵押贷款</a>
+                    <a href="https://app.etongdai.com/collateral/query"><i>▪</i>我的抵押物</a>
+                </div>
+                
+            </li> 
+            <li class="li5 "><a  class="t"><span></span>账户管理</a>
+             
+                <div class="zmenu">
+					<a href="https://app.etongdai.com/certification/attestation"><i>▪</i>我的认证</a>
+					<a  href="https://app.etongdai.com/uploadinfo/index"><i>▪</i>上传资料</a>
+                    <a  href="https://app.etongdai.com/safe/safeftl"><i>▪</i>安全中心</a>
+                </div>
+            </li>
+            <li class="li6 "><a  class="t"><span></span>消息管理</a>
+             
+             <div class="zmenu">
+                <a href="https://app.etongdai.com/message/mymessage?type=0" ><i>▪</i>我的消息<p class="yuan">0</p></a>
+             </div>
+            </li>
+            <li class="li7 ">
+            	<a  class="t"><span></span>好友管理</a>
+            	 
+                <div class="zmenu">
+                    <a href="https://app.etongdai.com/firend/newmyfriends" ><i>▪</i>我的好友</a>
+                    <a href="https://app.etongdai.com/firend/invitefriend" ><i>▪</i>邀请好友</a>
+                </div>
+            </li>
+        </ul>
+ 	</div>
+ 	 <div class="service">
+    </div>
+
+</div>        <div class="con_r">
+            <div class="friend">
+                <span class="t">账户充值</span>
+                <div class="ab_r">
+                    <span class="blue">选择充值方式<i>&gt;</i></span><span >完成</span>
+                </div>
+            </div>
+                <div class="bank-tip">
+                    <i></i>
+                    <p><span><i>尊敬的易家人：受银行渠道影响，暂不支持招商银行、农业银行、华夏银行、民生银行快捷充值业务，请使用其他银行操作，敬请谅解。</i></span></p>
+                </div>
+
+            <div class="tx_form1 tx_form">
+
+                    <ul class="formli ul_v">
+                        <li class="payway">
+                            <em>充值方式</em>
+                            <p>
+                                <span class="pay-select">快捷充值</span>
+                                <span>网银充值</span>
+                            </p>
+                        </li>
+                        <!-- 快捷充值 -->
+                        <form id="fastPay" onsubmit="fastPayDis()" action="/recharge/executeRecharge">
+                            <li>
+                                <em>银行卡号</em>
+                                <label class="inp">
+                                    <input type="text" class="bankNumber" value="" onkeyup="this.value=this.value.replace(/[^\d\s]/g,'');" oninput="bankNumberCheck()" minlength="19" maxlength="23" placeholder="请输入银行卡号">
+                                    <input type="hidden" name="bankAccount">
+                                </label>
+                                <p class="current-bank"></p>
+                            </li>
+                            <li>
+                                <em>银行预留手机号</em>
+                                <label class="inp">
+                                    <input type="text" class="bankPhone" value="130****9914" oninput="bankPhoneCheck()" maxlength="11" placeholder="请输入银行预留手机号">
+                                    <input type="hidden" name="mobilePhone">
+                                </label>
+                                <p class="tip-info redColor"></p>
+                            </li>
+                            <li>
+                                <em>充值金额</em>
+                                <label class="inp">
+                                    <input type="text" class="fastPayMoney" maxlength="6"
+                                           onkeyup="this.value=this.value.replace(/[^\d]/g,''); this.value=this.value.replace(/[`-~!@#$%^&*()_+<>?:{},.\/;'[\]]/im,'')"
+                                          >
+                                </label>
+                                <i class="view-limits">查看限额</i>
+                                <p class="tip-info redColor"></p>
+                            </li>
+                            <li class="tool">
+                                <input id="fastPaySubmit" class="btn btn-disabled" type="button" onclick="checkFastNext()" disabled="disabled" value="下一步" />
+                            </li>
+                            <input type="hidden" name="requestId">
+                            <input type="hidden" name="bankCode">
+                            <input type="hidden" name="quickChannelVal" value="18">
+                            <input type="hidden" name="quickChannel" value="fengfu">
+                            <input type="hidden" name="tradeId">
+                            <input type="hidden" name="randomValidateId">
+                            <input type="hidden" name="randomCode">
+                        </form>
+
+
+                        <form  style="display:none;" id="rechargeForm" method="post" action="https://app.etongdai.com/recharge/complete" onkeydown="if(event.keyCode==13){return false;}" target="_blank" onsubmit="return getOrder()">
+                            <li><em>充值渠道</em>
+                                <p class="pay tip clearfix">
+                                        <a class="cur"><i></i><img src="picture/yeepay.png" />
+                                            <input type="hidden" class="sypRuleJs" value="3" />
+                                            <input type="hidden" class="fee" value="" />
+                                        </a>
+                                        <a ><i></i><img src="picture/fengfu.png" />
+                                            <input type="hidden" class="sypRuleJs" value="7" />
+                                            <input type="hidden" class="fee" value="0" />
+                                        </a>
+                                </p>
+                            </li>
+                            <li class="money"><em>充值金额</em><label class="inp">
+                                <input id="recSum0" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" type="text" tabindex="2" class="digital_num i_text notEmpty" maxlength="8"  name="recSum0" /></label><i class="m_dw"></i>
+                                <input type="hidden" name="recSum" class="pay_money_true" />
+                                <input type="hidden" name="order0"/>
+                            </li>
+                            <li class="tool">
+                                <input id="f_submit" class="btn" type="button" value="下一步" />
+                                <input type="hidden" class="pay_val" name="charge" />
+                                <input type="hidden" class="money_val" name="amount" />
+                                <input type="hidden" class="channel_val" name="channel" />
+                            </li>
+                        </form>
+                    </ul>
+
+                <div class="tx_sm">
+                    <p class="blue">温馨提示：</p>
+                    <p>1. 易通贷禁止信用卡套现、虚假交易等行为,一经发现将予以冻结账户、暂停交易等操作。</p>
+                    <p>2. 为了您的资金安全，请在充值前进行实名认证、手机号码绑定及交易密码设置。</p>
+                    <p>3. 请注意您的银行卡充值限制，以免造成不便。</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="window_show" class="tc_pay fixcom" style="display: none;">
+    <i class="opa"></i>
+    <div class="bd">
+        <h3 class="white">登录网上银行充值</h3>
+        <dl class="word">
+            <dt>请在新开网银页面完成充值后选择：</dt>
+            <dd class="true"><strong>充值成功</strong>丨你可以选择：<a href="https://app.etongdai.com/recharge/successBody?recOrderNo=" id="_successBody"  class="blue">完成支付</a> 或 <a href="https://app.etongdai.com/subsidiary/list" class="blue">查看资金明细</a></dd>
+            <dd class="false"><strong>充值失败</strong>丨你可以选择：<a href="https://app.etongdai.com/recharge/payment"  class="blue">重新支付</a></dd>
+        </dl>
+        <a title="关闭" class="ab_r close">✖</a>
+    </div>
+</div>
+
+<!-- 快捷充值弹框 -->
+<div class="smscode-box">
+    <div class="smscode">
+        <i onclick="$(this).parents('.smscode-box').hide();$('#fastPaySubmit').removeAttr('disabled');">✕</i>
+        <p class="info">短信验证码已发送至<i class="hidePhone"></i></p>
+        <div class="inp2">
+            <input type="text" class="smscodeInp" onblur="smsCodeCheck(this)" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" maxlength="6" placeholder="请输入短信验证码">
+        </div>
+        <button type="button" class="sendsms">免费获取<br>验证码</button>
+        <p class="tip redColor"></p>
+        <button type="button" class="btn sure-btn" disabled="disabled" onclick="fastPay()">确定</button>
+    </div>
+</div>
+<div class="fasterr-box">
+    <div class="fasterr">
+        <i onclick="$(this).parents('.fasterr-box').hide();$('#fastPaySubmit').removeAttr('disabled');">✕</i>
+        <p class="info1"></p>
+        <p class="info2"></p>
+        <button type="button" class="btn sure-btn2" onclick="$(this).parents('.fasterr-box').hide();$('#fastPaySubmit').removeAttr('disabled');">确定</button>
+    </div>
+</div>
+<div class="fasterr-box1">
+    <div class="fasterr">
+        <i onclick="$(this).parents('.fasterr-box1').hide();$('#fastPaySubmit').removeAttr('disabled');">✕</i>
+        <p class="info3"></p>
+        <button type="button" class="btn sure-btn2" onclick="$(this).parents('.fasterr-box1').hide();$('#fastPaySubmit').removeAttr('disabled');">确定</button>
+    </div>
+</div>
+<div class="fasterr-box2">
+    <div class="fasterr">
+        <i onclick="$(this).parents('.fasterr-box2').hide();$('#fastPaySubmit').removeAttr('disabled');">✕</i>
+        <p class="info1"></p>
+        <p class="info2"></p>
+        <button type="button" class="btn sure-btn2" onclick="$(this).parents('.fasterr-box2').hide();$('#fastPaySubmit').removeAttr('disabled');">确定</button>
+    </div>
+</div>
+<!-- 快捷充值限额 -->
+<div class="limits-box">
+    <div class="limits">
+        <i onclick="$(this).parents('.limits-box').hide()">✕</i>
+        <h3>快捷充值限额</h3>
+        <table class="limits-table">
+            <thead>
+                <tr>
+                    <th>支持银行</th>
+                    <th>单笔限额</th>
+                    <th>日累计限额</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+	<nav id="redpack">
+		            <a href="https://app.etongdai.com/static/novice-guide/pc.html" target="_blank"><img src="picture/redpacket.gif" style="margin-left:-17px;"/></a>
+	</nav>
+	<nav id="fixbar">
+	    <a onclick="kf_online();" class="online">在线<br />客服</a>
+	    <a href="https://app.etongdai.com/calculator" class="calculator">收益<br />计算器</a>
+	    <a href="https://www.etongdai.com/download.html" class="download" onmousemove="$('.downloadimg').show();" onmouseout="$('.downloadimg').hide();">APP<br />下载</a>
+	    <a class="wxdownload" onmousemove="$('.wxdownloadimg').show();" onmouseout="$('.wxdownloadimg').hide();">微信<br />服务号</a>
+	    <a class="back">返回<br />顶部</a>
+	    <img class="downloadimg" src="picture/qrode_01.jpg" alt="APP下载">
+	    <img class="wxdownloadimg" src="picture/qrode_02.png" alt="微信服务">
+     </nav>
+	
+	<footer class="grid global-footer">
+	    <div>
+	        <nav class="grid-unit-1-8 global-footer-nav">
+	            <h3>关于我们</h3>
+		            	<a href="https://www.etongdai.com/p2p/abouts/abouts_company.html" title="公司简介">公司简介</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/abouts_team.html" title="团队介绍">团队介绍</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/honor/2/index.html" title="荣誉资质">荣誉资质</a>
+		            	<a href="https://www.etongdai.com/p2p/abouts/yxytd/" title="影音易通贷">影音易通贷</a>
+	        </nav>
+	        <nav class="grid-unit-1-6 global-footer-nav">
+	            <h3>相关法律</h3>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6536.html" title="民间借贷合法性">民间借贷合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6537.html" title="易通贷平台服务的合法性">易通贷平台服务的合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6538.html" title="电子合同合法性">电子合同合法性</a>
+			        	<a href="https://www.etongdai.com/p2p/help/legal/20170518/6539.html" title="民间借贷利息的确认">民间借贷利息的确认</a>
+                    <a href="https://www.etongdai.com/p2p/help/risk/" title="出借人风险教育">出借人风险教育</a>
+	        </nav>
+	        <nav class="grid-unit-1-8 global-footer-nav">
+	            <h3>帮助中心</h3>
+                        <p><a href="https://www.etongdai.com/p2p/help/guide/1" title="新人向导">新人向导</a></p>
+                    
+                        <p><a href="https://www.etongdai.com/p2p/help/guide/3/" title="常见问题">常见问题</a></p>
+                    
+                        <p><a href="https://www.etongdai.com/p2p/help/risk/" title="风险揭示书">风险揭示书</a></p>
+                    
+                    
+                    
+                    
+                    <p><a href="https://www.etongdai.com/p2p/help/wzdt/" title="网站地图">网站地图</a></p>
+	        </nav>
+	        <div class="grid-unit-1-8 qrcode"><img src="picture/qrode_01.jpg" alt="易通贷APP下载">易通贷APP下载</div>
+	        <div class="grid-unit-1-8 qrcode"><img src="picture/qrode_02.jpg" alt="关注微信-易通贷资讯">关注微信-易通贷资讯</div>
+	        <div class="grid-unit-1-4 telephone">
+	            <h3>全国服务热线<a href="javascript:void(0);" title="拨打客服热线：400-064-5156">400-064-5156</a></h3>
+	            <p>客服咨询时间：8:00 - 20:00<span class="qq-server"><i></i>QQ客服</span></p>
+	            <p>服务投诉电话：010-56177355</p>
+	            <p>商务合作电话：010-56177361</p>
+                <p>服务投诉邮箱：service@etongdai.com</p>
+	        </div>
+	        <p class="grid-unit-1 tip">预期投资回报率不等于实际投资回报率，投资有风险，选择需谨慎。</p>
+	    </div>
+	</footer>
+	<section class="copyright">
+	    <div class="authentic">  
+	        <a href="http://webscan.360.cn/index/checkwebsite?url=www.etongdai.com" target="_blank"><img src="picture/01.gif"></a>
+	        <a href="https://search.szfw.org/cert/l/CX20140515008078008136" target="_blank"><img src="picture/02.gif"></a>
+	        <a href="http://www.isc.org.cn/xhhy/hydw/content-32.html" target="_blank"><img src="picture/03.gif"></a>
+	        <a href="https://ss.knet.cn/verifyseal.dll?sn=e14051911010849050et7r000000&amp;ct=df&amp;a=1&amp;pa=0.7002172293035737" target="_blank"><img src="picture/04.gif"></a>
+	        <a href="http://www.bcpcn.com/product/rz/bq/BCP2615734826.html" target="_blank"><img src="picture/05.gif"></a>
+	        <a href="http://www.315online.com.cn/member/315140031.html" target="_blank"><img src="picture/06.gif"></a>
+	        <a href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/1571278794" target="_blank"><img src="picture/wxrz-white.jpg"></a>
+	        <a target="_blank" href="http://www.etongdai.com/p2p/help/guide/4/2017071111727.html"><img src="picture/08.gif"></a>
+	        <a href="http://www.cecy.org.cn/bencandy_search.php?fid=122&amp;id=1204" target="_blank"><img src="picture/09.png"></a>
+	        <a id="ppb" key ="587c78dbefbfb04f3bf057c6" logo_size="124x47" logo_type="business" href="http://www.anquan.org">
+				<script src="js/aq_auth.js"></script>
+			</a>
+	    </div>
+	    <p class="link clearfix">
+	        <span>友情链接</span>
+	      		<a target="_blank" href="http://www.p2peye.com/">网贷天眼</a> 
+	      		<a target="_blank" href="http://www.chuangtianxia.cn">创天下</a> 
+	      		<a target="_blank" href="http://www.p2p001.com/">第一网贷</a> 
+	      		<a target="_blank" href="http://www.wd315.cn/">网贷315</a> 
+	      		<a target="_blank" href="http://www.wdzj.com/">网贷之家</a> 
+	      		<a target="_blank" href="http://www.erongtu.com/">融途网</a> 
+	      		<a target="_blank" href="https://www.rong360.com/licai/">融360</a> 
+	    </p>
+	    <p>版权所有 © 北京易通贷金融信息服务有限公司    公司地址：北京市海淀区丹棱街1号互联网金融中心7层    办公时间：周一至周五 9:00-18:00</p>
+	    <p>
+	    	<a target="_blank" href="http://www.miitbeian.gov.cn" style="color:#3f3a39; cursor:pointer;">备案号:京ICP备11042752号-4</a>
+	    	<a target="_blank" href="https://tsm.miit.gov.cn/pages/EnterpriseSearchList_Portal.aspx?type=0&amp;keyword=%E4%BA%ACICP%E8%AF%81140393%E5%8F%B7&amp;pageNo=1" style="color:#3f3a39; cursor:pointer;">京ICP证140393号</a>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024662"
+               style="display:inline-block;text-decoration:none; vertical-align: top;">
+                <img src="picture/ghs.png" style="float:left;"/>
+                <span style="float:left;margin: 0px 0px 0px 5px;">京公网安备 11010802024662号</span>
+            </a>
+	    </p>
+	</section>
+
+
+<div style="display:none" class="tc_f">
+	<i class="opa"></i>
+	<div class="fbd">
+		<h3 class="white">关注微信-易通贷资讯号</h3>
+        <em class="wxtu">
+        </em>
+        <p class="graya">打开微信，点击“扫一扫”，扫描此二维码即可关注，或微信
+			搜索公众号“易通贷资讯”。</p>
+		<a title="关闭" class="ab_r close">✖</a>
+	</div>
+</div>
+<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js"></script>
+<script>
+	var _this = $("#ppb");
+    _this.children("img").css({"width":"auto","height":"36"});
+</script><div style="display:none;">
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?9a714a924f22b76dc92e5ae4bcbf6486";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</div>
+
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6abc8f820c003b71587d5619f3080cc1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div style="display:none;">
+	<script src='js/tongji_360.js' language='JavaScript' charset='gb2312'></script>
+</div>
+
+<script type="text/javascript">
+	window._pt_lt = new Date().getTime(); 
+	window._pt_sp_2 = []; 
+	_pt_sp_2.push('setAccount,641fe73f'); 
+	var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+	(function() { 
+		var atag = document.createElement('script'); 
+		atag.type = 'text/javascript'; 
+		atag.async = true; atag.src = _protocol + 'js.ptengine.cn/641fe73f.js'; 
+		var s = document.getElementsByTagName('script')[0]; 
+		s.parentNode.insertBefore(atag, s); 
+	})(); 
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+    setCookie("qqScriptId", "");
+    setCookie("qqScriptSrc", "");
+	var qqScriptId = $.cookie('qqScriptId');
+	var qqScriptSrc = $.cookie('qqScriptSrc');
+	$("body").before("<script id='" + qqScriptId + "' src = '" + qqScriptSrc + "' charset='utf-8' async defer>");
+})
+$(".qq-server").click(function(){
+    $(".qidian_wpa_img").click();
+})
+
+function setCookie(name, value) {
+    var exp = new Date();
+    exp.setDate(exp.getDate()+1000*60*60*24*30);
+    if (location.host.indexOf('.org') != -1) {
+        document.cookie = name + "="+ value+"; domain=etongdai.org; path=/;expires=" + exp.toGMTString();
+    } else {
+        document.cookie = name + "="+ value+"; domain=etongdai.com; path=/;expires=" + exp.toGMTString();
+    }
+
+}
+</script>
+<script type="text/javascript" src="js/mycheck.js"></script>
+<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/log_reg.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    function request(type,url,data,success){
+        $.ajax({
+            type:type,
+            url:url,
+            data:data,
+            success:success,
+            error:function(e){
+                console.log(e);
+            }
+        })
+    }
+    var bankSingleLimitMoney; //快捷充值当前银行单笔限额数
+    (function(){
+        if($(".bankNumber").val() == "" && $(".bankNumber").val() != ""){
+            $("input[name=bankAccount]").val("");
+        }
+        if($(".bankPhone").val() == "130****9914" && $(".bankPhone").val() != ""){
+            $("input[name=mobilePhone]").val("13008889914");
+        }
+        var data = {
+            recBankNo: $("input[name=bankAccount]").val()
+        }
+        var success = function(data){
+            var data = $.parseJSON(data);
+            if(data.body){
+                $("input[name=bankCode]").val(data.body.bankCode);
+                $(".current-bank").removeClass("redColor").html(data.body.bankName+'&nbsp;&nbsp;&nbsp;'+'单笔限额'+data.body.bankSingleLimit+'/单日限额'+data.body.bankDayLimit);
+                bankSingleLimitMoney = Number(data.body.bankSingleLimitValue);
+            }
+        }
+        request('get','/recharge/getBankInformation',data,success)
+    })()
+    //快捷提示
+    maquee($(".bank-tip>p"))
+    function maquee(obj){
+        var _obj = obj;
+        var _objSpan = _obj.children("span");
+        var _objSpanI = _objSpan.children("i:first");
+        var _objSpanIMarginRight =  Number(_objSpanI.css("margin-right").replace('px', ''));
+        var html = _objSpan.html();
+        var speed = 0.5;
+        var time = _objSpanI.width() / speed;
+
+        if(_obj.width()<_objSpanI.width()){
+            _objSpan.append(html);
+            setTimeout(function(){
+                setInterval(function(){
+                    _objSpanI = _objSpan.children("i:first");
+                    _objSpanI.animate({"margin-left":-(_objSpanI.width()+_objSpanIMarginRight)}, time*20, "linear", function(){
+                        _objSpanI.css({"margin-left": 0})
+                        _objSpanI.remove();
+                        _objSpan.append(html)
+                    })
+                }, 0)
+            }, 20)
+
+        }
+    }
+    //充值方式切换
+    $(".payway>p>span").click(function(){
+        $(this).addClass("pay-select").siblings().removeClass("pay-select");
+        $($(".formli").children("form")[$(this).index()]).show().siblings("form").hide();
+        if($(this).index() == 1) {
+            $(".bank-tip").hide();
+        }else{
+            $(".bank-tip").show();
+        }
+    })
+    //校验快捷充值是否输入正确
+    var check1 = false;
+    var check2 = false;
+    var check3 = false;
+    //银行卡号校验
+    function bankNumberCheck(){
+        var bankNumVal = $(".bankNumber").val();
+        if(bankNumVal.indexOf("****") != -1){
+            $("input[name=bankAccount]").val("");
+        }else{
+            $("input[name=bankAccount]").val(bankNumVal);
+        }
+        if(bankNumVal.indexOf("****") != -1 && (bankNumVal.indexOf("") != -1 || "".indexOf(bankNumVal) != -1)){
+            $(".bankNumber").val("");
+        }else{
+            /\S{5}/.test(bankNumVal)  && $(".bankNumber").val(bankNumVal.replace(/\s/g,'').replace(/(.{4})/g, "$1 "));
+        }
+        var bankNumLength = bankNumVal.length;
+        console.log(bankNumLength)
+        console.log()
+        if(bankNumLength<19){
+            $(".current-bank").html("");
+            $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+            check3 = true;
+            return
+        }
+        if(bankNumLength>=19){
+            var data = {
+                recBankNo: $("input[name=bankAccount]").val()
+            }
+            var success = function(data){
+                var data = $.parseJSON(data);
+                if(data.body){
+                    $("input[name=bankCode]").val(data.body.bankCode);
+                    $(".current-bank").removeClass("redColor").html(data.body.bankName+'&nbsp;&nbsp;&nbsp;'+'单笔限额'+data.body.bankSingleLimit+'/单日限额'+data.body.bankDayLimit);
+                    bankSingleLimitMoney = Number(data.body.bankSingleLimitValue);
+                    if($(".fastPayMoney").val()>bankSingleLimitMoney && $(".fastPayMoney").val()>=100){
+                        $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("充值金额超限");
+                        check3 = false;
+                    }else if($(".fastPayMoney").val()!=""){
+                        $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+                        check3 = true;
+                    }else{
+                        check3 = false;
+                    }
+                    check1 = true;
+                }else{
+                    $(".current-bank").removeClass("redColor").addClass("redColor").html(data.info);
+                    check1 = false;
+                }
+
+            }
+            request('get','/recharge/getBankInformation',data,success)
+        }
+        /*if(bankNumLength==0){
+            $(".current-bank").removeClass("redColor").addClass("redColor").html("请输入银行卡号");
+            check1 = false;
+            return
+        }*/
+        /*if(bankNumVal.indexOf("****") == -1){
+            if(bankNumLength<19 || bankNumLength>23){
+                $(".current-bank").removeClass("redColor").addClass("redColor").html("请输入正确的银行卡号");
+                check1 = false;
+                return
+            }
+        }*/
+    }
+    $(".bankNumber").focus(function(){
+        var bankNumVal = $(".bankNumber").val();
+        if(bankNumVal.indexOf("****") == -1){
+            if(bankNumVal.length < 19){
+                $(".current-bank").html("");
+                $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+            }
+        }
+    })
+    $(".bankNumber").blur(function(){
+        var bankNumVal = $(".bankNumber").val();
+        if(bankNumVal.indexOf("****") != -1){
+            $("input[name=bankAccount]").val("");
+        }else{
+            $("input[name=bankAccount]").val(bankNumVal);
+        }
+        var bankNumLength = bankNumVal.length;
+        if(bankNumLength==0){
+            $(".current-bank").removeClass("redColor").addClass("redColor").html("请输入银行卡号");
+            check1 = false;
+            bankSingleLimitMoney = null;
+            return
+        }
+        if(bankNumVal.indexOf("****") == -1){
+            if(bankNumLength<19 || bankNumLength>23){
+                $(".current-bank").removeClass("redColor").addClass("redColor").html("请输入正确的银行卡号");
+                bankSingleLimitMoney = null;
+                check1 = false;
+                return
+            }
+        }
+        var data = {
+            recBankNo: $("input[name=bankAccount]").val()
+        }
+        var success = function(data){
+            var data = $.parseJSON(data);
+            if(data.body){
+                $("input[name=bankCode]").val(data.body.bankCode);
+                $(".current-bank").removeClass("redColor").html(data.body.bankName+'&nbsp;&nbsp;&nbsp;'+'单笔限额'+data.body.bankSingleLimit+'/单日限额'+data.body.bankDayLimit);
+                bankSingleLimitMoney = Number(data.body.bankSingleLimitValue);
+                if($(".fastPayMoney").val()>bankSingleLimitMoney && $(".fastPayMoney").val()>=100){
+                    $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("充值金额超限");
+                    check3 = false;
+                }else if($(".fastPayMoney").val()!=""){
+                    $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+                }else{
+                    check3 = false;
+                }
+                check1 = true;
+            }else{
+                $(".current-bank").removeClass("redColor").addClass("redColor").html(data.info);
+                check1 = false;
+            }
+
+        }
+        request('get','/recharge/getBankInformation',data,success)
+    })
+    //银行预留手机号校验
+    function bankPhoneCheck(){
+        var _self = $(".bankPhone");
+        var bankPhoneVal = $(".bankPhone").val();
+        $("input[name=mobilePhone]").val(bankPhoneVal);
+        if(bankPhoneVal.indexOf("****") != -1 && (bankPhoneVal.indexOf("130****9914") != -1 || "130****9914".indexOf(bankPhoneVal) != -1)){
+            $(".bankPhone").val("");
+            // _self.parent("label").siblings(".tip-info").html("请输入银行预留手机号");
+        }else{
+            $(".bankPhone").val($(".bankPhone").val().replace(/[^\d]/g,''));
+            /*bankPhoneVal = $(".bankPhone").val();
+            if(bankPhoneVal.length == 0){
+                _self.parent("label").siblings(".tip-info").html("请输入银行预留手机号");
+                check2 = false;
+                return
+            }
+            if(bankPhoneVal.length<11 || !(/^((13[0-9])|(15[^4])|(18[0,2,3,5-9])|(17[0-8])|(147))+\d{8}$/.test(bankPhoneVal))){
+                _self.parent("label").siblings(".tip-info").html("请输入正确的银行预留手机号");
+                check2 = false;
+                return
+            }
+            _self.parent("label").siblings(".tip-info").html("");
+            check2 = true;*/
+        }
+    }
+    $(".bankPhone").focus(function(){
+        $(".bankPhone").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+    })
+    $(".bankPhone").blur(function(){
+        var _self = $(".bankPhone");
+        var bankPhoneVal = $(".bankPhone").val();
+        if(bankPhoneVal.indexOf("****") != -1 && (bankPhoneVal.indexOf("130****9914") != -1 || "130****9914".indexOf(bankPhoneVal) != -1)){
+            _self.parent("label").siblings(".tip-info").html("");
+            check2 = true;
+        }else{
+            $("input[name=mobilePhone]").val(bankPhoneVal);
+            if(bankPhoneVal.length == 0){
+                _self.parent("label").siblings(".tip-info").html("请输入银行预留手机号");
+                check2 = false;
+                return
+            }
+            if(bankPhoneVal.length<11 || !(/^((13[0-9])|(15[^4])|(18[0-9])|(17[0,1,3-8])|(14[5-8])|(166)|(198)|(199))+\d{8}$/.test(bankPhoneVal))){
+                _self.parent("label").siblings(".tip-info").html("请输入正确的银行预留手机号");
+                check2 = false;
+                return
+            }
+            _self.parent("label").siblings(".tip-info").html("");
+            check2 = true;
+        }
+
+    })
+    //快捷充值充值金额
+    function fastPayMoneyCheck(){
+        var _self = $(".fastPayMoney");
+        var fastPayMoneyVal = _self.val();
+        if(fastPayMoneyVal.length == 0){
+            _self.parent("label").siblings(".tip-info").html("请输入充值金额");
+            check3 = false;
+            return
+        }
+        if(fastPayMoneyVal<minNumber){
+            _self.parent("label").siblings(".tip-info").html("最小充值金额"+minNumber+"元");
+            check3 = false;
+            return
+        }
+        if((bankSingleLimitMoney != null) && (fastPayMoneyVal>bankSingleLimitMoney)){
+            _self.parent("label").siblings(".tip-info").html("充值金额超限");
+            check3 = false;
+            return
+        }
+        _self.parent("label").siblings(".tip-info").html("");
+        if($(".bankNumber").val() == ""){
+            check1 = true
+        }
+        if($(".bankPhone").val() == "130****9914"){
+            check2 = true
+        }
+        check3 = true;
+    }
+    $(".fastPayMoney").focus(function(){
+        $(".fastPayMoney").parent("label").siblings(".tip-info").removeClass("redColor").addClass("redColor").html("");
+    })
+    $(".fastPayMoney").blur(function(){
+        fastPayMoneyCheck();
+    })
+    //获取短信验证码
+    var waitFind = 60;
+    var flagFind = 1;// 1可以点,0不可以点
+    function timeFind(o) {
+        if (waitFind == 0) {
+            $(o).removeAttr("disabled");
+            $(".sendsms").html("再次发送<br />验证码");
+//			$("#sendFind").removeAttr('disabled');
+            $(".sendsms").removeAttr('disabled');
+            waitFind = 60;
+        } else {
+            $(o).attr("disabled", "disabled");
+            $(".sendsms").html(+waitFind + "秒后<br />可再次发送");
+            $(".sendsms").attr("disabled", "disabled");
+            waitFind--;
+            if (waitFind == 0) {
+                flagFind = 1;
+            }
+            setTimeout(function() {
+                timeFind(o);
+            }, 1000);
+        }
+    }
+    //快捷充值下一步
+    var fastNextSucContent = "";
+    function checkFastNext(){
+        setTimeout(function(){$(".bankNumber").blur();},5)
+        setTimeout(function(){$(".bankPhone").blur();},30)
+        setTimeout(function(){$(".fastPayMoney").blur();},50)
+        setTimeout(function(){
+            /*fastPayMoneyCheck();*/
+            var bankPhoneVal = $(".bankPhone").val();
+            /*if(!(bankPhoneVal.indexOf("****") != -1 && (bankPhoneVal.indexOf("130****9914") != -1 || "130****9914".indexOf(bankPhoneVal) != -1))){
+            bankPhoneCheck();
+        }*/
+            // console.log(check1)
+            // console.log(check2)
+            // console.log(check3)
+            // console.log(bankSingleLimitMoney)
+            if((bankSingleLimitMoney!=null)&&check1&&check2&&check3){
+                $("#fastPaySubmit").attr("disabled","disabled");
+                $(".hidePhone").html(bankPhoneVal.substr(0,3)+"****"+bankPhoneVal.substr(7));
+                var data = {
+                    payAmt: $(".fastPayMoney").val(),
+                    quickChannel: $("input[name=quickChannel]").val(),
+                    bankCode: $("input[name=bankCode]").val(),
+                    bankAccount: $("input[name=bankAccount]").val(),
+                    mobilePhone: $("input[name=mobilePhone]").val()
+                }
+                var success = function(data){
+                    var errorInfo = $.parseJSON($.parseJSON(data)).info;
+                    if(errorInfo != null && errorInfo != ""){
+                        if(errorInfo.indexOf("<br/>") <= 0){
+                            $(".fasterr .info3").html(errorInfo);
+                            $(".fasterr-box1").show();
+                        }else{
+                            var info = errorInfo.split("<br/>");
+                            $(".fasterr .info1").html(info[0]);
+                            $(".fasterr .info2").html(info[1]);
+                            $(".fasterr-box2").show();
+                        }
+                        return;
+                    }
+                    var quickChannel = $.parseJSON($.parseJSON(data)).quickChannel;
+                    $("input[name=requestId]").val($.parseJSON($.parseJSON(data)).requestId);
+                    $("input[name=quickChannel]").val(quickChannel);
+                    $("input[name=quickChannelVal]").val($.parseJSON($.parseJSON(data)).quickChannelVal);
+                    var data2 = $("#fastPay").serialize();
+                    var sucess2 = function(data){
+                        data = $.parseJSON(data);
+                        if(data.tradeId){
+                            $("input[name=tradeId]").val(data.tradeId);
+                        }
+                        if(data.randomValidateId){
+                            $("input[name=randomValidateId]").val(data.randomValidateId);
+                        }
+                        if(data.result&&data.result=="00000"){
+                            $(".smscode-box").show();
+                            flagFind = 1;
+                            timeFind($(".sendsms"));
+                        }else{
+                            var info = data.info.split("<br/>");
+                            $(".fasterr .info1").html(info[0]);
+                            $(".fasterr .info2").html(info[1]);
+                            $(".fasterr-box").show();
+                        }
+
+                    }
+                    if(quickChannel!=null && quickChannel=="fengfu"){
+                        request('get','/recharge/getMessageCode',data2,sucess2)
+                    }else if(quickChannel!=null && quickChannel=="yeepay"){
+                        var status = $.parseJSON($.parseJSON(data)).status;
+                        if(status == "TO_VALIDATE"){
+                            $(".smscode-box").show();
+                            flagFind = 1;
+                            timeFind($(".sendsms"));
+                        }
+                    }
+                }
+                request('get','/recharge/addQuickRechargeMapper',data,success)
+            }else{
+                $(".smscode-box").hide();
+            }
+        },100)
+    }
+    $('.sendsms').click(function() {
+        if (flagFind == 0) {
+            return false;
+        }
+        $.ajax({
+            type : "post",
+            url : "/recharge/getMessageCode",
+            data : $("#fastPay").serialize(),
+            async : false,
+            success : function(data) {
+                var data = $.parseJSON(data);
+                // console.log(data);
+                if(data.tradeId){
+                    $("input[name=tradeId]").val(data.tradeId);
+
+                }
+                if(data.randomValidateId){
+                    $("input[name=randomValidateId]").val(data.randomValidateId);
+                }
+                if(data.channelGroup&&data.channelGroup=="1"){//丰付
+                    if (data.result&&data.result=="00000") {
+                        flagFind = 1;
+                        timeFind($('.sendsms'));
+                        $(".smscode .tip").html("");
+                    } else {
+                        $(".smscode .tip").html(data.info);
+                    }
+                }else if(data.channelGroup&&data.channelGroup=="2"){//易宝
+                    var statusFlag = "TO_VALIDATE" == data.status.trim();
+                    var errorFlag = "" == data.errormsg.trim();
+                    if(statusFlag&&errorFlag){
+                        flagFind = 1;
+                        timeFind($('.sendsms'));
+                        $(".smscode .tip").html("");
+                    }else{
+                        $(".smscode .tip").html(data.errormsg);
+                    }
+                }
+            }
+        });
+    });
+    $(".smscodeInp").focus(function(){
+        $(".smscode .tip").html("");
+    })
+    $(".smscodeInp").on("input",function(){
+        var smscodeInpVal = $(".smscodeInp").val();
+        if(smscodeInpVal.length == 6){
+            $(".smscode .tip").html("");
+            $(".sure-btn").removeAttr("disabled");
+        }else{
+            $(".smscode .tip").html("");
+            $(".sure-btn").attr("disabled","disabled");
+        }
+    })
+    function smsCodeCheck(obj){
+        var objLength = $(obj).val().length;
+        $("input[name=randomCode]").val($(".smscodeInp").val());
+        if(objLength == 0){
+            $(".smscode .tip").html("请输入短信验证码");
+            $(".sure-btn").attr("disabled","disabled");
+            return
+        }
+        if(objLength < 6){
+            $(".smscode .tip").html("请输入正确的短信验证码");
+            $(".sure-btn").attr("disabled","disabled");
+            return
+        }
+        if(objLength == 6){
+            $(".smscode .tip").html("");
+            $(".sure-btn").removeAttr("disabled");
+        }
+    }
+    //快捷充值
+    function fastPay(){
+        $("#fastPay").submit();
+    }
+    function fastPayDis(){
+        $(".sure-btn").attr("disabled","disabled").css({"color":"#fff","background-color":"#ddd"})
+    }
+    $(function(){
+        var success = function(data){
+            var data = $.parseJSON(data);
+            var str = '';
+            $.each(data.list, function(index, data){
+                str += '<tr>'+
+                            '<td>' +
+                                '<span>' + '<i><img src=picture/690e96cce2f74292b88326cf46fd50dc.gif"' + data.bankLogo + '\" /></i>' + data.bankName + '</span>' +
+                            '</td>'+
+                            '<td><i class="thousand_char">' + data.singleQuota +'</i>元</td>';
+                    if(data.monthlyQouta!=null){
+                        str += '<td><i class="thousand_char">' + data.dailyQuota + '</i>元(月累计<i class="thousand_char">'+data.monthlyQouta+'</i>元)' +'</td>';
+                    }else{
+                        str += '<td><i class="thousand_char">' + data.dailyQuota +'</i>元</td>';
+                    }
+                str += '</tr>';
+            })
+            $(".limits-table tbody").html(str);
+            thousand_char($(".thousand_char"), 2);
+        }
+        request('get', '/recharge/getBankQoutaList', '', success)
+
+    })
+
+    $(".view-limits").click(function(){
+        $('.limits-box').show()
+        var limHeight = $(".limits").height();
+        if(limHeight<570){
+            $('.limits').css({"margin-top":-(limHeight/2)+"px"})
+        }else{
+            $('.limits').css({"margin-top":"-285px"})
+        }
+    })
+</script>
+</body>
+</html>

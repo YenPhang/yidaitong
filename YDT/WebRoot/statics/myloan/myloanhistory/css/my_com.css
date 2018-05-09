@@ -1,0 +1,93 @@
+﻿/***my***/
+.icon a,.name,.cura,.con_l li,.con_l .tool,.nav_l span,.nav_l a:hover span,.main .top1 span,.kbt span,.s_btn,.qnmd,.arwb{ background:url("../images/icon.gif") center bottom no-repeat;}
+.content .con24.clearfix{background:url("../images/my_r_line.gif") repeat-x 0 0 #fff;}
+textarea{border:1px solid #fff;}
+.tzzq{ height:20px; background-color:#2ea7e0;}
+.content{padding: 30px 0 60px 0; background-color:#f8f8f8;}
+.content .con24{border-left:3px solid #2ea7e0; border-right:1px solid #e0e0e0; border-bottom:2px solid #b1b1b1;  width:996px; background-color:#fff;position:relative}
+/**.con_l{ position:absolute;top:0;left:0; width:166px; min-height:600px;background:#fff; }
+.con_r{position:relative;float:right; border-left:1px solid #e6e6e6; width:829px; min-height:1400px;_height:1000px; }***/
+.con_l,.con_r{position:relative;float:left;display:inline-block;}
+.con_l{width:166px; min-height:600px;background:#fff; border-right:1px solid #e6e6e6;z-index:10;}
+.con_r{border-left:1px solid #e6e6e6;margin-left:-1px;width:825px; min-height:600px;overflow:hidden;padding-bottom:60px; float:left; }
+
+.nav_l .li1{margin-top:5px;}
+.name{ width:166px; height:175px; background:url(../images/name.gif) no-repeat;overflow:hidden; }
+.name .lone{ padding:20px 0 0 17px ;}
+.lone h2{ font-size:16px; color:#3f3a39; line-height:24px;}
+.lone .number{ color:#2ea7e0;}
+.lone .icon{ width:149px; height:18px; padding:8px 0 13px 0;}
+.lone .icon a{float:left; display: block; margin-right:8px; height: 18px;
+}
+
+.lone .icon1{ width:26px; background-position:0 0;}
+.lone .icon2{ width:14px; background-position:-34px 0;}
+.lone .icon3{ width:24px; background-position:-56px 0;}
+.lone .icon4{ width:26px; background-position:-88px 0;}
+.lone .icon5{ width:14px; background-position:-122px 0; }
+.lone .ok.icon1{ width:26px; background-position:0 -44px;;}
+.lone .ok.icon2{ width:14px; background-position:-34px -44px;;}
+.lone .ok.icon3{ width:24px; background-position:-56px -44px;;}
+.lone .ok.icon4{ width:26px; background-position:-88px -44px;;}
+.lone .ok.icon5{ width:14px; background-position:-122px -44px;; }
+
+.lone .bar{ width:135px; height:6px; background-color:#999;overflow:hidden;}
+.lone .bar i{width:3%; height:6px; background-color:#e43737;display:block;}
+.lone .bar i.zhong{background-color:#ff9600;}
+.lone .bar i.gao{background-color:#2ea7e0;}
+
+.lone p{ font-size:14px; line-height:37px; color:#9d9d9d; height:33px;}
+.lone .p3{line-height:20px;}
+.lone .p3 em{color:#3f3a39}
+.lone p i{ color:#e43737;}
+.lone p span,.lone p span a{ color:#2ea7e0;}
+.lone p span a:hover{color:#1c87ca}
+
+.con_l li{ line-height:60px; font-size:16px; text-indent:44px; margin-top:10px;}
+.con_l li a{ display:block; width:166px; position:relative; }
+.con_l li .t:hover{ background:#2ea7e0; color:#fff;}
+.con_l li .cur1{ color:#fff; background-color:#2ea7e0; }
+.con_l .cura{ width:14px; height:70px; display:block; position:absolute; top:0; right:-14px; background-position:0 -230px; z-index:10;}
+em,i{font-style:normal;}
+.nav_l li{line-height:60px; font-size:16px; text-indent:38px;overflow:visible}
+.nav_l span{position:absolute;top:15px;left:6px;width:25px;height:30px;display:block;background-position:-17px -230px;}
+.nav_l .li2 span{background-position:-20px -260px;}
+.nav_l .li3 span{background-position:-20px -290px;}
+.nav_l .li4 span{background-position:-20px -320px;}
+.nav_l .li5 span{background-position:-20px -350px;}
+.nav_l .li6 span{background-position:-20px -380px;}
+.nav_l .li7 span{background-position:-20px -410px;}
+.nav_l .li8 span{background-position:-20px -440px;}
+.nav_l .li1 a:hover span,.nav_l .li1.cur1 span{ background-position:-71px -230px;}
+.nav_l .li2 a:hover span,.nav_l .li2.cur1 span{ background-position:-77px -260px;}
+.nav_l .li3 a:hover span,.nav_l .li3.cur1 span{ background-position:-77px -290px;}
+.nav_l .li4 a:hover span,.nav_l .li4.cur1 span{ background-position:-77px -320px;}
+.nav_l .li5 a:hover span,.nav_l .li5.cur1 span{ background-position:-77px -350px;}
+.nav_l .li6 a:hover span,.nav_l .li6.cur1 span{ background-position:-77px -380px;}
+.nav_l .li7 a:hover span,.nav_l .li7.cur1 span{ background-position:-77px -410px;}
+.nav_l .li8 a:hover span,.nav_l .li8.cur1 span{ background-position:-77px -440px;}
+.nav_l a.t{ display:block;position:relative;font-size:18px;height:60px;}
+.nav_l .cur1 .t{  color:#fff; background-color:#2ea7e0; }
+.cura{background-position:0 -230px;width:14px; height:70px; display:block; position:absolute; top:0; right:-14px; }
+.zmenu{display:none;line-height:0; background:#fcfcfc;}
+.zmenu a{display:block;height:60px;line-height:60px; font-size:14px;}
+.cur1 .zmenu{display:block;position:relative;}
+.zmenu .cur2{position:relative;color:#2ea7e0;}
+.zmenu .cur2 em{position:absolute;top:15px;right:0;display:block;width:3px;height:30px;line-height:30px;background:#2ea7e0}
+.zmenu i{font-size:13px;padding-right:4px;}
+.service{ width:166px; height:60px;  background:url(../images/service.jpg) no-repeat;}
+.service a{ display:block; padding-left:17px; line-height:60px; font-size:18px; color:#fff; }
+.service a:hover{ color:#feae3b;}
+.yuan{ display:inline-block; width:18px; height:18px; text-align:center; font-size:12px; line-height:18px; color:#fff; background-color:#e43737; -webkit-border-radius:9px; -moz-border-radius:9px; border-radius:9px; position:absolute; top:10px; left:110px; text-indent:0;}
+.friend{ position:relative;height:60px; background:#eaf6fc; text-indent:34px; font-size:18px; line-height:60px; color:#2ea7e0;}
+.friend .t{border-left:2px solid #2ea7e0;padding-left:8px;}
+.friend .ab_r{color:#999;margin-right:20px;font-size:16px;}
+.friend .ab_r i{padding:0 10px}
+.formli{text-align:left;}
+.li20{z-index:0;}.li19{z-index:1;}.li18{z-index:2;}.li17{z-index:3;}.li16{z-index:4;}.li15{z-index:5;}.li14{z-index:6;}.li13{z-index:7;}.li12{z-index:8;}.li11{z-index:9;}.li10{z-index:10;}.li9{z-index:11;}.li8{z-index:12;}.li7{z-index:13;}.li6{z-index:14;}.li5{z-index:15;}.li4{z-index:16;}.li3{z-index:17;}.li2{z-index:18;}.li1{z-index:19;}.li0{z-index:20;}
+
+/*unUse  */
+ul.ul_v .li3 a.t b{position: absolute; right: 27px; top: 20px; z-index: 999; width: 8px; height: 8px; display: block; background: #fc7030; border-radius: 50%;
+}
+ul.ul_v div.zmenu a.unUse b{position: absolute; right: 55px; top: 22px; z-index: 999; width: 6px; height: 6px; display: block; background: #fc7030; border-radius: 50%;
+}

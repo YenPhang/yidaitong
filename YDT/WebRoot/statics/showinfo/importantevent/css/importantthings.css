@@ -1,0 +1,11 @@
+﻿.important_things .infor_important{
+    margin: 20px 0px 27px 0px;
+}
+.important_things .nothing_img img{
+    margin: 0 auto;
+}
+.important_things .nothing_des{color: #999;font-size: 14px;margin: 18px auto  0px;width: 56px;}
+.count {
+    border: none;
+    padding: 0px 30px 85px 30px;
+}

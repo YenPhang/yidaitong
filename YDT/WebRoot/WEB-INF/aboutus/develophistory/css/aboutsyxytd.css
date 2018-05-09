@@ -1,0 +1,16 @@
+﻿.container{ position: relative; width: 800px; margin-top: 50px; margin-left: 40px;}
+.swiper-container {
+    width: 100%;
+}
+.swiper-slide {
+	width: 45%;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    margin-bottom:2%;
+}
+.swiper-slide>div{ position: relative; display: block; width: 90%; height: 225px; padding: 5%; text-align: center; background-color: rgba(242, 242, 242, 1);}
+.swiper-slide>div img{ display: inline-block; width: 100%; height: 100%;}
+.swiper-slide p{ position: relative; height: 40px; line-height: 40px; padding: 0 15px; border-top: 1px solid #eee; box-sizing: border-box; text-align: center; }
+div.swiper-slide:nth-child(2n){margin-left:5%;}

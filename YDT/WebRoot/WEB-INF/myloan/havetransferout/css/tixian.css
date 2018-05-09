@@ -1,0 +1,89 @@
+﻿/*****我的账户提现页********/
+.tx_form{padding:50px 0 0 160px;}
+.tx_form i{font-size:18px;}
+.formli i.font_a{font-size:12px;}
+.formli .f_wrong,.formli .f_right,.formli .f_info,.othelog a,.tc_pay dd{ background:url("../images/icon.gif") 0 10px no-repeat; }
+.pass2{background:url("../images/qiangruo.gif") 0 0 no-repeat;}
+.pay a i,.pay a{background:url("../images/pay.gif") 0 0 no-repeat;}
+.inp{display:block;width:275px;height:40px;border:1px solid #cfcfcf;position:relative;overflow:hidden}
+.inp input{position:absolute;top:8px;padding-left:8px;width:255px;border:1px solid #fff;font-size:18px;color:#3f3a39;top:/*\**/:4px\9;_top:7px;}
+.inp:hover,.inp:focus{border:1px solid #2ea7e0}
+.inp input:focus{border-color:#fff!important;}
+em,i{font-style:normal;}
+.conbd{padding: 25px 0;}
+.conbd .con24{ position:relative;border-left:3px solid #2ea7e0; border-right:1px solid #e0e0e0; border-bottom:2px solid #b1b1b1;  width:996px; background-color:#fff;}
+.conbd h2{background:#f0f0f0;font-size:18px;height:61px;line-height:61px;padding-left:15px;margin-bottom:40px;}
+.conbd h2 .ab_r{font-size:16px;right:15px;}
+.conbd h2 .ab_r i{padding:0 6px;}
+.conbd .left{border-right:1px solid #eee;margin-right:340px;margin-bottom:30px;}
+.formli li{overflow:visible;margin-left:100px;line-height:40px;margin-bottom:18px;font-size:14px;}
+.formli li em{position:absolute;top:0;left:-80px;color:#999}
+.formli em i{color:#F00}
+.formli li span{position:absolute;top:0;left:290px;width:300px;padding-left:28px;}
+.formli li .f_info{background-position: 0 -35px;color:#2ea7e0}
+.formli li .f_right{background-position: 0 -80px;}
+.f_wrong{color:#e43737}
+.tool .btn{width:277px;height:43px;line-height:41px;font-size:18px;}
+.yzm .inp{width:180px;}
+li.yzm .inp input{width:160px}
+.yzmtu{position:absolute;top:0;left:180px; line-height:21px; padding:0 15px;  width:64px; text-align:center; }
+.yzmtu img{width:77px;height:34px; padding-top:5px;}
+.formli .agree{height:25px;line-height:25px;}
+.agree .ab_l{margin-left:200px;width:80px;text-align:right;color:#09F;}
+.aside{top:100px;width:315px;padding-left:20px;font-size:14px;color:#999;}
+.aside p{margin-bottom:10px;}
+.othelog a{background-position:0 -137px;padding-left:24px;line-height:26px;padding-right:5px;}
+.othelog .sinalog{background-position:0 -182px;}
+.formli li.tool{padding-top:20px;}
+/*zhmm2-3*/
+.arwb{position: absolute; display: block;width:18px;height:18px;top:15px;right:7px;background-position:-162px -502px;}
+.cha_sel{z-index:10;}
+.sel .em_num{position:relative;padding-left:10px;height:40px;width:275px;}
+.em_sea{position:relative;left:0; border:1px solid #2ea7e0;background:#fff; height:38px; display:block;width:265px; padding-left:10px;}
+.em_sea label{  height:40px; width:275px; display:inline-block;font-size:18px;font-weight:normal;}
+.em_pan{min-width:275px;position:absolute;top:38px;left:-1px;display:block;background:#fff;border:1px solid #2ea7e0;z-index:100;_width:275px;}
+.em_pan a{display:block;line-height:24px;padding-left:10px;}
+.em_pan a:hover{background:#2ea7e0;color:#fff;}
+.margin .name{color:#444; padding-left:10px;}
+.yzsj{padding:0;width:95px;left:182px}
+.yzsj .btn{font-size:12px;width:96px;height:40px;display:block;border:1px solid #2ea7e0;margin-left:-1px;}
+.yzsj button.btn{line-height:16px;padding-top:2px;height:42px;}
+.yzsj p.btn{line-height:16px;padding-top:4px;height:36px}
+.yzsj .btn.disabled{border-color:#cfcfcf}
+#yzm a{ color:#fff;}
+.margin .div1{ color:#2ea7e0;}
+
+.money .inp input{width:225px}
+.tx_form1 i.blue{margin-right:3px;}
+.m_dw{position:absolute;top:0;left:240px;}
+.tx_form1{padding-left:100px;}
+.tx_form1 li em{left:-100px;}
+.other{border:1px solid #ddd;padding:20px 0 0 40px;width:580px;margin-bottom:45px;}
+.other 	.ul_v{padding:0}
+.tool.clearfix .btn,.tool.clearfix  .btn2{ float:left; display:block; width:219px; height:42px; line-height:42px; font-size:18px; text-align:center;margin-right:30px;}
+
+.tx_sm{background:#eaf6fc;padding:10px 0 10px 15px;width:630px;font-size:14px;}
+
+.pay{width:360px;}
+.pay a{background-position:0 -30px;position:relative;width:132px;height:49px;display:block;float:left;margin-right:10px;margin-bottom:10px;border:1px solid #ccc;}
+/*.pay .pay2{background-position:0 -80px;}
+.pay .pay3{background-position:0 -126px;}
+.pay .pay4{background-position:0 -176px;}*/
+.pay img{width:132px;height:49px;}
+.pay a.cur{border-color:#2ea7e0;}
+.pay a i{position:absolute;}
+.pay a.cur i{position:absolute;top:0;left:0;width:30px;height:30px;}
+
+.tc_pay dl{padding:10px 0 0 30px;line-height:30px;}
+.tc_pay dd{padding-left:25px;}
+.tc_pay dd.true{background-position: 0 -86px;}
+.tc_pay dd.false{background-position: 0 4px;}
+
+.tc_pay .bd{height:180px;top:230px;width:360px;margin-left:-180px;}
+.tc_pay dt{text-align:center;font-size:14px;}
+.dis_sm{position:absolute;top:20px;left:300px;*left:400px;}
+/*语音验证码*/
+.voice{ padding-left:100px; font-size:12px; color:#999;}
+.orgColor{ font-size:16px; color:#ff9600;}
+.voice i{ font-style:normal; font-size:16px; color:#2EA7E0; cursor:pointer;}
+.voice i:hover,.voice i:active{color:#1c87ca;}

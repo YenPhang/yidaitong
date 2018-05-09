@@ -1,0 +1,648 @@
+﻿/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+*{ font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;}
+body{
+    position: relative;
+    /* overflow: hidden; */
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    color: #2588c8;
+}
+i{
+    font-style: normal;
+}
+.clear,.clearfix{
+    zoom:1;
+}
+.clear:after,.clearfix:after{
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    content:'.';
+}
+.current{
+    border-bottom: 2px solid #2588c8 !important;
+    color: #2588c8 !important;
+}
+#toolbar{
+    width: 1000px;
+    height: 30px;
+    margin:0 auto;
+    line-height: 30px;
+    background: #313132;
+    font-family: AppleSystemUIFont;
+    font-size: 12px;
+    color: #BEBEBE;
+    letter-spacing: 0;
+}
+#toolbar:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 30px;
+    content: '';
+    background-color: #313132;
+}
+#toolbar .tool{
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 15px;
+    font-size: 12px;
+    font-family: AppleSystemUIFont;
+}
+#toolbar .tool:nth-child(1) a{
+    font-size: 14px;
+}
+#toolbar .tool a:hover{
+    color: #2588c8;
+}
+#toolbar .tool strong{
+    font-size: 12px;
+}
+#toolbar .online{
+    margin-right: 35px;
+    cursor: pointer;
+    border:none;
+}
+#toolbar .online:after{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -19px;
+    content: '';
+    width: 20px;
+    height: 40px;
+    background: url(../images/icon.png) no-repeat;
+    background-size: 22px auto;
+    background-position: 0 11px;
+}
+#toolbar .online:hover{
+    color: #2588c8;
+}
+#toolbar .tool a{
+    position: relative;
+    color: #BEBEBE;
+}
+#toolbar .service{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -315px;
+    z-index: 10;
+    width: 290px;
+    height: auto !important;
+    padding: 10px 5px 0;
+    background-image: none !important;
+    background-color: #fff;
+    box-shadow: 2px 1px 3px 0px #ccc;
+}
+#toolbar .service a{
+    position: relative;
+    display: inline-block;
+    line-height: 40px !important;
+    padding-left: 0 !important;
+    text-align: center;
+    font-size: 13px;
+    color: #3f3a39;
+    /*background: url(../images/icon.png) no-repeat;
+    background-size: 22px auto;*/
+}
+#toolbar .service a:nth-of-type(1):after{
+    position: absolute;
+    top: 11px;
+    right: -5px;
+    width: 1px;
+    height: 15px;
+    content: '';
+    border-left: 1px solid #e8e8e8;
+}
+#toolbar .service a i{
+    vertical-align: bottom;
+    font-style: normal;
+    font-size: 32px;
+    color: #fc7030;
+}
+/*#toolbar .service a i.icon_qq{*/
+/*background: url(../images/icon_qq.png) no-repeat center center;*/
+/*padding: 14px;*/
+/*}*/
+/*#toolbar .service a:nth-of-type(2){
+    background-position: 32px -178px;
+}*/
+/*#toolbar .service a:nth-of-type(3){
+    background-position: 10px -128px;
+}*/
+#toolbar .nav a{
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+#toolbar .service h3{
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    color: #3f3a39;
+}
+#toolbar .nav div.welcome{
+    display: block;
+    float: left;
+}
+#toolbar .nav a:after{
+    position: absolute;
+    top: 0;
+    right: -12px;
+    content: '|';
+    color: #fff;
+}
+#toolbar .nav a:last-child:after{
+    content: '';
+}
+#toolbar .mobile-box{
+    display: none;
+    position: absolute;
+    top: 30px;
+    margin-left: -231px;
+    left: 50%;
+    z-index: 99;
+    width: 130px;
+    padding: 0 10px 10px;
+    background-color: #f5f5f5;
+}
+#toolbar .mobile-box h3{
+    position: relative;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+    color: #3f3a39;
+}
+#toolbar .mobile-box img{
+    display: block;
+    width: 100%;
+}
+#toolbar .user{
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 0;
+    text-align: right;
+    font-size: 12px;
+    color: #BEBEBE;
+}
+#toolbar .user span{
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+#toolbar .user a:nth-of-type(1):after{
+    content: '';
+}
+#toolbar .user a:last-child{
+    margin-right: 0;
+}
+#toolbar .user a:last-child:before{
+    position: absolute;
+    top: 0;
+    left: -12px;
+    right: auto;
+    content: '|';
+    color: #fff;
+}
+.global-header{
+    display: block;
+    position: relative;
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+}
+.global-header .logo{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    text-indent: 0;
+    background: none;
+    cursor:pointer;
+}
+.global-header .logo>img{
+    display: inline-block;
+    height: 45px;
+    vertical-align: middle;
+}
+.global-header .banner-loop{
+    position: absolute;
+    left: 110px;
+    top: 7px;
+    width: 165px;
+    height: 45px;
+    /* margin-top: -35px; */
+    content: '';
+    background: url(../images/banner_02.png) no-repeat left center;
+    background-size: auto 100%;
+}
+.global-header>a{
+    position: relative;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    margin: 9px 0 0 0;
+}
+
+.global-header>a>img{
+    display: inline-block;
+    height: 57px;
+    vertical-align: middle;
+}
+.global-header .global{
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 335px;
+    list-style: none;
+    text-align: left;
+}
+.global-header .global li{
+    width: 74px;
+    text-align: center;
+    margin-left: 24px;
+}
+.global-header .global li a{
+    display: block;
+    border-bottom: 2px solid #fff;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+    height: 45px;
+    color: #444;
+}
+.global-header .global li:nth-of-type(1){margin-left: 0px;width: auto;}
+.global-header .global li:nth-of-type(1) a{
+    /* margin: 0 18px; */
+    margin-left: -29px;
+}
+.global-header .global a:hover{
+    border-bottom: 2px solid #2588c8;
+    color: #2588c8;
+}
+
+.global-header .account{
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    right: 0;
+    padding: 0 8px 0 4px;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: normal;
+    color: #3f3a39;
+    background-color: transparent;
+    cursor: pointer;
+    width: 105px;
+}
+.global-header .account i{
+    vertical-align: bottom;
+    font-style: normal;
+    font-size: 33px;
+    color: #fc7030;
+}
+#fixbar{
+    position: fixed;
+    top: 50%;
+    right: 12px;
+    z-index: 2;
+    width: 50px;
+    margin-top: -55px;
+
+}
+#redpack{
+    position: fixed;
+    top: 46%;
+    right: 12px;
+    z-index: 2;
+    width: 40px;
+    margin-top: -122px;
+
+}
+#redpack img{width:67px;margin-left:-14px;}
+#fixbar .red-packet{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    min-height: 40px;
+}
+#fixbar a{
+    position: relative;
+    display: block;
+    float: left;
+    width: 54px;
+    height: 37px;
+    line-height: 14px;
+    padding: 13px 0 4px;
+    margin-top: 2px;
+    border: 0;
+    text-align: center;
+    font-size: 12px;
+    color: transparent;
+    background:#fff url(../images/iconfixbar.png) no-repeat;
+    background-size: 27px auto;
+}
+#fixbar a:hover{
+    color: #fff;
+    background-position: -99px -99px;
+    background-color: #ff5500;
+}
+#fixbar a:nth-child(1){
+    margin-top: 0;
+    background-position: 12px 16px;
+    cursor: pointer;
+}
+#fixbar a:nth-child(2){
+    background-position: 12px -99px;
+}
+#fixbar a:nth-child(3){
+    background-position: 12px -156px;
+}
+#fixbar a:nth-child(4){
+
+    background-position: 12px -213px;
+}
+#fixbar a:nth-child(5){
+    display: none;
+    background-position: 12px -272px;
+}
+/*#fixbar a:nth-child(6){*/
+/*display: none;*/
+/*background-position: 12px -272px;*/
+/*}*/
+
+#fixbar a:hover{
+    color: #fff;
+    background-position: -99px -99px;
+    background-color: #ff5500;
+}
+#fixbar .downloadimg{
+    display: none;
+    position: absolute;
+    top: 110px;
+    right: 50px;
+    z-index: 2;
+    width: 86px;
+    height: 86px;
+}
+#fixbar .wxdownloadimg{
+    display: none;
+    position: absolute;
+    top: 168px;
+    right: 50px;
+    z-index: 2;
+    width: 86px;
+    height: 86px;
+}
+/*公共底部*/
+footer.global-footer {
+    position: relative;
+    width: 100%;
+    line-height: 1.15;
+    padding: 20px 0 10px;
+    border: 0 !important;
+    margin: 0 auto;
+    text-align: left !important;
+    font-size: 12px !important;
+    color: #fff;
+    background-color: #3f3a39;
+}
+footer.global-footer>div {
+    width: 1000px;
+    padding: 0;
+    border: 0;
+    margin: 0 auto;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;
+    word-wrap: break-word;
+}
+footer.global-footer .global-footer-nav {
+    /*margin-right: 40px;*/
+}
+footer.global-footer .global-footer-nav h3 {
+    width: 100%;
+    height: 41px;
+    line-height: 50px;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;
+    text-align: left !important;
+    font-size: 16px !important;
+}
+footer.global-footer .global-footer-nav a {
+    display: block;
+    line-height: 13px !important;
+    margin: 11px 0;
+    text-align: left !important;
+    text-decoration: none;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;
+    color: #fff;
+    background-color: transparent;
+    outline-style: none;
+    cursor: pointer;
+}
+footer.global-footer .qrcode {
+    width: 130px;
+    line-height: normal !important;
+    margin: 7px 0 0;
+    text-align: center;
+}
+footer.global-footer .qrcode img{
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+}
+footer.global-footer .telephone{
+    margin-left: 60px;
+    text-align: left !important;
+}
+footer.global-footer .telephone h3{
+    position: relative;
+    height: auto;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;
+    font-weight: normal;
+    font-size: 16px;
+}
+footer.global-footer .telephone h3 a{
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    outline-style: none;
+    cursor: default !important;
+    color: #fff !important;
+}
+footer.global-footer .telephone p{
+    position: relative;
+    line-height: 22px;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans !important;
+}
+footer.global-footer .tip{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    background: none;
+}
+.copyright{
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: #3f3a39;
+    font-size: 12px;
+}
+.copyright .authentic{
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    width: 1200px;
+    line-height: 1.15;
+    margin-left: -600px;
+    text-align: center;
+    word-spacing: -4px;
+}
+.copyright .authentic a{
+    display: inline-block;
+    margin: 0 2px;
+}
+.copyright p{
+    line-height: 30px;
+    text-align: center;
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}
+.copyright p a{
+    color: #3f3a39;
+}
+.copyright p:last-child {
+    font-size:0;
+}
+.copyright p:last-child a{
+    font-size:12px;
+    margin: 0 10px;
+}
+.copyright .link{
+    line-height: 30px;
+    padding-top: 45px;
+    margin: 10px 0 0;
+    text-align: left;
+    font-size: 14px;
+}
+.copyright .link span{
+    display: block;
+    float: left;
+}
+.copyright .link a{
+    display: block;
+    float: left;
+    margin-left: 50px;
+    color: #3f3a39;
+}
+.copyright .authentic a img{
+    width: auto;
+    height: 36px;
+}
+/*注册登陆样式*/
+#accountStatus #register_log {
+    color: #2EA7E0;
+    letter-spacing: 0;
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 21px;
+    top:50%;
+    margin-top: -10px;
+}
+#accountStatus .nvestingSafety{
+    margin-top: -13px!important;
+}
+#accountStatus .nvestingSafety i{
+    font-size: 16px!important;
+    left: 0px!important;
+}
+#register_log a {
+    color:#2EA7E0;
+    font-family: AppleSystemUIFont;
+    font-size: 16px;
+}
+#register_log a:hover{
+    color: #2588c8;
+}
+#register_log #fenliu{
+    float: left;
+}
+#register_log #fenliu_log{
+    float: right;
+}
+#register_log i{
+    position: relative;
+    left: 4px;
+}
+#register_log:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/*qq客服*/
+.qq-server {
+    position: relative;
+    display: inline-block;
+    min-height: 20px;
+    line-height: 25px;
+    padding-left: 18px;
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.qq-server i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 20px;
+    background: url(../images/qq.png) no-repeat center center;
+    background-size: 100% auto;
+}
+.qidian_wpa_img{
+    width: 0 !important;
+    height: 0 !important;
+}
+/*默认选中*/
+.def-curr {
+    border-bottom: 2px solid #2588c8 !important;
+    color: #2588c8 !important;
+}

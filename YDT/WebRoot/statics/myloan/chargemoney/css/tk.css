@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+#big{ width:100%; height:100%;  position:fixed; top:0; left:0; z-index:100}
+#park{ width:100%; height:100%;  position:fixed; top:0; left:0; 
+background:#000;opacity: 0.5;filter:alpha(opacity =50);  }
+#ts{ width:462px; height:252px; position:relative; top:160px;  margin:0 auto; border:5px solid #e6e6e6; background:#fff; z-index:100;}
+#ts .null{ width:471px; height:72px; }
+#ts p{ text-align:center; font-size:14px; line-height:24px; color:#898989; font-weight:bold;}
+#btn1 a,#btn2{ display:block; width:70px; height:26px; background:url(../images/tk_btn.jpg) no-repeat; position:absolute; left:126px; top:155px; text-align:center; line-height:26px; font-size:12px; color:#898989; }
+#btn2{left:266px; cursor:pointer;  }
+#btn3{ position:absolute; top:0; right:0; width:25px; height:25px; cursor:pointer; background:url(../images/tk_rt.jpg) no-repeat;}
+#btn1 a:hover,#btn2:hover{ background:url(../images/tk_btn1.jpg); }
+
+
+
+
+#big2{ width:100%; height:100%;  position:fixed; top:0; left:0; z-index:100}
+#park2{ width:100%; height:100%;  position:fixed; top:0; left:0; 
+background:#000;opacity: 0.5;filter:alpha(opacity =50);  }
+#ts2{ width:462px; height:252px; position:relative; top:160px;  margin:0 auto; border:5px solid #e6e6e6; background:#fff; z-index:100;}
+#ts2 .null{ width:471px; height:72px; }
+#ts2 p{ text-align:center; font-size:14px; line-height:24px; color:#898989; font-weight:bold;}
+#btn4 a,#btn5{ display:block; width:70px; height:26px; background:url(../images/tk_btn.jpg) no-repeat; position:absolute; left:126px; top:155px; text-align:center; line-height:26px; font-size:12px; color:#898989; }
+#btn5{left:266px; cursor:pointer;  }
+#btn6{ position:absolute; top:0; right:0; width:25px; height:25px; cursor:pointer; background:url(../images/tk_rt.jpg) no-repeat;}
+#btn4 a:hover,#btn5:hover{ background:url(../images/tk_btn1.jpg); }

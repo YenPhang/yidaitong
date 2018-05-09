@@ -1,0 +1,55 @@
+﻿/**********/
+::-ms-clear,::-ms-reveal{display:none;}
+.up_bd{background:#f8f8f8;margin:20px 0 0 36px;width:770px;padding-top:30px;}
+.address{margin:36px 0 0 36px;width:770px;}
+.addressCont{box-sizing: border-box;padding:20px;background:#f8f8f8;overflow: hidden; }
+.address p{float: left;font-size:16px}
+.addressTitle{margin-bottom:10px}
+.addressTitle img{position: relative; top:2px;}
+.addressTitle span{font-size:16px;color:#999;}
+.addressP1{width:100px; color:#444; margin-left:20px}
+.addressP2{width:180px; color:#999; margin-left:20px}
+.addressP3{width:200px;}
+.addressP4{position: absolute; right:92px;}
+.addressP4 a{font-size:14px; display:inline-block; padding:0 10px; background:#2EA7E0; color:#fff;}
+.up_bd i{width:100px;display:inline-block;}
+.up_bd ul{padding-left:20px}
+.up_bd .ul_h li{width:260px;font-size:14px;padding-left:100px;padding-bottom:17px;margin-top:17px;border-bottom:1px solid #ddd}.up_bd .ul_h li.last{border:none;}
+.up_bd li .btn,.up_bd li .btn:visited{display:inline-block;padding:0 10px;margin-right:10px}
+
+.addRessRver{width:780px; margin:20px 0 0 20px;}
+.addressTable{ width:100%; font-size:14px}
+.addressTable thead tr{height:60px; border:1px solid #E5E5E5; border-bottom:none 0;}
+.addressTable th{font-weight:normal;}
+.addressTable th,.addressTable td{text-align: left; text-indent:20px; }
+.addressTable td{font-size:12px;}
+.addressTable tbody tr{height:40px;border:1px solid #f2f2f2; border-top:none 0; }
+.addressTable tbody tr td span{text-indent:0; float: left; display:block;cursor: pointer; text-align: center; margin:0 5px; }
+.addressTable tbody tr td span.addressDel{color:#2EA7E0; border:1px solid #2EA7E0; width:48px; height:24px; line-height:24px}
+.addressTable tbody tr td span.addressUpdate{color:#fff; background:#2EA7E0;width:50px; height:26px; line-height:26px}
+
+.cityForm{margin-top:30px; }
+.citySame{ width:780px;  padding-top:20px; overflow: hidden; position: relative; }
+.citySame label,.citySame input,.citySame p,.citySame textarea,.selectFome{float: left}
+.citySame label{width:110px;display:block;line-height:38px; margin-left:27px;font-size:16px;height:38px; font-weight:normal;}
+.citySame p{width:220px;font-size:16px;margin-left:27px;}
+.citySame input{width:215px;border:1px solid #ccc; height:36px; text-indent: 10px}
+.citySame b{color:#FF5500; font-size:14px;}
+.citySame textarea{width:380px;  line-height:23px; height:120px;border:1px solid #ccc; margin:0;padding:5px 5px 0;text-indent:10px;}
+.citySame select{width:128px; height:38px;border:1px solid #ccc; }
+.citySame select option{ height:38px; line-height:38px}
+.closeLittle{display: block; cursor: pointer; position:absolute; top:34px; left:333px; width:12px; height:12px; background-image: url(../images/closelittle.png)}
+.upLoad{width:215px; height:46px; color:#fff; font-size:16px; background:#2EA7E0; cursor: pointer; border:0 none;}
+.none{display: none}
+.addRemoveSame{  width:400px; height:200px; text-align: center; background:#fff }
+.addRemoveSame i{display:block; width:30px; height:30px;cursor: pointer; position: absolute;
+    top:5px;right:5px; background-image: url(../images/close.png); background-size: 30px 30px}
+.addRemovePop p{font-size:18px}
+.addRemovePop .p1{padding-top:60px; color:#2EA7E0;}
+.addRemovePop .p2{margin-top:30px}
+.addRemovePop .p2 span{display: inline-block; width:180px; height:40px; line-height:40px; background:#2EA7E0; cursor: pointer; color:#fff; }
+.mdw-popup{position:fixed;z-index:31; top:0; left:0;display: none}
+.mdw-popup-mark{position: fixed; left:0; top:0; z-index: 30;opacity:0.5;filter:alpha(opacity=50);}
+.addRemoveSame h2{padding-top:40px; font-weight: normal; font-size:18px; color:#2EA7E0;}
+.addRemoveUp{margin-top:50px; text-align: center;}
+.addRemoveUp button{width:180px; height:40px; color:#fff; border:0 none; cursor: pointer; background-color: #2ea7e0; font-size:18px;}

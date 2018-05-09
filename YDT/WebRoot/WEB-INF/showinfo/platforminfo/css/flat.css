@@ -1,0 +1,69 @@
+﻿.flat_information .line1{
+    height: 64px;
+    position: relative;
+    margin-top: 20px;
+}
+.flat_information .line1>div:nth-child(1){position: absolute;left: 0px;}
+.flat_information .line1>div:nth-child(2){position: absolute;left: 298px;}
+
+.line1 span {position: relative;left: 12px;font-size: 16px;color: #444;top: 16px;line-height: 24px;}
+
+.flat_information .line2 {
+    position: relative;
+    top: 42px;
+}
+.flat_information .line2 .tittle{
+    position: relative;
+    height: 24px;
+}
+.flat_information .line2 .tittle p:nth-child(1){
+    position: absolute;
+    left: 0px;
+    line-height: 24px;
+}
+.flat_information .line2 .tittle p:nth-child(2){
+    position: absolute;
+    left: 298px;
+}
+
+.flat_information .line2 .content{
+    position: relative;
+    padding-top: 0px;
+    margin-top: 12px;
+}
+.flat_information .line2 .content div{
+    float: left;
+}
+.flat_information .line2 .content div>span{
+    position: relative;
+    top: 7px;
+    color: #444;
+    font-size: 16px;
+}
+.flat_information .line2 .content div:nth-child(1){width: 295px;}
+.flat_information .line2 .content div:nth-child(2){width: 302px;}
+.flat_information .line2 .content div:nth-child(3){
+}
+.flat_information .line2 .content div:nth-child(1) img{
+    margin-left: 12px;
+}
+.flat_information .line2 .content div:nth-child(2) img{position: relative;left: 12px;width: 111px;height: 109px;}
+.flat_information .line2 .content div:nth-child(3) img{width: 111px;height: 109px;}
+.flat_information .line2 .content div:nth-child(1) span{left: 51px;}
+.flat_information .line2 .content div:nth-child(2) span{
+    left: 5px;
+}
+.case_infor {margin-top: 40px;}
+.case_infor .infor_tittle{
+    margin-bottom: 14px;
+}
+.flat_information .connect{margin-top: 89px;}
+.flat_information .connect div {margin-bottom: 13px;}
+.flat_information .line2 .content div:nth-child(3) span{left: -37px;}
+.flat_information .connect>p{font-size: 16px;color: #444444;letter-spacing: 0;line-height: 32px;margin-left: 12px;}
+.flat_information .case_infor>p{font-size: 14px;color: #444444;letter-spacing: 0;line-height: 30px;margin-left: 12px;}
+.flat_information .case_infor>p a{font-size: 16px;color: #2EA7E0;letter-spacing: 0;line-height: 32px;}
+.flat_information .others>a{font-size: 16px;color: #2EA7E0;letter-spacing: 0;line-height: 30px;margin-left: 12px;}
+.others .infor_tittle {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,63 @@
+﻿.organizations>div>div.framework{
+    background: url(../images/og_tree.png) no-repeat center;
+    width: 678px;
+    height: 240px;
+    background-size: 100%;
+    margin: 0 auto;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+    -o-background-size: 100%;
+    -webkit-background-size: 100%;
+}
+
+.organizations>div>div.share-holder {
+    background: url(../images/shareholder.png) no-repeat center;
+    width: 746px;
+    height: 106px;
+    background-size: 100%;
+    margin: 0 auto;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+    -o-background-size: 100%;
+     -webkit-background-size: 100%;
+}
+.organizations>div>div.members {
+    background: url(../images/member.png) no-repeat center;
+    width: 725px;
+    height: 203px;
+    background-size: 100%;
+    margin: 0 auto;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+    -o-background-size: 100%;
+    -webkit-background-size: 100%;
+}
+.organizations .og_img .infor_tittle{
+    margin-top: 20px;
+    margin-bottom: 11px;
+}
+.organizations .share_img .infor_tittle{
+    margin-top: 31px;
+    margin-bottom: 23px;
+}
+.organizations .members_img .infor_tittle{
+    margin-top: 47px;
+    margin-bottom: 29px;
+}
+.organizations .super_manage .infor_tittle{
+    margin-top: 53px;
+    margin-bottom: 16px;
+}
+.organizations .super_manage>span>a{
+    font-size: 16px;
+    color: #2EA7E0;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    left: 10px;
+    font-family: AppleSystemUIFont;
+}
+.organizations .super_manage>span{
+    display: block;
+    padding-bottom: 13px;
+}

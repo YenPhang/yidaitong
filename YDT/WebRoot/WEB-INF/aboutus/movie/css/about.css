@@ -1,0 +1,93 @@
+﻿/*关于我们*/
+/*.tzzq{ height:20px; background-color:#2ea7e0;}*/
+.content{padding: 30px 0 60px 0;margin-bottom:0;}
+.content .con24{}
+.con_l{  position: relative !important; float:left; width:150px; min-height:500px; }
+.con_l li{line-height:60px; font-size:16px; text-indent:18px;}
+.con_l a{ display:block; width:150px; position:relative;}
+.con_l .cur1{}
+.cura{ width:14px; height:70px; display:block; position:absolute; top:0; right:-14px; background:url("../images/cura.png") no-repeat; }
+.con_l a:hover{ background:#2ea7e0; color:#fff;}
+
+.con_r{ float:left; border-left:1px solid #e6e6e6; width:830px; min-height:732px; box-sizing:border-box; overflow:hidden;}
+.con_r h2{ }
+.main{ padding:0 15px 40px 35px; width:810px;}
+.main h3{ font-size:18px; color:#2ea7e0; font-weight:normal;margin-bottom:0px;}
+.main h3 span{ color:#555; font-size:16px;}
+.main p{ line-height:28px; font-size:16px; color:#555;}
+.main .cf{ color:#2ea7e0; }
+.main .ck{ text-indent:2em;}
+#ck{ padding-bottom:350px;}
+#spe p{ padding:15px 0;}
+.main .wu{ padding-top:30px;}
+.main .wu1{ padding-bottom:80px;}
+.main .cq{ color:#b1b1b1;}
+.main .cc{ text-indent:2em; padding-top:0;}
+.main .cr{ text-align:right; }
+.main .clearfix{ padding:30px 0 200px 0 ;}
+.main .clearfix li{ float:left; width:200px; line-height:50px; font-size:16px;}
+.main .clearfix li a:hover{ border:1px solid #2ea7e0; padding:3px 5px; }
+.acticle{ line-height:50px; font-size:24px; color:#2ea7e0; text-align:center;}
+.acticle_b{ line-height:50px; font-size:16px; color:#b1b1b1; text-align:center;}
+.main .map{ width:810px; height:474px; background:url("../images/map.jpg");}
+.main .meiti li{ width:810px;height:150px;border-bottom: solid 1px #dcdcdc;margin: 30px 0;}
+.main .mtl{  float:left; width:550px; }
+.main .mtr{ float:left; margin-right:20px;}
+.main .mtr a{ display:block; width:260px; height:241px; }
+.main .meiti h3 a{ color:#2ea7e0;}
+.main .meiti h3 a:hover{  color:#00ADFF;}
+.mtr img{ width:200px; height:120px; overflow:hidden; }
+
+
+
+.erweima{ padding-left:460px; width:361px; height:250px;}
+.erweima span{ display:block; font-size:16px; text-align:center; line-height:28px; }
+.erweima i{ display:block; margin:0 auto; width:307px; height:120px; background:url("../images/erweima.jpg");}
+
+/****分页****/
+.thepage{ margin: 10px 0; height:67px;}
+.page{float: right;margin:20px 31px 20px 0;color:#999;padding-bottom:2px;font-size:14px;}
+.page .btn,.page a,.page .active,.page .page_box,.page .prev,.page .next{vertical-align:middle;display:inline-block;border:1px solid #2ea7e0;background:#f8f8f8;padding:0 8px;margin-right:8px;height:auto;line-height: 26px; color:#2ea7e0; text-align:center; font-size:14px;}
+.page .active{background:#2ea7e0;color:#fff;}
+.page .prev,.page .next{color:#2ea7e0;margin-right:15px;}
+.page .next{margin:0 5px;}
+.page .page_box{ width:28px; padding:0 5px;text-align:center;margin:-2px 3px 0;height: 24px;color:#999;vertical-align:middle; border:1px solid #9d9d9d;}
+.page .page_box:focus{ border:1px solid #2ea7e0; color:#2ea7e0;}
+.page .page_button{margin-left:15px;cursor: pointer;width:40px;padding:0;height:26px;overflow:hidden;color: #2ea7e0; border: 1px solid #2ea7e0;vertical-align:middle; background-color:#f8f8f8;font-size:14px; }
+.page .prev:hover,.page .next:hover,.page .page_button:hover,.page .btn:hover{ background-color:#2ea7e0; color:#fff;}
+.page .btn-disabled,.page .btn-disabled:hover{color:#ccc;border-color:#ddd;background-color:#f8f8f8;}
+/*关于我们-公司简介*/
+.main_title{height: 48px;border-bottom: solid 1px #2ea7e0;margin: 0 22px 0 23px;}
+.main_title h2{line-height: 48px; color: #383939; text-align: right; font-size: 14px;padding-right:20px;}
+.h_list h1{font-size: 20px;color: #2ea7e0;padding: 20px 10px;font-weight: normal;}
+/*服务条款*/
+ strong{font-weight: normal;font-size: 20px;color: #2ea7e0;line-height: 50px;}
+/*侧边栏*/
+
+.con_l li:hover{background:#fff;color:#2ea7e0!important;}
+
+.h_list li{line-height:24px;}
+.a_txt{color:#FF7917!important;}
+.honorTit ul li{float:left;line-height: 50px;font-size: 16px; margin-right: 20px;cursor:pointer;}
+.honorTit{height: 50px;margin: 0 20px;border-bottom: dotted 1px #dcdcdc;}
+.honorTit ul{width: 310px;margin:0 auto;}
+.honorTit ul li.cur{color:#2ea7e0;}
+.about_yxzl{padding-top:40px;margin-left:40px;}
+
+/*1114*/
+.bgcolor .content{    background-color: #f5f5f5; margin-bottom:0;}
+.bgcolor .content .con24{background-color: #f5f5f5;}
+.bgcolor .help_bd .con_r{border-left: none;    width: 100%;} /*about--line:12*/
+.bgcolor .help_bd .main{width: 100%;padding:0;}
+.bgcolor .main_title{margin:0;background-color: #f5f5f5;}
+.bgcolor .main_title{height: 60px;}
+.bgcolor .main_title h2{line-height: 60px;}
+.bgcolor .main{border:none;}
+.bgcolor ul#commentlist{width:100%;overflow: hidden;background-color: #fff;}
+.bgcolor .main .meiti li{    width: 936px;     height: 135px; padding: 30px 0;    margin: 0 auto; }/*about--line:33*/
+.bgcolor .main .meiti li:last-child{border-bottom: none}
+.bgcolor .mtr img { width: 240px; height: 135px;}
+.bgcolor .main .mtl{ width: 675px;margin-top: 5px;font-size: 14px;}
+.bgcolor .main h3{margin-bottom: 10px;}
+.bgcolor .pageBgColor{background: #f5f5f5; width: 100%;height: 100px;}
+.bgcolor .pageBgColor .page{margin:35px 0 0 0;}

@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <title>易通贷-让您的钱包鼓鼓的-中国互联网金融领域资深服务品牌</title>
+    <meta name="keywords" content="易通贷,财富管理,互联网金融服务品牌"/>
+    <meta name="description" content="易通贷成立于2011年3月,注册资金1.5亿元,是中国互联网金融领域资深服务品牌.易通贷以打造 互联网金融百年老店 为发展愿景,诚信经营,合规发展,是中国老百姓值得信赖的互联网财富管理伙伴. "/>
+    <link type="/image/x-icon" rel="Icon" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link type="/image/x-icon" rel="Shortcut Icon" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link type="/image/x-icon" rel="Bookmark" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link href="css/front.css" rel="stylesheet" type="text/css"/>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/style_s.css" rel="stylesheet">
+    <link href="css/news.css" rel="stylesheet">
+    <link href="css/tf.css" rel="stylesheet">
+    <link href="css/help.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/front.js" type="text/javascript"></script>
+    <script src="js/com.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/growingio.js" type="text/javascript" charset="utf-8"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body >
+<link href="css/base_1.css" rel="stylesheet">
+<link href="css/leftmenu.css" rel="stylesheet">
+<link href="css/comptroller.css" rel="stylesheet">
+<link href="css/iconfont.css" rel="stylesheet">
+<link href="css/common2.css" rel="stylesheet">
+<script src="js/digital.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/hf.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var Stringserver={
+        server:"https://app.etongdai.com",
+        staticServer:"https://www.etongdai.com",
+        sslServer:"https://app.etongdai.com",
+        adServer:"https://ad.etongdai.com",
+        mServer:"https://m.etongdai.com",
+        msslServer:"https://m.etongdai.com",
+        newsServer:"https://news.etongdai.com"//内部搜索服务器
+    };
+    $(function(){
+        $("a[href*='server']").each(function(){
+            $(this).attr('href',Stringserver.server + $(this).attr("href").substring(6,$(this).attr("href").length));
+        });
+        $("a[href*='staticServer']").each(function(){
+            $(this).attr('href',Stringserver.staticServer + $(this).attr("href").substring(12,$(this).attr("href").length));
+        });
+        $("a[href*='sslServer']").each(function(){
+            $(this).attr('href',Stringserver.sslServer + $(this).attr("href").substring(9,$(this).attr("href").length));
+        });
+        $("form[action*='newsServer']").each(function(){
+            $(this).attr('action',Stringserver.newsServer + $(this).attr("action").substring(10,$(this).attr("action").length));
+        });
+        $("form[href*='mServer']").each(function(){
+            $(this).attr('href',Stringserver.newsServer + $(this).attr("href").substring(7,$(this).attr("href").length));
+        });
+        $("form[href*='msslServer']").each(function(){
+            $(this).attr('href',Stringserver.newsServer + $(this).attr("href").substring(10,$(this).attr("href").length));
+        });
+        getIndexHtml(Stringserver);
+
+        startAnimation();
+    });
+    function startAnimation(){
+        $(".global-header .banner-loop").delay(3000).animate({opacity:0},500,"linear",function(){
+            $(".global-header .banner-loop").css("background-image","url(images/banner_03.png)");
+            $(".global-header .banner-loop").animate({opacity:1},500,"linear",function(){
+                $(".global-header .banner-loop").delay(2000).animate({opacity:0},1000,"linear",function(){
+                    $(".global-header .banner-loop").css("background-image","url(images/banner_02.png)");
+                    $(".global-header .banner-loop").animate({opacity:1},500,"linear",startAnimation);
+                });
+            });
+        });
+    }
+
+
+    var pclink = "<link href=\"/r/cms/www/template-v1/css/com.css\" rel=\"stylesheet\">";
+    var goback = "javascript:history.go(-1);";
+    if(window.location.href.indexOf("announcement") != -1){
+        goback = Stringserver.mServer + "/helpCenter/help_context/9";
+    }
+    var waptop = "<header class=\"com_menu\" >" +
+        "   <i class=\"opa\" style=\"display:none\"></i>" +
+        "    <h1 id=\"logo\"></h1>" +
+        "    <a id=\"commenu\" class=\"ab_r blue\"></a>" +
+        "    <div id=\"cm_bd\" class=\"cm_con\" style=\"display:none\"  data-display=\"0\">" +
+        "        <a class=\"cm1\" href=\"" + Stringserver.mServer + "\"><i></i>首页</a>" +
+        "        <a class=\"cm2\" href=\"" + Stringserver.mServer + "/account/index\"><i></i>我的账户</a>" +
+        "        <a class=\"cm3\" href=\"" + Stringserver.msslServer + "/login/loginH5\"><i></i>登录</a>" +
+        "        <a class=\"cm4\" href=\"" + Stringserver.mServer + "/payment/paymentIndex\"><i></i>充值</a>" +
+        "        <a class=\"cm7 tx_li\" ><i></i>提现</a>" +
+        "        <a class=\"cm5\" href=\"" + Stringserver.mServer + "/invest/investlist\"><i></i>投资</a>" +
+        "        <a class=\"cm6\" href=\"" + Stringserver.mServer + "/helpCenter/eGuide\"><i></i>小e指南</a>" +
+        "        <a class=\"cm8\" href=\"" + Stringserver.mServer + "/information/informationList\"><i></i>网站资讯</a>" +
+        "    </div>" +
+        "</header>" +
+        "<header id=\"head\">" +
+        "<a class=\"ab_l\" href=\"" + goback + "\">返回</a>" +
+        "<h2>网站公告</h2>" +
+        "</header>";
+    var waplink = "<link rel=\"stylesheet\" href=\"/r/cms/www/template-v1/css/wapcom.css\" type=\"text/css\" />"+"<link href=\"/r/cms/www/template-v1/css/media_abs.css\" rel=\"stylesheet\">";
+
+    function abs(){
+        var system ={
+            win : false,
+            mac : false,
+            xll : false
+        };
+        //检测平台
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+
+        if(system.win||system.mac||system.xll){
+            document.write(pclink);
+            document.write(pctop);
+          defCurr("information");
+        }else{
+            document.write(waplink);
+            if(window.location.href.indexOf("u=1") != -1){
+                document.body.style.backgroundColor="transparent";
+                return;
+            }
+            document.write(waptop);
+        }
+    }
+    abs();
+</script>
+
+<script>
+    /* var dateTime = new Date().getTime();
+    var tag = document.location.protocol;
+        if(tag == "https:"){
+            document.write('<scr'+'ipt language="javascript" type="text/javascript" src="https://float.agent.tq.cn/floatcard?adminid=9703668&sort=0&t='+dateTime+'"></scr'+'ipt>');
+        }else{
+            document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://float.agent.tq.cn/floatcard?adminid=9703668&sort=2&t='+dateTime+'"></scr'+'ipt>');
+        } */
+</script>
+<div class="contetent_back">
+    <div class="content lvbd">
+        <div class="con24 clearfix help_bd box">
+            <div class="con_r">
+                <div class="main">
+                    <div class="count comptroller">
+                        <div class="main_title">
+                            <p>中国互联网金融协会会员单位</p>
+                        </div>
+                        <div>
+                            <p class="infor_tittle infor_comptroller">审计报告</p>
+                            <div class="comptroller_img clearfix">
+                                <img src="picture/finance1.png">
+                                <img src="picture/finance2.png">
+                                <img src="picture/finance3.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con_l">
+                <ul class="ul_v">
+                    <li>
+                        <a class="t" href="/p2p/informations/index.html" target="_self" >基本信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li>
+                        <a class="t" href="/p2p/informations/organizations.html" target="_self" >组织结构</a>
+                        <div class="_blank"></div>
+                    </li>
+                    </li>
+                    <li>
+                        <a class="t"  href="/p2p/informations/flat.html" target="_self" >平台信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/riskCtr.html" target="_self" >风控措施</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li>
+                        <a class="t"  href="/p2p/informations/laws.html" target="_self" >法律法规</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li>
+                        <a class="t"  href="/p2p/informations/operate" target="_self" >运营信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li>
+                        <a class="t"  href="/p2p/informations/importantThings.html" target="_self" >重大事项</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li class="cur1">
+                        <a class="t"  href="/p2p/informations/comptroller.html" target="_self" >审计报告</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/p2p_footer.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" type="text/javascript" charset="utf-8">
+  writeFooter();
+</script>
+<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 百度 -->
+<div style="display:none;">
+    <script>
+        <!-- 在线客服链接修改 -->
+        function kf_online(){
+            var userName=$.cookie('_username');
+            var userMobile=$.cookie('_userMobile');
+            if(userName){
+                if(userMobile != null && userMobile != ''){
+                    window.open("http://im.etongdai.com/webchat.html?custAcc="+userMobile+"&vip=0&mediaType=1",'_blank');
+                }else{
+                    window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+                }
+            }else{
+                window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+            }
+        }
+
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9a714a924f22b76dc92e5ae4bcbf6486";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        /* var dateTime = new Date().getTime();
+        var tag = document.location.protocol;
+            if(tag == "https:"){
+                document.write('<scr'+'ipt language="javascript" type="text/javascript" src="https://float.agent.tq.cn/floatcard?adminid=9703668&sort=0&t='+dateTime+'"></scr'+'ipt>');
+            }else{
+                document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://float.agent.tq.cn/floatcard?adminid=9703668&sort=2&t='+dateTime+'"></scr'+'ipt>');
+            } */
+    </script>
+</div><script src="js/news.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/eframe.js" type="text/javascript" charset="utf-8"></script>
+<!--本页中-->
+<script>
+    $(function() {
+        $("a.cur2").parents("li").addClass("cur1");
+        $(".con_l li").click(function(){
+            $(this).addClass("cur1").append('<i class="cura"></i>')
+                .siblings().removeClass("cur1").children('i').remove();
+        });
+        $(".zmenu a").click(function(){
+            $(this).addClass("cur2").append('<em></em>')
+                .siblings().removeClass("cur2").children('em').remove();
+        });
+        $("li#abouts").addClass("cur");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿/******我的账户提示页********/
+
+.resultl{background:url(../images/result.gif) no-repeat 0 15px;}
+.wrongs .resultl{background:url(../images/wrong.gif) no-repeat 0 0;}
+.ts404 .resultl{background:url(../images/404.gif) no-repeat 0 0;}
+.ts505 .resultl{background:url(../images/505.gif) no-repeat 0 0;}
+.hr{ height:20px; background-color:#2ea7e0;}
+
+
+.result{ height:128px; padding:80px 0 100px 100px;}
+.resultl{ display:block;float:left; width:149px; height:128px;}
+.resultr{ float:left; width:550px; height:128px; }
+.resultr h3{ font-size:24px; line-height:44px; color:#2ea7e0;font-weight:normal;}
+.resultr p.graya,.resultr div.graya{ font-size:18px; line-height:30px; color:#b6b6b6; padding-bottom:12px;}
+.look,.look1{ float:left; display:block; width:219px; height:42px; line-height:42px; font-size:18px; text-align:center;margin-right:30px;}
+
+.conbd h2{background:#f0f0f0;font-size:18px;height:61px;line-height:61px;padding-left:15px;margin-bottom:40px;}
+.conbd h2 .ab_r{font-size:16px;right:15px;}
+.conbd h2 .ab_r i{padding:0 6px;}
+
+.ts404 .result{padding-left:150px;}
+.ts404 .resultl{width:190px;height:170px;}
+.ts404 .resultr{width:650px;}
+
+.ts505 .result{padding-left:90px;}
+.ts505 .resultl{width:310px;height:170px;}
+.ts505 .resultr{width:560px;}

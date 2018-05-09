@@ -1,0 +1,15 @@
+﻿.contetent_back .count.laws p.infor_tittle.classic_info {
+    margin: 20px 0 16px 0px;
+}
+
+.contetent_back .count.laws p.infor {
+    line-height: 30px;
+    margin-left: 10px;
+}
+.contetent_back .count.laws p.infor_tittle.infor_agreement {
+    margin: 39px 0 16px 0px;
+}
+.contetent_back .count.laws p.infor a{
+    color: #2EA7E0;
+    font-size: 16px;
+}

@@ -1,0 +1,80 @@
+﻿.nvestingSafety .banner{background-color: #3480C4;}
+.nvestingSafety .banner .banner_img{
+    background: url(../images/risk_banner.jpg) no-repeat center;
+    height: 382px;
+    /* background-size: 100%; */
+    -moz-background-size: 100%;
+    /* -webkit-background-size: 100%; */
+    -o-background-size: 100%;
+}
+.nvestingSafety .content1{background: F7F6FB;}
+.nvestingSafety .content1 .con_img{
+    background:url(../images/risk1.jpg) no-repeat center center;
+    height: 494px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content2{background: #F7F6FB;}
+.nvestingSafety .content2 .con_img{
+    background:url(../images/risk2.jpg) no-repeat;
+    height: 615px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content3{
+
+}
+.nvestingSafety .content3 .con_img{
+    background:url(../images/risk3.jpg) no-repeat;
+    height: 490px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content4{background: #F7F6FB;}
+.nvestingSafety .content4 .con_img{
+    background:url(../images/risk4.jpg) no-repeat;
+    height: 530px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content5{
+
+}
+.nvestingSafety .content5 .con_img{
+    background:url(../images/risk5.jpg) no-repeat;
+    height: 403px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content6{background: #F7F6FB;}
+.nvestingSafety .content6 .con_img{
+    background:url(../images/risk6.jpg) no-repeat;
+    height: 269px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content7{
+
+}
+.nvestingSafety .content7 .con_img{
+    background:url(../images/risk7.jpg) no-repeat;
+    height: 604px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content8 {background: #F7F6FB;}
+.nvestingSafety .content8 .con_img{
+    background:url(../images/risk8.jpg) no-repeat;
+    height: 646px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.nvestingSafety .content9{
+
+}
+.nvestingSafety .content9 .con_img{
+    background:url(../images/risk9.jpg) no-repeat;
+    height: 517px;
+    width: 1000px;
+    margin: 0 auto;
+}
