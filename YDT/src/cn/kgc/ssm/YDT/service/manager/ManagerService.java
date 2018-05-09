@@ -26,5 +26,5 @@ public interface ManagerService {
 	 * @param noticeTypeId:公告版块种类id
 	 * @return
 	 */
-	public List<Notice> getNoticeListByNoticeTypeId(int noticeTypeId);
+	public List<Notice> getNoticeListByNoticeTypeId(Integer noticeTypeId);
 }

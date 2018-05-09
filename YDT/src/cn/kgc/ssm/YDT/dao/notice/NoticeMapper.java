@@ -33,7 +33,7 @@ public interface NoticeMapper {
 	 * @param noticeTypeId:公告版块种类
 	 * @return
 	 */
-	public List<Notice> getNoticeListByNoticeTypeId(@Param("noticeType")  int noticeTypeId,Page page);
+	public List<Notice> getNoticeListByNoticeTypeId(@Param(value="noticeTypeId") Integer noticeTypeId);
 	
 	
 

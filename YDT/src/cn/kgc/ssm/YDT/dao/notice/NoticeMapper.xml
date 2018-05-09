@@ -23,11 +23,13 @@
 			<if test=" noticeContent != null and noticeContent != ''"> noticeContent = #{noticeContent}, </if>
 			<if test=" noticeTypeId != null and noticeTypeId != ''"> noticeTypeId = #{noticeTypeId}, </if>
 		</trim>
-			where noticeId = #{noticeId}
+		<if test="noticeId != 0 ">where noticeId = #{noticeId}</if>
+			
 	</update>
 	
 	<!--查询某个版块下的所有公告  -->
-	<select id="getNoticeListByNoticeTypeId" parameterType="int" resultType="notice">
-		select * from notice where noticeTypeId = #{noticeTypeId}
+	<select id="getNoticeListByNoticeTypeId" parameterType="int" resultType="Notice">
+		select * from notice
+		<if test="noticeTypeId != null and noticeTypeId != ''">where noticeTypeId = #{noticeTypeId}</if>
 	</select>
 </mapper>

@@ -54,7 +54,7 @@ public class ManagerServiceImplement implements ManagerService {
 	 * @return
 	 */
 	@Override
-	public List<Notice> getNoticeListByNoticeTypeId(int noticeTypeId) {
+	public List<Notice> getNoticeListByNoticeTypeId(Integer noticeTypeId) {
 		List<Notice> notices =  noticeMapper.getNoticeListByNoticeTypeId(noticeTypeId);
 		return notices;
 	}
