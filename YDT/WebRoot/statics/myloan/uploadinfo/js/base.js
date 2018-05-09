@@ -30,9 +30,9 @@ function thousand_char(obj, d) {
 function numFormat(num, d) {
   return (num.toFixed(d) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
 }
-
 function toThousands(num, d) {
-  var text1 = '', result = '';
+	var text1 = '',
+		result = '';
   var num = num.toFixed(d);
   num = (num || 0).toString();
   var index = num.indexOf('.');

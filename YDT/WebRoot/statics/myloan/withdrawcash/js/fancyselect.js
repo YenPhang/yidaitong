@@ -29,8 +29,7 @@
       sel.addClass('fancified');
       sel.css({
         width: 1,
-        height: 1,
-        display: 'block',
+        height: 1,display: 'block',
         position: 'absolute',
         top: 0,
         left: 0,

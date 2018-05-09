@@ -32,6 +32,6 @@ var pctop = '<div id="toolbar">\
     </header>';
 
 function defCurr(key, add) {
-  console.log(key);
-  $('#toolbar,.global-header').find('.nav_' + key).addClass(add || 'cur');
+	console.log(key);
+	$('#toolbar,.global-header').find('.nav_' + key).addClass(add || 'cur');
 } 

@@ -3,16 +3,16 @@ Cms = {};
  * 浏览次数
  */
 Cms.viewCount = function(base, contentId, viewId, commentId, downloadId, upId,
-		downId) {
+	downId) {
 	viewId = viewId || "views";
 	commentId = commentId || "comments";
 	downloadId = downloadId || "downloads";
 	upId = upId || "ups";
 	downId = downId || "downs";
 	$.getJSON(base + "/content_view.jspx", {
-		contentId : contentId
+		contentId: contentId
 	}, function(data) {
-		if (data.length > 0) {
+		if(data.length > 0) {
 			$("#" + viewId).text(data[0]);
 			$("#" + commentId).text(data[1]);
 			$("#" + downloadId).text(data[2]);
@@ -24,16 +24,16 @@ Cms.viewCount = function(base, contentId, viewId, commentId, downloadId, upId,
 /**
  * 站点流量统计
  */
-Cms.siteFlow = function(base, page, referer,flag,pvId, visitorId) {
+Cms.siteFlow = function(base, page, referer, flag, pvId, visitorId) {
 	pvId = pvId || "pv";
 	visitorId = visitorId || "visitor";
 	flag = flag || 1;
 	$.getJSON(base + "/flow_statistic.jspx", {
-		page : page,
-		referer : referer
+		page: page,
+		referer: referer
 	}, function(data) {
-		if(flag==1){
-			if (data.length > 0) {
+		if(flag == 1) {
+			if(data.length > 0) {
 				$("#" + pvId).text(data[0]);
 				$("#" + visitorId).text(data[1]);
 			}
@@ -46,12 +46,12 @@ Cms.siteFlow = function(base, page, referer,flag,pvId, visitorId) {
 Cms.up = function(base, contentId, origValue, upId) {
 	upId = upId || "ups";
 	var updown = $.cookie("_cms_updown_" + contentId);
-	if (updown) {
+	if(updown) {
 		return false;
 	}
 	$.cookie("_cms_updown_" + contentId, "1");
 	$.get(base + "/content_up.jspx", {
-		"contentId" : contentId
+		"contentId": contentId
 	}, function(data) {
 		$("#" + upId).text(origValue + 1);
 	});
@@ -63,12 +63,12 @@ Cms.up = function(base, contentId, origValue, upId) {
 Cms.down = function(base, contentId, origValue, downId) {
 	downId = downId || "downs";
 	var updown = $.cookie("_cms_updown_" + contentId);
-	if (updown) {
+	if(updown) {
 		return false;
 	}
 	$.cookie("_cms_updown_" + contentId, "1");
 	$.get(base + "/content_down.jspx", {
-		contentId : contentId
+		contentId: contentId
 	}, function(data) {
 		$("#" + downId).text(origValue + 1);
 	});
@@ -77,33 +77,33 @@ Cms.down = function(base, contentId, origValue, downId) {
 /**
  * 获取评分选项投票数
  */
-Cms.scoreCount = function(base, contentId,itemPrefix) {
-	itemPrefix=itemPrefix||"score-item-";
+Cms.scoreCount = function(base, contentId, itemPrefix) {
+	itemPrefix = itemPrefix || "score-item-";
 	$.getJSON(base + "/content_score_items.jspx", {
-		contentId : contentId
+		contentId: contentId
 	}, function(data) {
-			$("span[id^='"+itemPrefix+"']").each(function(){
-				var itemId=$(this).prop("id").split(itemPrefix)[1];
-				$(this).text(data.result[itemId]);
-			});
+		$("span[id^='" + itemPrefix + "']").each(function() {
+			var itemId = $(this).prop("id").split(itemPrefix)[1];
+			$(this).text(data.result[itemId]);
+		});
 	});
 }
 /**
  * 成功返回true，失败返回false。
  */
-Cms.score = function(base, contentId,itemId,itemPrefix) {
-	itemPrefix=itemPrefix||"score-item-";
+Cms.score = function(base, contentId, itemId, itemPrefix) {
+	itemPrefix = itemPrefix || "score-item-";
 	var score = $.cookie("_cms_score_" + contentId);
-	if (score) {
+	if(score) {
 		return false;
 	}
 	$.cookie("_cms_score_" + contentId, "1");
 	$.get(base + "/content_score.jspx", {
-		"contentId" : contentId,
-		"itemId":itemId
+		"contentId": contentId,
+		"itemId": itemId
 	}, function(data) {
-		if(data.succ){
-			$("#"+itemPrefix + itemId).text(data.count);
+		if(data.succ) {
+			$("#" + itemPrefix + itemId).text(data.count);
 		}
 	});
 	return true;
@@ -113,13 +113,13 @@ Cms.score = function(base, contentId,itemId,itemPrefix) {
  */
 Cms.attachment = function(base, contentId, n, prefix) {
 	$.get(base + "/attachment_url.jspx", {
-		"cid" : contentId,
-		"n" : n
+		"cid": contentId,
+		"n": n
 	}, function(data) {
 		var url;
-		for (var i = 0;i < n; i++) {
-			url = base + "/attachment.jspx?cid=" + contentId + "&i=" + i
-					+ data[i];
+		for(var i = 0; i < n; i++) {
+			url = base + "/attachment.jspx?cid=" + contentId + "&i=" + i +
+				data[i];
 			$("#" + prefix + i).attr("href", url);
 		}
 	}, "json");
@@ -129,11 +129,11 @@ Cms.attachment = function(base, contentId, n, prefix) {
  */
 Cms.comment = function(callback, form) {
 	form = form || "commentForm";
-	$("#" + form).validate( {
-		submitHandler : function(form) {
-			$(form).ajaxSubmit( {
-				"success" : callback,
-				"dataType" : "json"
+	$("#" + form).validate({
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				"success": callback,
+				"dataType": "json"
 			});
 		}
 	});
@@ -163,7 +163,7 @@ Cms.loginCsi = function(base, c, options) {
  * 向上滚动js类
  */
 Cms.UpRoller = function(rid, speed, isSleep, sleepTime, rollRows, rollSpan,
-		unitHight) {
+	unitHight) {
 	this.speed = speed;
 	this.rid = rid;
 	this.isSleep = isSleep;
@@ -183,20 +183,20 @@ Cms.UpRoller = function(rid, speed, isSleep, sleepTime, rollRows, rollSpan,
 	}, this.speed);
 }
 Cms.UpRoller.prototype.roll = function() {
-	if (this.proll[0].scrollTop > this.prollCopy[0].offsetHeight) {
+	if(this.proll[0].scrollTop > this.prollCopy[0].offsetHeight) {
 		this.proll[0].scrollTop = this.rollSpan + 1;
 	} else {
-		if (this.proll[0].scrollTop % (this.unitHight * this.rollRows) == 0
-				&& this.sleepCount <= this.sleepTime && this.isSleep) {
+		if(this.proll[0].scrollTop % (this.unitHight * this.rollRows) == 0 &&
+			this.sleepCount <= this.sleepTime && this.isSleep) {
 			this.sleepCount++;
-			if (this.sleepCount >= this.sleepTime) {
+			if(this.sleepCount >= this.sleepTime) {
 				this.sleepCount = 0;
 				this.proll[0].scrollTop += this.rollSpan;
 			}
 		} else {
-			var modCount = (this.proll[0].scrollTop + this.rollSpan)
-					% (this.unitHight * this.rollRows);
-			if (modCount < this.rollSpan) {
+			var modCount = (this.proll[0].scrollTop + this.rollSpan) %
+				(this.unitHight * this.rollRows);
+			if(modCount < this.rollSpan) {
 				this.proll[0].scrollTop += this.rollSpan - modCount;
 			} else {
 				this.proll[0].scrollTop += this.rollSpan;
@@ -218,7 +218,7 @@ Cms.LeftRoller = function(rid, speed, rollSpan) {
 	}, this.speed);
 }
 Cms.LeftRoller.prototype.roll = function() {
-	if (this.proll[0].scrollLeft > this.prollCopy[0].offsetWidth) {
+	if(this.proll[0].scrollLeft > this.prollCopy[0].offsetWidth) {
 		this.proll[0].scrollLeft = this.rollSpan + 1;
 	} else {
 		this.proll[0].scrollLeft += this.rollSpan;
@@ -227,22 +227,22 @@ Cms.LeftRoller.prototype.roll = function() {
 /**
  * 收藏信息
  */
-Cms.collect = function(base, cId, operate,showSpanId,hideSpanId) {
+Cms.collect = function(base, cId, operate, showSpanId, hideSpanId) {
 	$.post(base + "/member/collect.jspx", {
-		"cId" : cId,
-		"operate" : operate
+		"cId": cId,
+		"operate": operate
 	}, function(data) {
-		if(data.result){
-			if(operate==1){
+		if(data.result) {
+			if(operate == 1) {
 				alert("收藏成功！");
-				$("#"+showSpanId).show();
-				$("#"+hideSpanId).hide();
-			}else{
+				$("#" + showSpanId).show();
+				$("#" + hideSpanId).hide();
+			} else {
 				alert("取消收藏成功！");
-				$("#"+showSpanId).hide();
-				$("#"+hideSpanId).show();
+				$("#" + showSpanId).hide();
+				$("#" + hideSpanId).show();
 			}
-		}else{
+		} else {
 			alert("请先登录");
 		}
 	}, "json");
@@ -252,17 +252,17 @@ Cms.collect = function(base, cId, operate,showSpanId,hideSpanId) {
  */
 Cms.cmsCollect = function(base, cId, operate) {
 	$.post(base + "/member/collect.jspx", {
-		"cId" : cId,
-		"operate" : operate
+		"cId": cId,
+		"operate": operate
 	}, function(data) {
-		if(data.result){
-			if(operate==1){
+		if(data.result) {
+			if(operate == 1) {
 				alert("收藏成功！");
-			}else{
+			} else {
 				alert("取消收藏成功！");
-				$("#tr_"+cId).remove();
+				$("#tr_" + cId).remove();
 			}
-		}else{
+		} else {
 			alert("请先登录");
 		}
 	}, "json");
@@ -270,16 +270,16 @@ Cms.cmsCollect = function(base, cId, operate) {
 /**
  * 检测是否已经收藏信息
  */
-Cms.collectexist = function(base, cId,showSpanId,hideSpanId) {
+Cms.collectexist = function(base, cId, showSpanId, hideSpanId) {
 	$.post(base + "/member/collect_exist.jspx", {
-		"cId" : cId
+		"cId": cId
 	}, function(data) {
-		if(data.result){
-			$("#"+showSpanId).show();
-			$("#"+hideSpanId).hide();
-		}else{
-			$("#"+showSpanId).hide();
-			$("#"+hideSpanId).show();
+		if(data.result) {
+			$("#" + showSpanId).show();
+			$("#" + hideSpanId).hide();
+		} else {
+			$("#" + showSpanId).hide();
+			$("#" + hideSpanId).show();
 		}
 	}, "json");
 }
@@ -289,19 +289,19 @@ Cms.collectexist = function(base, cId,showSpanId,hideSpanId) {
  */
 Cms.jobApply = function(base, cId) {
 	$.post(base + "/member/jobapply.jspx", {
-		"cId" : cId
+		"cId": cId
 	}, function(data) {
-		if(data.result==-1){
+		if(data.result == -1) {
 			alert("请先登录");
-		}else if(data.result==-2){
+		} else if(data.result == -2) {
 			alert("职位id不能为空");
-		}else if(data.result==-3){
+		} else if(data.result == -3) {
 			alert("未找到该职位");
-		}else if(data.result==-4){
+		} else if(data.result == -4) {
 			alert("您还没有创建简历，请先完善简历");
-		}else if(data.result==0){
+		} else if(data.result == 0) {
 			alert("您今天已经申请了该职位!");
-		}else if(data.result==1){
+		} else if(data.result == 1) {
 			alert("成功申请了该职位!");
 		}
 	}, "json");

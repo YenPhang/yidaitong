@@ -19,11 +19,13 @@ a:hover{color:#d40212 !important;text-decoration:none;}
 .relative{position:relative}
 
 .clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
-.clearfix{zoom:1;}
+.clearfix{zoom:1;}.colred {
+	color: #d40212;
+}
 
-.colred{color:#d40212;}
-.colred2{color:#aa1a10;}
-.colyellow{color:#d49c00;}
+.colred2 {
+	color: #aa1a10;
+}.colyellow{color:#d49c00;}
 .col999{color:#999;}
 .colf60{color:#ff6600;}
 .col333{color:#333;}
