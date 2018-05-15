@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="cn.kgc.ssm.YDT.dao.datadirectory.DataDirectoryMapper">
+	<select id="getDataByDirectory" parameterType="DataDirectory" resultType="DataDirectory">
+		select * from data_directory
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test=" ddId != null and ddId != 0"> and ddId = #{ddId} </if>
+			<if test=" typeCode != null and typeCode != ''"> and typeCode = #{typeCode} </if>
+			<if test=" typeName != null and typeName != ''"> and typeName = #{typeName} </if>
+			<if test=" valueId != null and valueId != '' and valueId != '-10'"> and valueId = #{valueId}</if>
+			<if test=" valueName != null and valueName != ''"> and valueName = #{valueName} </if>
+		</trim>
+	
+	</select>
+
+
+</mapper>

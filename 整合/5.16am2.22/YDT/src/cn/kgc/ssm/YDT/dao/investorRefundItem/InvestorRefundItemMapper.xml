@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kgc.ssm.YDT.dao.investorRefundItem.InvestorRefundItemMapper">
+
+<!-- 新增收款项目 -->
+<insert id="addRefundItem" parameterType="int">
+INSERT INTO investorRefunditem (investorid,periods,promiseInterest,applyDate,principal,itemcommonid)
+		VALUES
+		(#{investorid},
+		(SELECT iterepaycount FROM itemcommon WHERE itemcommonid=#{itemcommonid}),
+		(SELECT iteYearRate FROM itemcommon WHERE itemcommonid=#{itemcommonid}), 
+		NOW(),
+		(SELECT money FROM fund WHERE itemcommonid=#{itemcommonid} AND userid=#{investorid}),
+		#{itemcommonid});
+</insert>
+
+
+<!-- 查询收款项目明细 -->
+	 <select id="findRefundItemByRefundItemId" resultType="InvestorRefundItem">
+		SELECT * FROM investorRefunditem
+		<where>
+		<if test="refundItemId != null and refundItemId != ''">
+		and refundItemId=#{refundItemId}
+		</if>
+		</where>
+	</select>  
+
+
+</mapper>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="   
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+                
+    <!-- spring扫描包下所有类，让标注spring注解的类生效 -->
+    <context:component-scan base-package="cn.kgc.ssm.YDT.dao"/>
+    <context:component-scan base-package="cn.kgc.ssm.YDT.service"/>
+    
+	<!-- 读取JDBC的配置文件 -->
+	<context:property-placeholder location="classpath:database.properties" />
+
+	<!-- JNDI获取数据源（dbcp连接池） -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" >
+		<property name="driverClassName" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${user}" />
+		<property name="password" value="${password}" />
+		
+	</bean>
+	
+	
+
+	<!-- 配置mybatis sqlSessionFactoryBean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<!-- 配置sql映射信息 -->
+    	<property name="mapperLocations">
+    	  <list>
+    	    <value>classpath:cn/kgc/ssm/YDT/dao/**/*.xml</value>
+    	  </list> 
+    	</property>
+	</bean>
+	
+	<!--用于获得Mapper接口中的Mapper对象，封装了getMapper方法，可以直接调用方法  -->
+	<!-- <bean id="managerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="cn.kgc.ssm.YDT.dao.notice"></property>
+	</bean> -->
+	
+	<!-- mapper 接口所在包名，spring会自动查找其下的Mapper，会直接扫描生成接口实现类，省去了mapperfacotorybean的配置 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.kgc.ssm.YDT.dao" />
+	</bean>
+	
+	
+	<!-- 事务管理 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- AOP事务处理 -->
+	<aop:aspectj-autoproxy />
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="execution(* com.kgc.ssm.YDT.service..*(..))"
+			id="transService" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transService" />
+	</aop:config>
+	
+	<!-- txAdvice:需要定义事务管理器，进行事务处理 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+            <tx:method name="find*" read-only="true" propagation="SUPPORTS" timeout="1000" />
+    		<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+
+	
+
+</beans>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kgc.ssm.YDT.dao.user.UserMapper">
+	<!-- 查询手机号码和密码 -->
+	<select id="getLoginUserbyphuserInp" resultType="User">
+		select * from
+		user u
+		<trim prefix="where" prefixOverrides="and|or">
+		<if test="userTel!=null and  userTel!=''">and u.userTel=#{userTel}</if>
+		<if test="logPsw!=null and  logPsw!=''">and u.logPsw=#{logPsw}</if>
+		</trim>
+	</select>
+	<!-- 查询邮箱和密码 -->
+	<select id="getLoginUserbyemuserInp" resultType="User">
+		select * from
+		user u,verifydata v
+	    <trim prefix="where" prefixOverrides="and|or">
+		<if test="email!=null and  email!=''">and u.email=#{email}</if>
+		<if test="logPsw!=null and  logPsw!=''">and u.logPsw=#{logPsw}</if>
+		</trim>
+		where u.userId=v.verifyDataId
+	</select>
+	<!-- 查询用户名和密码 -->
+	<select id="getLoginUserbynauserInp" resultType="User">
+		select * from
+		user u
+        <trim prefix="where" prefixOverrides="and|or">
+		<if test="userName!=null and  userName!=''">and u.userName=#{userName}</if>
+		<if test="logPsw!=null and  logPsw!=''">and u.logPsw=#{logPsw}</if>
+		</trim>
+	</select>
+
+	<!-- 查询手机号码是否存在 -->
+	<select id="loginisExitbyph" resultType="int">
+		select count(1) from
+		user u
+		where u.userTel=#{userTel}
+	</select>
+	<!-- 查询用户名是否存在 -->
+	<select id="loginisExitbyna" resultType="int">
+		select count(1) from
+		user u
+		where u.userName=#{userName}
+	</select>
+	<!-- 查询邮箱是否存在 -->
+	<select id="loginisExitbyem" resultType="int">
+		select count(1) from
+		user u,verifydata v
+		where v.email=${email}
+		and u.userId=v.verifyDataId
+	</select>
+
+	<!-- 更新用户登录最后时间 -->
+	<update id="modifyUser" parameterType="User">
+		update user u,verifydata v
+		<set>
+			<if test="lastLoginTime!=null">u.lastLoginTime=#{lastLoginTime}</if>
+		</set>
+		where u.userId=#{userId}
+		and u.userId=v.verifyDataId
+	</update>
+
+	<!-- 使用手机号码和用户进行注册 -->
+	<insert id="adduser">
+		insert into user
+		(userTel,userName,logPsw)
+		values (
+		#{userTel},#{userName},#{logPsw})
+	</insert>
+	<!-- 查询手机号码是否存在 -->
+	<select id="registerisExitbyph" resultType="int">
+		select count(1) from
+		user u
+		where u.userTel=#{userTel}
+	</select>
+	<!-- 查询用户名是否存在 -->
+	<select id="registerisExitbyna" resultType="int">
+		select count(1) from
+		user u
+		where u.userName=#{userName}
+	</select>
+	
+		<!-- 更新交易密码 -->
+	<update id="modifyjypwd" parameterType="User">
+		update user u
+		<set>
+			<if test="lastLoginTime!=null">u.lastLoginTime=#{lastLoginTime}</if>
+		</set>
+		where u.userId=#{userId}
+		and u.userId=v.verifyDataId
+	</update>
+</mapper>

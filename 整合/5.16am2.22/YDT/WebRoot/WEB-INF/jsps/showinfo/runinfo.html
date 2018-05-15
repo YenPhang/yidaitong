@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <title>易通贷-让您的钱包鼓鼓的-中国互联网金融领域资深服务品牌</title>
+    <meta name="keywords" content="易通贷,财富管理,互联网金融服务品牌"/>
+    <meta name="description" content="易通贷成立于2011年3月,注册资金1.5亿元,是中国互联网金融领域资深服务品牌.易通贷以打造 互联网金融百年老店 为发展愿景,诚信经营,合规发展,是中国老百姓值得信赖的互联网财富管理伙伴. "/>
+    <link type="/image/x-icon" rel="Icon" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link type="/image/x-icon" rel="Shortcut Icon" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link type="/image/x-icon" rel="Bookmark" href="/r/cms/www/template-v1/img/etd.ico" />
+    <link href="css/front.css" rel="stylesheet" type="text/css"/>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/style_s.css" rel="stylesheet">
+    <link href="css/news.css" rel="stylesheet">
+    <link href="css/tf.css" rel="stylesheet">
+    <link href="css/help.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/front.js" type="text/javascript"></script>
+    <script src="js/com.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/growingio.js" type="text/javascript" charset="utf-8"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body >
+<link href="css/base_1.css" rel="stylesheet">
+<link href="css/leftmenu.css" rel="stylesheet">
+<link href="css/operations.css" rel="stylesheet">
+<link href="css/iconfont.css" rel="stylesheet">
+<link href="css/common2.css" rel="stylesheet">
+<script src="js/digital.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/hf.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var Stringserver={
+        server:"https://app.etongdai.com",
+        staticServer:"https://www.etongdai.com",
+        sslServer:"https://app.etongdai.com",
+        adServer:"https://ad.etongdai.com",
+        mServer:"https://m.etongdai.com",
+        msslServer:"https://m.etongdai.com",
+        newsServer:"https://news.etongdai.com"//内部搜索服务器
+    };
+    $(function(){
+        $("a[href*='server']").each(function(){
+            $(this).attr('href',Stringserver.server + $(this).attr("href").substring(6,$(this).attr("href").length));
+        });
+        $("a[href*='staticServer']").each(function(){
+            $(this).attr('href',Stringserver.staticServer + $(this).attr("href").substring(12,$(this).attr("href").length));
+        });
+        $("a[href*='sslServer']").each(function(){
+            $(this).attr('href',Stringserver.sslServer + $(this).attr("href").substring(9,$(this).attr("href").length));
+        });
+        $("form[action*='newsServer']").each(function(){
+            $(this).attr('action',Stringserver.newsServer + $(this).attr("action").substring(10,$(this).attr("action").length));
+        });
+        $("form[href*='mServer']").each(function(){
+            $(this).attr('href',Stringserver.newsServer + $(this).attr("href").substring(7,$(this).attr("href").length));
+        });
+        $("form[href*='msslServer']").each(function(){
+            $(this).attr('href',Stringserver.newsServer + $(this).attr("href").substring(10,$(this).attr("href").length));
+        });
+        getIndexHtml(Stringserver);
+
+        startAnimation();
+    });
+    function startAnimation(){
+        $(".global-header .banner-loop").delay(3000).animate({opacity:0},500,"linear",function(){
+            $(".global-header .banner-loop").css("background-image","url(images/banner_03.png)");
+            $(".global-header .banner-loop").animate({opacity:1},500,"linear",function(){
+                $(".global-header .banner-loop").delay(2000).animate({opacity:0},1000,"linear",function(){
+                    $(".global-header .banner-loop").css("background-image","url(images/banner_02.png)");
+                    $(".global-header .banner-loop").animate({opacity:1},500,"linear",startAnimation);
+                });
+            });
+        });
+    }
+
+
+
+    var pclink = "<link href=\"/r/cms/www/template-v1/css/com.css\" rel=\"stylesheet\">";
+    var goback = "javascript:history.go(-1);";
+    if(window.location.href.indexOf("announcement") != -1){
+        goback = Stringserver.mServer + "/helpCenter/help_context/9";
+    }
+    var waptop = "<header class=\"com_menu\" >" +
+        "   <i class=\"opa\" style=\"display:none\"></i>" +
+        "    <h1 id=\"logo\"></h1>" +
+        "    <a id=\"commenu\" class=\"ab_r blue\"></a>" +
+        "    <div id=\"cm_bd\" class=\"cm_con\" style=\"display:none\"  data-display=\"0\">" +
+        "        <a class=\"cm1\" href=\"" + Stringserver.mServer + "\"><i></i>首页</a>" +
+        "        <a class=\"cm2\" href=\"" + Stringserver.mServer + "/account/index\"><i></i>我的账户</a>" +
+        "        <a class=\"cm3\" href=\"" + Stringserver.msslServer + "/login/loginH5\"><i></i>登录</a>" +
+        "        <a class=\"cm4\" href=\"" + Stringserver.mServer + "/payment/paymentIndex\"><i></i>充值</a>" +
+        "        <a class=\"cm7 tx_li\" ><i></i>提现</a>" +
+        "        <a class=\"cm5\" href=\"" + Stringserver.mServer + "/invest/investlist\"><i></i>投资</a>" +
+        "        <a class=\"cm6\" href=\"" + Stringserver.mServer + "/helpCenter/eGuide\"><i></i>小e指南</a>" +
+        "        <a class=\"cm8\" href=\"" + Stringserver.mServer + "/information/informationList\"><i></i>网站资讯</a>" +
+        "    </div>" +
+        "</header>" +
+        "<header id=\"head\">" +
+        "<a class=\"ab_l\" href=\"" + goback + "\">返回</a>" +
+        "<h2>网站公告</h2>" +
+        "</header>";
+    var waplink = "<link rel=\"stylesheet\" href=\"/r/cms/www/template-v1/css/wapcom.css\" type=\"text/css\" />"+"<link href=\"/r/cms/www/template-v1/css/media_abs.css\" rel=\"stylesheet\">";
+
+    function abs(){
+        var system ={
+            win : false,
+            mac : false,
+            xll : false
+        };
+        //检测平台
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+
+        if(system.win||system.mac||system.xll){
+            document.write(pclink);
+            document.write(pctop);
+          defCurr("information");
+        }else{
+            document.write(waplink);
+            if(window.location.href.indexOf("u=1") != -1){
+                document.body.style.backgroundColor="transparent";
+                return;
+            }
+            document.write(waptop);
+        }
+    }
+    abs();
+</script>
+
+<script>
+    /* var dateTime = new Date().getTime();
+    var tag = document.location.protocol;
+        if(tag == "https:"){
+            document.write('<scr'+'ipt language="javascript" type="text/javascript" src="https://float.agent.tq.cn/floatcard?adminid=9703668&sort=0&t='+dateTime+'"></scr'+'ipt>');
+        }else{
+            document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://float.agent.tq.cn/floatcard?adminid=9703668&sort=2&t='+dateTime+'"></scr'+'ipt>');
+        } */
+</script>
+<div class="contetent_back">
+    <div class="content lvbd">
+        <div class="con24 clearfix help_bd box">
+            <div class="con_r">
+                <div class="main">
+                    <div class="count">
+                        <div class="main_title">
+                            <p>中国互联网金融协会会员单位</p>
+                        </div>
+                    <div class="operations_content">
+                        <div class="lending">
+                            <p class="infor_tittle">平台出借信息</p>
+                            <div class="info_table">
+                                                                <table>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">成立以来的累计借贷金额</td>
+                                        <td style="width: 236px;">2502346</td>
+                                        <td style="width: 206px;">万元</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">成立以来的累计借贷笔数</td>
+                                        <td style="width: 236px;">5202009</td>
+                                        <td style="width: 206px;">笔</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">借贷余额</td>
+                                        <td style="width: 236px;">431055</td>
+                                        <td style="width: 206px;">万元</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">借贷笔数</td>
+                                        <td style="width: 236px;">845621</td>
+                                        <td style="width: 206px;">笔</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">累计出借人数量</td>
+                                        <td style="width: 236px;">263640</td>
+                                        <td style="width: 206px;">人</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">累计借款人数量</td>
+                                        <td style="width: 236px;">25322</td>
+                                        <td style="width: 206px;">人</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">当期出借人数量</td>
+                                        <td style="width: 236px;">37470</td>
+                                        <td style="width: 206px;">人</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">当期借款人数量</td>
+                                        <td style="width: 236px;">1133</td>
+                                        <td style="width: 206px;">人</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">关联关系借款余额及笔数</td>
+                                        <td style="width: 236px;">0/0</td>
+                                        <td style="width: 206px;">万元/笔</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">逾期金额及笔数</td>
+                                        <td style="width: 236px;">0/0</td>
+                                        <td style="width: 206px;">万元/笔</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="width: 309px;">逾期90天（不含）以上金额及笔数</td>
+                                        <td style="width: 236px;">0/0</td>
+                                        <td style="width: 206px;">万元/笔</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td style="width: 309px;">累计代偿金额及笔数</td>
+                                        <td style="width: 236px;">0/0</td>
+                                        <td style="width: 206px;">万元/笔</td>
+                                    </tr>
+
+                                </table>
+                                <p class="lending_des">注：披露数据截止到3月31日24:00</p>
+                            </div>
+                        </div>
+                        <div class="lending_people">
+                            <p class="infor_tittle">前十大借款人情况</p>
+                            <div class="info_table">
+                                <table>
+                                    <tr class="tittle odd">
+                                        <td style="width: 376px;">前十大借款人待还金额占比</td>
+                                        <td style="width: 377px;">最大单一借款人待还金额占比</td>
+                                    </tr>
+                                    <tr class="even" style="height: 32px">
+                                        <td style="width: 376px;">0.22%</td>
+                                        <td style="width: 377px;">0.01%</td>
+                                    </tr>
+                                </table>
+                                <p class="lending_des">注：披露数据截止到3月31日24:00</p>
+                            </div>
+                        </div>
+                        <div class="lending_standards">
+                            <p class="infor_tittle">收费标准</p>
+                            <div class="info_table">
+                                <div class="table_img">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con_l">
+                <ul class="ul_v">
+                    <li >
+                        <a class="t" href="/p2p/informations/index.html" target="_self" >基本信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t" href="/p2p/informations/organizations.html" target="_self" >组织结构</a>
+                        <div class="_blank"></div>
+                    </li>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/flat.html" target="_self" >平台信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/riskCtr.html" target="_self" >风控措施</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/laws.html" target="_self" >法律法规</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li class="cur1">
+                        <a class="t"  href="/p2p/informations/operate" target="_self" >运营信息</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/importantThings.html" target="_self" >重大事项</a>
+                        <div class="_blank"></div>
+                    </li>
+                    <li >
+                        <a class="t"  href="/p2p/informations/comptroller.html" target="_self" >审计报告</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" type="text/javascript" charset="utf-8">
+var pcbottom = "<footer class=\"grid global-footer\">"+
+"<div>"+
+"    <nav class=\"grid-unit-1-8 global-footer-nav\">"+
+"        <h3>关于我们</h3>"+
+"            	<a href=\"https://www.etongdai.com/p2p/abouts/abouts_company.html\" title=\"公司简介\">公司简介</a>"+
+"            	<a href=\"https://www.etongdai.com/p2p/abouts/abouts_team.html\" title=\"团队介绍\">团队介绍</a>"+
+"            	<a href=\"https://www.etongdai.com/p2p/abouts/honor/2/\" title=\"荣誉资质\">荣誉资质</a>"+
+    "            	<a href=\"https://www.etongdai.com/p2p/abouts/yxytd/\" title=\"影音易通贷\">影音易通贷</a>"+
+
+"    </nav>"+
+"    <nav class=\"grid-unit-1-6 global-footer-nav\">"+
+"        <h3>相关法律</h3>"+
+"	        	<a href=\"https://www.etongdai.com/p2p/help/legal/20170518/6536.html\" title=\"民间借贷合法性\">民间借贷合法性</a>"+
+"	        	<a href=\"https://www.etongdai.com/p2p/help/legal/20170518/6537.html\" title=\"易通贷平台服务的合法性\">易通贷平台服务的合法性</a>"+
+"	        	<a href=\"https://www.etongdai.com/p2p/help/legal/20170518/6538.html\" title=\"电子合同合法性\">电子合同合法性</a>"+
+"	        	<a href=\"https://www.etongdai.com/p2p/help/legal/20170518/6539.html\" title=\"民间借贷利息的确认\">民间借贷利息的确认</a>"+
+    "	        	<a href=\"https://www.etongdai.com/p2p/help/risk/\" title=\"出借人风险教育\">出借人风险教育</a>"+
+"    </nav>"+
+"    <nav class=\"grid-unit-1-8 global-footer-nav\">"+
+"        <h3>帮助中心</h3>"+
+"		 <p><a href=\"https://www.etongdai.com/p2p/help/guide/1\" shape=\"\">新人向导</a></p>"+
+"         <p><a href=\"https://www.etongdai.com/p2p/help/rule\" shape=\"\">网站规则</a></p>"+
+"        <p><a href=\"https://www.etongdai.com/p2p/help/risk\" shape=\"\">风险揭示书</a></p>"+
+"         <p><a href=\"https://www.etongdai.com/p2p/help/wzdt\" shape=\"\">网站地图</a></p>"+
+"   </nav>"+
+"    <div class=\"grid-unit-1-8 qrcode\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/new/img/qrode_01.jpg\" alt=\"易通贷APP下载\">易通贷APP下载</div>"+
+"    <div class=\"grid-unit-1-8 qrcode\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/new/img/qrode_02.jpg\" alt=\"关注微信-易通贷资讯\">关注微信-易通贷资讯</div>"+
+"    <div class=\"grid-unit-1-4 telephone\">"+
+"        <h3>全国服务热线<a href=\"javascript:void(0);\" title=\"拨打客服热线：400-064-5156\">400-064-5156</a></h3>"+
+"       <p>客服咨询时间：8:00 - 20:00<span class=\"qq-server\"><i></i>QQ客服</span></p>"+
+"        <p>服务投诉电话：010-56177355</p>"+
+"        <p>商务合作电话：010-56177361</p>"+
+    "<p>服务投诉邮箱：service@etongdai.com</p>" +"    </div>"+"    <p class=\"grid-unit-1 tip\">预期投资回报率不等于实际投资回报率，投资有风险，选择需谨慎。</p>"+
+"</div>"+
+"</footer>"+
+"<section class=\"copyright\">"+
+"<div class=\"authentic\">  "+
+"    <a href=\"http://webscan.360.cn/index/checkwebsite?url=www.etongdai.com\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/01.gif\"></a>"+
+"    <a href=\"https://search.szfw.org/cert/l/CX20140515008078008136\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/02.gif\"></a>"+
+"    <a href=\"http://www.isc.org.cn/xhhy/hydw/content-32.html\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/03.gif\"></a>"+
+"    <a href=\"https://ss.knet.cn/verifyseal.dll?sn=e14051911010849050et7r000000&amp;ct=df&amp;a=1&amp;pa=0.7002172293035737\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/04.gif\"></a>"+
+"    <a href=\"http://www.bcpcn.com/product/rz/bq/BCP2615734826.html\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/05.gif\"></a>"+
+"    <a href=\"http://www.315online.com.cn/member/315140031.html\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/06.gif\"></a>"+
+"    <a href=\"http://www.itrust.org.cn/home/index/itrust_certifi/wm/1571278794\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/wxrz-white.jpg\"></a>"+
+"	 <a target=\"_blank\" href=\"https://www.etongdai.com/p2p/help/guide/4/2017071111727.html\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/08.gif\"></a>"+
+"    <a href=\"http://www.cecy.org.cn/bencandy_search.php?fid=122&amp;id=1204\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/sys/zheng/09.png\"></a>"+
+"    <a id=\"ppb\" key =\"587c78dbefbfb04f3bf057c6\" logo_size=\"124x47\" logo_type=\"business\" href=\"http://www.anquan.org\">" +
+"		<script src=js/f881fcf6ac1b4da19b8bf69656f1cb84.gif"//static.anquan.org/static/outer/js/aq_auth.js\">" +
+"       <\/script>"+
+"    </a>"+
+"</div>"+
+"<p class=\"link clearfix\">"+
+"    <span>友情链接</span>"+
+"  	<a target=\"_blank\" href=\"http://www.p2peye.com/\">网贷天眼</a> "+
+"		<a target=\"_blank\" href=\"http://www.chuangtianxia.cn\">创天下</a> "+
+"		<a target=\"_blank\" href=\"http://www.p2p001.com/\">第一网贷</a> "+
+"		<a target=\"_blank\" href=\"http://www.wd315.cn/\">网贷315</a> "+
+"		<a target=\"_blank\" href=\"http://www.wdzj.com/\">网贷之家</a> "+
+"		<a target=\"_blank\" href=\"http://www.erongtu.com/\">融途网</a> "+
+"		<a target=\"_blank\" href=\"http://www.rong360.com/licai/\">融360</a> "+
+"</p>"+
+"<p>版权所有 © 北京易通贷金融信息服务有限公司    公司地址：北京市海淀区丹棱街1号互联网金融中心7层    办公时间：周一至周五 9:00-18:00</p>"+
+"<p>"+
+"<a target=\"_blank\" href=\"http://www.miitbeian.gov.cn\" style=\"color:#3f3a39; cursor:pointer;\">备案号:京ICP备11042752号-4</a>"+
+"<a target=\"_blank\" href=\"https://tsm.miit.gov.cn/pages/EnterpriseSearchList_Portal.aspx?type=0&amp;keyword=%E4%BA%ACICP%E8%AF%81140393%E5%8F%B7&amp;pageNo=1\" style=\"color:#3f3a39; cursor:pointer;\">京ICP证140393号</a>"+
+"    <a target=\"_blank\" href=\"http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024662\" style=\"display:inline-block;text-decoration:none; vertical-align: top;\">"+
+"        <img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/img/beian/ghs.png\" style=\"float:left;\"/>"+
+"        <span style=\"float:left;margin: 0px 0px 0px 5px;\">京公网安备 11010802024662号</span>"+
+"    </a>"+
+"</p>"+
+"</section>"+
+"<nav id=\"redpack\">"+
+"<a href=\"http://app.etongdai.com/static/novice-guide/pc.html\" target=\"_blank\"><img src=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"/r/cms/www/template-v1/new/img/redpacket.gif\" style=\"margin-left:-17px;\"/></a>"+
+"</nav>"+
+"<nav id=\"fixbar\">"+
+"<a onclick=\"kf_online();\" class=\"online\">在线<br />客服</a>"+
+"<a href=\"http://app.etongdai.com/calculator\" class=\"calculator\">收益<br />计算器</a>"+
+"<a href=\"https://www.etongdai.com/download.html\" class=\"download\">APP<br />下载</a>"+
+"<a class=\"wxdownload\" onmousemove=\"$('.wxdownloadimg').show();\" onmouseout=\"$('.wxdownloadimg').hide();\">微信<br />服务号</a>"+
+"<a class=\"back\">返回<br />顶部</a>"+
+"<img class=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"downloadimg\" src=\"/r/cms/www/template-v1/new/img/qrode_01.jpg\" alt=\"APP下载\">"+
+"<img class=picture/f881fcf6ac1b4da19b8bf69656f1cb84.gif"wxdownloadimg\" src=\"/r/cms/www/template-v1/new/img/qrode_02.png\" alt=\"微信服务\">"+
+"</nav>"+
+"<div style=\"display:none\" class=\"tc_f\">"+
+"<i class=\"opa\"></i>"+
+"<div class=\"bd\">"+
+"<h3 class=\"white\">关注微信-易通贷资讯号</h3>"+
+"<em class=\"wxtu\">"+
+"</em>"+
+"<p class=\"graya\">打开微信，点击\"扫一扫\"，扫描此二维码即可关注，或微信搜索公众号\"易通贷资讯\"。</p>"+
+"<a title=\"关闭\" class=\"ab_r close\">✖</a>"+
+"</div>"+
+"</div>";
+
+var wapbottom="<footer class=\"footer white\">" + 
+"		<p>预期收益不承诺等于实际收益，投资需谨慎</p>" +
+"       <p>客服电话400-064-5156 服务时间:8:00-20:00</p>" + 
+"       <p>中关村互联网金融中心</p>" + 
+"</footer>";
+
+function abs1(){
+	var system ={
+	win : false,
+	mac : false,
+	xll : false
+	};
+	//检测平台
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	
+ 	if(system.win||system.mac||system.xll){
+		document.write(pcbottom);
+	}else{
+		if(window.location.href.indexOf("u=1") != -1){
+			return;
+		}
+		document.write(wapbottom);
+	} 
+}
+abs1();
+</script>
+<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 百度 -->
+<div style="display:none;">
+<script>
+<!-- 在线客服链接修改 -->
+function kf_online(){
+	var userName=$.cookie('_username');
+	var userMobile=$.cookie('_userMobile');
+	if(userName){
+		if(userMobile != null && userMobile != ''){
+			window.open("http://im.etongdai.com/webchat.html?custAcc="+userMobile+"&vip=0&mediaType=1",'_blank');
+		}else{
+			window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+		}
+	}else{
+		window.open("http://im.etongdai.com/webchat.html?custAcc=null&vip=0&mediaType=1",'_blank');
+	}
+}
+
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?9a714a924f22b76dc92e5ae4bcbf6486";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+
+/* var dateTime = new Date().getTime();
+var tag = document.location.protocol;
+	if(tag == "https:"){
+		document.write('<scr'+'ipt language="javascript" type="text/javascript" src="https://float.agent.tq.cn/floatcard?adminid=9703668&sort=0&t='+dateTime+'"></scr'+'ipt>'); 		
+	}else{
+		document.write('<scr'+'ipt language="javascript" type="text/javascript" src="http://float.agent.tq.cn/floatcard?adminid=9703668&sort=2&t='+dateTime+'"></scr'+'ipt>'); 		
+	} */
+</script>
+</div><script src="js/news.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/eframe.js" type="text/javascript" charset="utf-8"></script>
+<!--本页中-->
+<script>
+    $(function() {
+        $("a.cur2").parents("li").addClass("cur1");
+        $(".con_l li").click(function(){
+            $(this).addClass("cur1").append('<i class="cura"></i>')
+                .siblings().removeClass("cur1").children('i').remove();
+        });
+        $(".zmenu a").click(function(){
+            $(this).addClass("cur2").append('<em></em>')
+                .siblings().removeClass("cur2").children('em').remove();
+        });
+        $("li#abouts").addClass("cur");
+    });
+</script>
+</body>
+</html>

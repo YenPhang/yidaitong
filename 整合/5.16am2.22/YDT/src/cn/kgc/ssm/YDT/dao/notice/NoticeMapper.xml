@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="cn.kgc.ssm.YDT.dao.notice.NoticeMapper">
+<!-- 插入一条新的公告 -->
+	<insert id="addNotice" parameterType="Notice">
+		INSERT INTO notice
+		(noticeTitle,noticeTime,noticeFrom,noticeContent,noticeTypeId)
+		VALUES 
+		(#{noticeTitle},now(),#{noticeFrom},#{noticeContent},#{noticeTypeId})
+	</insert>
+	
+	<!--根据前台传入的noticeId对公告进行修改  -->
+	<update id="modifyNoticeById" parameterType="Notice">
+		update notice 
+		<trim prefix="set" suffixOverrides=",">
+			<if test=" noticeTitle != null and noticeTitle != ''"> noticeTitle = #{noticeTitle}, </if>
+			<if test=" noticeTime != null and noticeTime != ''"> noticeTime = #{noticeTime}, </if>
+			<if test=" noticeFrom != null and noticeFrom != ''"> noticeFrom =#{noticeFrom}, </if>
+			<if test=" noticeContent != null and noticeContent != ''"> noticeContent = #{noticeContent}, </if>
+			<if test=" noticeTypeId != null and noticeTypeId != '' and noticeTypeId != -10"> noticeTypeId = #{noticeTypeId}, </if>
+		</trim>
+		<if test="noticeId != 0 ">where noticeId = #{noticeId}</if>	
+	</update>
+	
+	<resultMap type="notice" id="basicNotice">
+		<id property="noticeId" column="noticeId"/>
+		<result property="noticeTitle" column="noticeTitle"/>
+		<result property="noticeTime" column="noticeTime"/>
+		<result property="noticeFrom" column="noticeFrom"/>
+		<result property="noticeContent" column="noticeContent"/>
+		<result property="noticeTypeId" column="noticeTypeId"/>
+	</resultMap>
+	
+	
+	
+	<!--查询某个版块下的所有公告  -->
+	<select id="getNoticeListByNoticeTypeId"  parameterType="map" resultType="Notice">
+		select no.*,dd.valueName noticeTypeName from notice no,data_directory dd
+		<where>
+			no.noticeTypeId = dd.valueId and dd.typeCode = 'noticeType'
+			<if test="noticeTypeId != null and noticeTypeId != -10">and noticeTypeId = #{noticeTypeId}</if>
+			<if test="title != null ">and noticeTitle like concat('%',#{title},'%')</if>
+			<if test="stime != null and stime != '' and etime != null and etime != '' ">and noticeTime between #{stime} and #{etime}</if>
+			<if test="noticeId != null and noticeId != ''"> and noticeId = #{noticeId}</if>
+		</where>
+	</select>
+	
+	<!--根据传入的noticeId删除notice  -->
+	<delete id="deleteNoticeByNoticeId" parameterType="notice">
+		delete from notice
+		where noticeId = #{noticeId} 
+	</delete>
+</mapper>

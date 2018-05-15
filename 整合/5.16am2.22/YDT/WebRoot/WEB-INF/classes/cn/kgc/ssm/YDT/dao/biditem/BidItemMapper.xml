@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="cn.kgc.ssm.YDT.dao.biditem.BidItemMapper">
+<!-- 查询招标项目列表 -->
+	<select id="findAllBidItem" resultType="BidItem">
+	select * from biditem
+		
+	</select>
+
+<!-- 根据项目ID查询指定招标项目 -->
+    <select id="findBidItemByBidItemId"  resultType="BidItem">
+	select * from biditem 
+	 <where>
+	  <if test="bidItemId != null and bidItemId != ''">
+	  bidItemId = #{bidItemId}
+	  </if>
+	 </where>
+	</select>
+
+<!--根据传入的biditem增加一个招标项目  -->
+<insert id="addBidItemByItemCommon" parameterType="biditem">
+	insert into biditem (creditLevel,raiseDays,applyDate,canInvestCash,loanUse,repaymentResource,
+	pawnInfo,factoryBackground,riskControlMethod,itemCommonId,iteStatus)
+	values(#{creditLevel},#{raiseDays},now(),#{canInvestCash},#{loanUse},#{repaymentResource},
+	#{pawnInfo},#{factoryBackground},#{riskControlMethod},#{itemCommonId},"1")
+ 
+
+ 
+ </insert>
+</mapper>

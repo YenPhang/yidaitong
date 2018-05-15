@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kgc.ssm.YDT.dao.itemcommon.ItemCommomMapper">
+
+<insert id="addItemCommom" parameterType="ItemCommon">
+		insert into itemcommon
+		(iteLimitYuan,iteYearRate,iteRepayInterval,
+		iteRepayDate,iteReason,iteBidSum,iteBidMin,
+		iteRepayType,iteBidDate,iteTitle,itdContent)
+		values (
+		#{iteLimitYuan},#{iteYearRate},#{iteRepayInterval},
+		#{iteRepayDate},#{iteReason},#{iteBidSum},#{iteBidMin},
+		#{iteRepayType},#{iteBidDate},#{iteTitle},#{itdContent}
+		)
+	</insert>
+	
+	<!-- 获取贷款项目的集合 -->
+	<select id="getItemCommonList" parameterType="Map" resultMap="ItemCommonListResult">
+		SELECT  icn.iteTitle,icn.iteLimitYuan,icn.iteYearRate,icn.repayTotalMoney,
+		rmm.applyDate,rmm.repaymentTerm,rmm.itemStatus
+        FROM  
+        itemcommon AS icn
+		INNER JOIN  `repaymentitem` AS rmm ON rmm.itemCommonId=icn.itemCommonId
+        WHERE 
+        iteTitle like concat("%",#{iteTitle},"%") 
+	</select>
+	<resultMap type="itemCommon" id="ItemCommonListResult">
+		<id property="itemCommonId" column="itemCommonId"></id>
+		<result property="iteTitle" column="iteTitle"></result>
+		<result property="iteLimitYuan" column="iteLimitYuan"></result>
+		<result property="iteYearRate" column="iteYearRate"></result>
+		<result property="repayTotalMoney" column="repayTotalMoney"></result>
+		
+		<association property="repaymentItem" javaType="RepaymentItem">
+			<id property="itemCommonId" column="itemCommonId"></id>
+			<result property="applyDate" column="applyDate" />
+			<result property="repaymentTerm" column="repaymentTerm" />
+			<result property="itemStatus" column="itemStatus" />
+		</association>
+	</resultMap>
+	
+	<!--获取申请贷款项目  -->
+	<select id="getApplyItemCommonList" parameterType="map" resultType="itemcommon">
+		select ic.*,dd.valueName iteStatusName from itemcommon ic,data_directory dd
+		<where>
+			ic.iteStatus = dd.valueId and dd.typeCode = "iteStatus"
+			<if test="itemCommonId != null and itemCommonId != 0">and itemCommonId = #{itemCommonId}</if>
+			<if test=" title != null ">and iteTitle like concat('%',#{title},'%')</if>
+			<if test="stime != null and stime != '' and etime != null and etime != '' ">and applyDate between #{stime} and #{etime}</if>
+			<if test="iteStatus != null and iteStatus != -10"> and ic.iteStatus = #{iteStatus}</if>
+						<if test="iteStatus != null and iteStatus != -10"> and ic.iteStatus = #{iteStatus}</if>
+			
+		</where>
+		order by applyDate desc
+			<if test="currentCount != null">Limit #{currentCount},#{pageSize}</if>
+			
+	</select>
+	
+	<!--获取申请贷款项目的总条数  -->
+	<select id="getCount" parameterType="map" resultType="int">
+		select count(1) from itemcommon ic,data_directory dd
+		<where>
+			ic.iteStatus = dd.valueId and dd.typeCode = 'iteStatus'
+			<if test="itemCommonId != null and itemCommonId != 0">and itemCommonId = #{itemCommonId}</if>
+			<if test=" title != null ">and iteTitle like concat('%',#{title},'%')</if>
+			<if test="stime != null and stime != '' and etime != null and etime != '' ">and applyDate between #{stime} and #{etime}</if>
+			<if test="iteStatus != null and iteStatus != -10"> and ic.iteStatus = #{iteStatus}</if>
+		</where>
+	</select>
+	
+	<!--修改贷款项目的状态  -->
+	<update id="updateIteStatusByItemCommonId" parameterType="itemCommon">
+		update itemcommon ic
+		<trim prefix="set" suffixOverrides=",">
+			<if test=" iteStatus != null and iteStatus != '' "> iteStatus = #{iteStatus},</if>
+			<!-- <if test="   != null and  != '' ">  = #{} ,</if>
+			<if test="   != null and  != '' ">  = #{} ,</if>
+			<if test="   != null and  != '' ">  = #{} ,</if> -->
+		</trim>
+		<where>
+			<if test=" itemCommonId != null and itemCommonId != 0 "> itemCommonId = #{itemCommonId} </if>
+		</where>
+	</update>
+	
+	
+	<!-- 根据条件获取借贷者  项目名称（itemCommonId） 的抵押贷款 信息-->
+	<select id="getItemCommonList" parameterType="Map" resultMap="ItemCommonListResult">
+		SELECT  icn.iteTitle,icn.iteLimitYuan,icn.iteYearRate,icn.repayTotalMoney,
+		rmm.applyDate,rmm.repaymentTerm,rmm.itestatus
+        FROM  
+        itemcommon AS icn
+		INNER JOIN  `repaymentitem` AS rmm ON rmm.itemCommonId=icn.itemCommonId
+        WHERE 
+        iteTitle like concat("%",#{iteTitle},"%") 
+	</select>
+	<resultMap type="itemCommon" id="ItemCommonListResult">
+		<id property="itemCommonId" column="itemCommonId"></id>
+		<result property="iteTitle" column="iteTitle"></result>
+		<result property="iteLimitYuan" column="iteLimitYuan"></result>
+		<result property="iteYearRate" column="iteYearRate"></result>
+		<result property="repayTotalMoney" column="repayTotalMoney"></result>
+		
+		<association property="repaymentItem" javaType="RepaymentItem">
+			<id property="itemCommonId" column="itemCommonId"></id>
+			<result property="applyDate" column="applyDate" />
+			<result property="repaymentTerm" column="repaymentTerm" />
+			<result property="itestatus" column="itestatus" />
+		</association>
+	</resultMap>
+	
+		<!-- 我的抵押物信息  我的房产添加信息 -->
+	<insert id="addItdPawn" parameterType="pawn">
+		INSERT INTO pawn(titleName,itdContent) VALUES (#{titleName},#{itdContent})
+	</insert>
+
+	
+</mapper>
